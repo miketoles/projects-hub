@@ -1,46 +1,63 @@
-# 🔄 Sync File for Claude
+# Sync File for Claude
 
-*Last synced: [DATE] by Claude Code*
+*Last synced: January 26, 2026 by Claude Code*
 
 Hey Claude! Mike is continuing work from his phone. Here's the current context:
 
 ---
 
-## 🔥 What I Was Just Working On
+## What I Was Just Working On
 
-**Project:** [Name]
-**Repo:** [github link]
-**Last session:** [what was accomplished]
-**Next up:** [what needs to happen next]
-**Open questions:** [anything unresolved]
+**Project:** ScatterplotCreator
+**Path:** `~/dev/ScatterplotCreator`
+**GitHub:** https://github.com/miketoles/Scatterplot
+**Last session:**
+- Fixed grey backgrounds not printing (darkened from #f2f2f2 to #e0e0e0)
+- Fixed Print All PDF sorting by patient ID
+- Increased font sizes for better print readability (12px headers, descriptions, instructions)
+- Removed "Behaviors for data collection" line
+- Pushed all changes to GitHub
+
+**Next up:** Continue gathering stakeholder feedback
+
+**Open questions:** None - awaiting more feedback
 
 ---
 
-## 🧠 Current Mental Context
+## Current Mental Context
 
-[Free-form notes about where my head is at, what I'm thinking about, decisions I'm mulling over]
+ScatterplotCreator is in stakeholder review. First round of feedback addressed (font sizes, grey printing). App is deployed and being tested by BCBAs.
+
+Main focus areas:
+1. ScatterplotCreator - address any additional feedback
+2. 3dArchery indoor scoring expansion
+3. hospital-mini-apps development
 
 ---
 
-## 📋 Quick Status: Active Projects
+## Quick Status: Active Projects
 
 | Project | Status | Next Action |
 |---------|--------|-------------|
-| Polymarket Bot | ✅ Running | Monitor for opportunities |
-| Scatterplot Creator | ✅ Done | Stakeholder demo this week |
-| [Project 3] | 🟡 In Progress | [next step] |
+| ScatterplotCreator | In stakeholder review | Address feedback |
+| 3dArchery | Expanding to v2 | Add Indoor scoring modes |
+| hospital-mini-apps | In development | Continue building |
+| polymarket-arb-bot | Running | Monitor |
 
 ---
 
-## 📝 Notes for This Mobile Session
+## Notes for This Mobile Session
 
-[Anything specific I want to brainstorm/plan/write while away from computer]
+Things to think about:
+- Any additional stakeholder feedback for ScatterplotCreator
+- Indoor archery scoring UI design
+- Quiz App feature prioritization
 
 ---
 
-## 🔗 Quick Links
+## Quick Links
 
-- **Projects Hub:** github.com/USER/projects-hub
+- **Projects Hub:** ~/dev/projects-hub
 - **Active Projects:** [ACTIVE.md](./ACTIVE.md)
 - **All Projects:** [PROJECTS.md](./PROJECTS.md)
 
