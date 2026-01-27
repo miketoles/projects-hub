@@ -33,6 +33,12 @@ What I'm actively working on right now.
 - **Next step:** Monitor for opportunities
 - **Blocked by:** None
 
+### 5. CR (CentralReach Integration)
+- **Path:** `~/dev/CR`
+- **Status:** Exploratory - researching API
+- **Next step:** Identify who at hospital can request API access
+- **Blocked by:** Need API credentials from CR admin
+
 ---
 
 ## This Week's Goals

@@ -1,57 +1,95 @@
-# 📚 All Projects
+# All Projects
 
-A complete index of all my projects, organized by category/status.
+*Last updated: January 26, 2026*
 
----
-
-## 🟢 Active Development
-
-| Project | Description | Repo | Status |
-|---------|-------------|------|--------|
-| Polymarket Arb Bot | Binary arbitrage trading bot | [link](https://github.com/USER/polymarket-arb-bot) | Running on Railway |
-| Scatterplot Creator | [brief description] | [link] | Ready for stakeholder demo |
+A complete index of all Mike's projects in `~/dev/`, organized by status.
 
 ---
 
-## 🟡 In Progress (Paused)
+## Active Development
 
-| Project | Description | Repo | Why Paused | Notes |
-|---------|-------------|------|------------|-------|
-| [Name] | [desc] | [link] | [reason] | [notes] |
-
----
-
-## 🔵 Learning / Exploration
-
-| Project | Description | Repo | What I'm Learning |
-|---------|-------------|------|-------------------|
-| OS Development | Educational OS project | [link] | Low-level systems, Rust |
-
----
-
-## ✅ Completed
-
-| Project | Description | Repo | Completed | Key Learnings |
-|---------|-------------|------|-----------|---------------|
-| [Name] | [desc] | [link] | [date] | [1-2 takeaways] |
+| Project | Description | Tech Stack | Docs |
+|---------|-------------|------------|------|
+| **ScatterplotCreator** | Electron app for BCBAs to manage patient scatterplots | Electron, Node.js, HTML/CSS/JS | DESIGN.md |
+| **3dArchery** | Multi-discipline archery scoring PWA | PWA, Netlify, Stripe | DESIGN-DOC-V2.md |
+| **hospital-mini-apps** | PWA platform for hospital iPhone mini-apps | Next.js 16, React 19, TypeScript, Tailwind | DESIGN.md |
+| **polymarket-arb-bot** | Polymarket arbitrage trading bot | Python, web3, Telegram | requirements.txt |
+| **bulldozer app** | Satisfying digging game for toddlers | HTML5, Canvas, JavaScript | DESIGN.md |
+| **Quiz App** | Kahoot-like training app for RBTs | React 19, Vite, TypeScript, Supabase | DESIGN.md |
+| **spiritlogic** | Main brand/landing site | HTML, CSS, Vercel | DESIGN.md |
+| **AbletonPlugins** | JUCE audio plugins (Arp, Distortion) | C++, JUCE, CMake | DESIGN.md |
 
 ---
 
-## 💡 Ideas / Backlog
+## Planning / Design Phase
 
-Projects I want to build someday:
-
-- [ ] Idea 1
-- [ ] Idea 2
-- [ ] Idea 3
+| Project | Description | Tech Stack | Notes |
+|---------|-------------|------------|-------|
+| **CR** | CentralReach API integration exploration | REST API, Node.js (TBD) | Exploratory for hospital tools |
+| **ABA-Platform** | Role-based ABA patient data platform | Web-based (TBD) | PRD.md, DATA_MODEL.md |
+| **SpiritlogicDB** | Mobile database app for non-technical users | Mobile (TBD) | Comprehensive DESIGN.md |
+| **CatGame** | 3D stealth game (cat hunting prey) | Godot 4.x | DESIGN_V3.md |
+| **TrashTruckGame** | 2D trash truck simulator | HTML5, Canvas | DESIGN.md |
+| **Pantry** | Photo-to-grocery-list app | Web/Mobile | PRD.md, ROADMAP.md |
 
 ---
 
-## 🏷️ By Technology
+## Learning / Experimental
 
-Quick reference for finding projects by tech stack:
+| Project | Description | What I'm Learning |
+|---------|-------------|-------------------|
+| **AI Local** | Running LLMs locally | Local inference, privacy-focused AI |
+| **Roblox** | Roblox game development | Roblox Studio, Lua scripting |
+| **RBT99** | Python tools for RBT training | Django, Jupyter, Python |
+| **Sandbox** | Experimental prototypes | Various (lag arbitrage, etc.) |
 
-**Python:** Polymarket Bot, ...
-**React:** Scatterplot Creator(?), ...
-**Rust:** OS Development, ...
-**Node.js:** ...
+---
+
+## Completed / Maintenance
+
+| Project | Description | Status |
+|---------|-------------|--------|
+| **SpaceAttack** | Space Invaders arcade shooter | Complete |
+| **Spiritlogic Shared UI** | JUCE UI theme module | Active (reusable) |
+| **UI Schemas** | Color/theme gallery | Reference |
+
+---
+
+## Paused / On Hold
+
+| Project | Description | Why Paused |
+|---------|-------------|------------|
+| **ABA Tracker** | Web app for ABA patient tracking | Superseded by ABA-Platform |
+| **LuckySnap** | Photo-based app | Low priority |
+| **Scatterplot Printer** | Earlier scatterplot tool | Superseded by ScatterplotCreator |
+
+---
+
+## Reference / Meta
+
+| Project | Description |
+|---------|-------------|
+| **meta** | Project index and local paths |
+| **Protocols** | ABA protocol templates (Word docs) |
+| **projects-hub** | This repo - central command |
+
+---
+
+## By Technology
+
+**JavaScript/TypeScript:** 3dArchery, Quiz App, hospital-mini-apps, bulldozer app, SpaceAttack, TrashTruckGame
+**Electron:** ScatterplotCreator
+**Python:** polymarket-arb-bot, RBT99
+**C++/JUCE:** AbletonPlugins, Spiritlogic Shared UI
+**Godot:** CatGame
+**Next.js/React:** hospital-mini-apps, Quiz App
+**HTML5/Canvas:** bulldozer app, SpaceAttack, TrashTruckGame, UI Schemas
+
+---
+
+## Project Locations
+
+All projects live in `~/dev/`:
+- Most are local-only (no GitHub repo yet)
+- 13 of 25 are git repos
+- Design docs exist for 18 projects
