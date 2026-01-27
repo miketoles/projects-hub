@@ -8,18 +8,17 @@ Hey Claude! Mike is continuing work from his phone. Here's the current context:
 
 ## What I Was Just Working On
 
-**Project:** CR (CentralReach Integration)
+**Project:** CR (Scatterplot Quick Entry Tool)
 **Path:** `~/dev/CR`
 **Last session:**
-- Researched CentralReach API capabilities
-- Documented authentication (OAuth 2.0, JWT tokens)
-- Identified available API domains (Clients, Employees, Scheduling, Billing)
-- Created project files (STATUS.md, CLAUDE.md)
-- Goal: Exploratory for hospital internal tools
+- Identified primary use case: faster scatterplot data entry
+- Designed click+drag UI for filling 96-interval grids
+- Built working prototype: `mockup/quick-entry.html`
+- Prototype ready for user testing
 
-**Next up:** Identify who at hospital can request API access
+**Next up:** Test prototype with real paper scatterplots
 
-**Open questions:** Who has CR admin access at the hospital?
+**Open questions:** What improvements needed after testing?
 
 ---
 
