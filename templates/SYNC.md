@@ -64,7 +64,7 @@ TEMPLATE INSTRUCTIONS:
 
 ## From Mobile Session
 
-*[Paste notes here when returning to desktop]*
+*(empty - paste mobile notes here)*
 
 ---
 

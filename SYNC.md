@@ -67,8 +67,8 @@ Key questions:
 
 ## From Mobile Session
 
-*[Paste notes here when returning to desktop]*
+*(empty - paste mobile notes here)*
 
 ---
 
-*For all projects: see ACTIVE.md | Fetch: raw.githubusercontent.com/miketoles/projects-hub/main/SYNC.md?v=20260128*
+*For all projects: see ACTIVE.md | Mobile Claude fetches: cdn.jsdelivr.net/gh/miketoles/projects-hub@main/SYNC.md*
