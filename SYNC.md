@@ -6,72 +6,60 @@
 
 ## Current Focus
 
-**Project:** NRT (Neurorehabilitation Team Platform)
-**Repo:** https://github.com/miketoles/NRT
-**Path:** `~/dev/NRT`
-**Run:** `cd ~/dev/NRT && npm run dev` → http://localhost:3000
-**Demo logins:** admin@example.com / admin123, bcba@example.com / bcba123
+**Project:** Shipwreck Explorer
+**Path:** `~/dev/ShipwreckExplorer`
+**Run:** `cd ~/dev/ShipwreckExplorer && python3 -m http.server 8000` → http://localhost:8000
 
 ---
 
 ## What We Did This Session
 
-- **Fixed ScatterplotGrid click/drag logic** - Now matches the mockup exactly:
-  - Single click toggles cells (IND ↔ ERR)
-  - Drag uses "format painter" style (starting cell determines brush)
-  - Check column now has full drag support
-  - Added `hasDragged` tracking to distinguish click vs drag
-
-- **Created Simple theme** in `/Users/miketoles/dev/UI Schemas/simple/`:
-  - `simple-light.html` - White background, dark text (Day mode)
-  - `simple-dark.html` - Black background, light text (Night mode)
-  - `index.html` - Gallery page
-  - Added to master UI Schemas index
-
-- **Implemented day/night toggle in NRT**:
-  - Added Simple themes to `globals.css`
-  - Updated ThemeProvider with `toggleDayNight()` function
-  - Navigation now has sun/moon icon toggle button
-  - **simple-dark is the default** for development
-
-- **Key design decision:** Grid cells are ALWAYS white with black text for readability, even in dark mode. Time column and headers follow the theme, but data entry cells stay white.
+- Fixed waterline position (lowered so whole boat visible)
+- Fixed treasure/diver clipping through seafloor
+- Made fins tapered properly (narrow ankle, wide toes)
+- Made the Orca boat bigger (scale 2.4)
+- Added auto-deposit treasure when near surface
+- Hid hammer except during smash animation
+- Fixed walking fin direction to point forward like feet
 
 ---
 
 ## Current State
 
-**NRT Platform:**
-- Scatterplot data entry working with correct click/drag behavior
-- Day/night theme toggle functional
-- Simple theme with clean black/white aesthetic
-- Grid is always readable (white cells, visible grid lines)
+**Shipwreck Explorer:**
+- Core gameplay working (explore, collect treasure, smash chests, deposit at boat)
+- Fish schools, sharks, whales, air line all functional
+- **BROKEN: Diver animation system**
 
-**UI Schemas:**
-- New "Simple" collection added with 2 themes
-- Located at `~/dev/UI Schemas/simple/`
+**The Problem:**
+Multiple attempts to implement front-view (facing player when idle) vs side-view (swimming profile) all failed. The diver keeps looking wrong - limbs on one side, no smooth transitions, helmet not turning.
+
+**Root Cause:**
+The diver is drawn as a 2D side-view sprite. The bulldozer game works because it uses Three.js for actual 3D rotation. We tried pseudo-3D projection approaches but they didn't work.
 
 ---
 
 ## What's Next
 
-- [ ] Excel export for scatterplot reports
-- [ ] Remove login requirement (AD/Windows auth)
-- [ ] Flesh out DESIGN.md with TBI/ABA model details
-- [ ] Test with real team members
+Need fresh eyes on the animation system. Options to consider:
+1. Switch to Three.js for the diver (like bulldozer)
+2. Create completely separate front-view and side-view drawing functions
+3. Simplify and keep diver always in side-view
 
 ---
 
 ## Open Questions / Mental Context
 
-- Theme architecture is now solid - can easily add new color schemes
-- Grid always stays readable regardless of theme choice
-- Mike mentioned wanting to discuss a new game project
+- Should study the bulldozer code more carefully to understand how it handles rotation
+- The diver state now has viewAngle and targetViewAngle properties (may want to keep or remove)
+- Animation code is in drawDiver() around line 3099
+- ViewAngle update logic is around line 1656
 
 ---
 
 ## Notes for Mobile Session
 
-NRT is in good shape with working data entry and theming. Ready to pivot to discussing the new game project Mike mentioned.
+Shipwreck Explorer gameplay is solid but diver animations need rework. Taking a break to get fresh perspective. When returning, consider whether to use Three.js like the bulldozer or find a simpler 2D solution.
 
 ---
 
