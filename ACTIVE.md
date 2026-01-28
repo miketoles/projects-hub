@@ -10,7 +10,7 @@ What I'm actively working on right now.
 
 ### 1. NRT (Neurorehabilitation Team Platform) - HIGH PRIORITY
 - **Path:** `~/dev/NRT`
-- **GitHub:** https://github.com/miketoles/CR (renaming to NRT)
+- **GitHub:** https://github.com/miketoles/NRT
 - **Status:** Phase 1 - Quick Win (Scatterplot Data Entry)
 - **Next step:** Excel export + AD auth + flesh out DESIGN.md
 - **Run it:** `cd ~/dev/NRT && npm run dev` then http://localhost:3000

@@ -7,7 +7,7 @@
 ## Current Focus
 
 **Project:** NRT (Neurorehabilitation Team Platform)
-**Repo:** https://github.com/miketoles/CR (renaming to NRT)
+**Repo:** https://github.com/miketoles/NRT
 **Path:** `~/dev/NRT`
 **Run:** `cd ~/dev/NRT && npm run dev` → http://localhost:3000
 **Demo logins:** admin@example.com / admin123, bcba@example.com / bcba123
