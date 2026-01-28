@@ -8,25 +8,25 @@ What I'm actively working on right now.
 
 ## Currently Building
 
-### 1. CR (Scatterplot Data Platform) - HIGH PRIORITY
-- **Path:** `~/dev/CR`
-- **GitHub:** https://github.com/miketoles/CR
-- **Status:** Phase 1 Complete - Working app!
-- **Next step:** Phase 2 - Offline sync with IndexedDB
-- **Run it:** `cd ~/dev/CR && npm run dev` then http://localhost:3000
+### 1. NRT (Neurorehabilitation Team Platform) - HIGH PRIORITY
+- **Path:** `~/dev/NRT`
+- **GitHub:** https://github.com/miketoles/CR (renaming to NRT)
+- **Status:** Phase 1 - Quick Win (Scatterplot Data Entry)
+- **Next step:** Excel export + AD auth + flesh out DESIGN.md
+- **Run it:** `cd ~/dev/NRT && npm run dev` then http://localhost:3000
 - **Demo logins:** admin@example.com/admin123, bcba@example.com/bcba123
-- **Future change:** Switch to Windows/network auth (no separate login)
+
+**Vision:** Bespoke ABA platform for Craig Hospital's TBI patients. Potentially a complete CentralReach replacement.
+
+**Two-Track Approach:**
+- Track 1 (Quick Win): Scatterplot data entry + Excel reports
+- Track 2 (Full Platform): Comprehensive TBI/ABA workflows
 
 **What's built:**
 - Next.js 16 + TypeScript + Tailwind
-- User auth (NextAuth), Client/Behavior management
 - ScatterplotGrid (96 intervals, click+drag)
-- REST API, SQLite database
-
-**Remaining phases:**
-- Phase 2: Offline-first with IndexedDB + sync
-- Phase 3: Reports (Recharts) + Excel export
-- Phase 4: Docker deployment for hospital
+- Client/behavior management
+- SQLite database with backup utility
 
 ### 2. ScatterplotCreator
 - **Path:** `~/dev/ScatterplotCreator`

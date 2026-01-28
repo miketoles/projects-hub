@@ -25,7 +25,7 @@ A complete index of all Mike's projects in `~/dev/`, organized by status.
 
 | Project | Description | Tech Stack | Notes |
 |---------|-------------|------------|-------|
-| **CR** | CentralReach API integration exploration | REST API, Node.js (TBD) | Exploratory for hospital tools |
+| **NRT** | Neurorehabilitation Team Platform (TBI/ABA) | Next.js, Prisma, SQLite | Potential CentralReach replacement |
 | **ABA-Platform** | Role-based ABA patient data platform | Web-based (TBD) | PRD.md, DATA_MODEL.md |
 | **SpiritlogicDB** | Mobile database app for non-technical users | Mobile (TBD) | Comprehensive DESIGN.md |
 | **CatGame** | 3D stealth game (cat hunting prey) | Godot 4.x | DESIGN_V3.md |
