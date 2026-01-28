@@ -10,7 +10,7 @@ Hey Claude! Mike stepped away from the CR project. Here's where things stand:
 
 **Project:** CR (Scatterplot Data Platform)
 **Path:** `~/dev/CR`
-**GitHub:** Needs setup - run `gh auth login` then `gh repo create miketoles/CR --private --source=. --push`
+**GitHub:** https://github.com/miketoles/CR
 
 **Completed in this session:**
 - Built complete Phase 1 of the Scatterplot Data Platform
@@ -27,17 +27,6 @@ Hey Claude! Mike stepped away from the CR project. Here's where things stand:
 **Demo accounts:**
 - admin@example.com / admin123
 - bcba@example.com / bcba123
-
----
-
-## TODO: Create CR GitHub Repo
-
-To make CR code accessible from mobile Claude:
-```bash
-gh auth login          # One-time setup
-cd ~/dev/CR
-gh repo create miketoles/CR --private --source=. --push
-```
 
 ---
 
