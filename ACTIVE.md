@@ -10,6 +10,7 @@ What I'm actively working on right now.
 
 ### 1. CR (Scatterplot Data Platform) - HIGH PRIORITY
 - **Path:** `~/dev/CR`
+- **GitHub:** https://github.com/miketoles/CR
 - **Status:** Phase 1 Complete - Working app!
 - **Next step:** Phase 2 - Offline sync with IndexedDB
 - **Run it:** `cd ~/dev/CR && npm run dev` then http://localhost:3000
