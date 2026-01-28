@@ -2,35 +2,61 @@
 
 *Last synced: January 27, 2026 by Claude Code*
 
-Hey Claude! Mike is continuing work from his phone. Here's the current context:
+Hey Claude! Mike stepped away from the CR project. Here's where things stand:
 
 ---
 
 ## What I Was Just Working On
 
-**Project:** CR (Scatterplot Quick Entry Tool)
+**Project:** CR (Scatterplot Data Platform)
 **Path:** `~/dev/CR`
-**Last session:**
-- Identified primary use case: faster scatterplot data entry
-- Designed click+drag UI for filling 96-interval grids
-- Built working prototype: `mockup/quick-entry.html`
-- Prototype ready for user testing
 
-**Next up:** Test prototype with real paper scatterplots
+**Completed in this session:**
+- Built complete Phase 1 of the Scatterplot Data Platform
+- Next.js 16 app with TypeScript, Tailwind, Prisma
+- User authentication (NextAuth with credentials)
+- Client/behavior management pages
+- ScatterplotGrid component (96 intervals, click+drag)
+- REST API for all CRUD operations
+- SQLite database with seed data
 
-**Open questions:** What improvements needed after testing?
+**The app is runnable:** `cd ~/dev/CR && npm run dev`
+
+**Demo accounts:**
+- admin@example.com / admin123
+- bcba@example.com / bcba123
 
 ---
 
-## Current Mental Context
+## IMPORTANT: Future Auth Change
 
-Started exploring CentralReach API for potential hospital integrations. This is early-stage - no credentials yet. Could potentially integrate with ScatterplotCreator or hospital-mini-apps.
+Mike wants to change authentication to use **network/Windows credentials**:
+- Users are already logged into hospital computers
+- App should auto-authenticate from system credentials
+- No separate login step - seamless experience
+- Look into: NextAuth + LDAP/Active Directory integration
 
-Main focus areas:
-1. CR - find path to API credentials
-2. ScatterplotCreator - in stakeholder review
-3. 3dArchery indoor scoring expansion
-4. hospital-mini-apps development
+**Don't change this now** - just note for Phase 2+
+
+---
+
+## What's Next for CR
+
+### Phase 2: Offline-First Sync
+- IndexedDB storage layer for offline data entry
+- Background sync to hospital database
+- Sync status indicator
+- Service worker
+
+### Phase 3: Reports & Export
+- Trend charts with Recharts
+- Heat map visualization
+- Excel export with ExcelJS
+
+### Phase 4: Deployment
+- Docker container for hospital server
+- PostgreSQL for production
+- Coordinate with hospital IT
 
 ---
 
@@ -38,7 +64,7 @@ Main focus areas:
 
 | Project | Status | Next Action |
 |---------|--------|-------------|
-| CR | Exploratory | Find CR admin for API access |
+| **CR** | Phase 1 Complete | Phase 2: Offline sync |
 | ScatterplotCreator | In stakeholder review | Address feedback |
 | 3dArchery | Expanding to v2 | Add Indoor scoring modes |
 | hospital-mini-apps | In development | Continue building |
@@ -46,12 +72,12 @@ Main focus areas:
 
 ---
 
-## Notes for This Mobile Session
+## Project Files to Check
 
-Things to think about:
-- Any additional stakeholder feedback for ScatterplotCreator
-- Indoor archery scoring UI design
-- Quiz App feature prioritization
+When resuming CR:
+1. `~/dev/CR/STATUS.md` - Full project status
+2. `~/dev/CR/docs/design-plan.md` - Original design doc (if exists)
+3. `~/dev/CR/mockup/quick-entry.html` - Original prototype reference
 
 ---
 
