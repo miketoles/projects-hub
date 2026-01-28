@@ -100,4 +100,9 @@ Next steps could be:
 
 ---
 
-*For all projects: see ACTIVE.md | Mobile Claude fetches: raw.githubusercontent.com/miketoles/projects-hub/main/SYNC.md*
+*For all projects: see ACTIVE.md*
+
+**Mobile Claude fetch URL (cache-busted):**
+```
+https://cdn.jsdelivr.net/gh/miketoles/projects-hub@1729c174b1dee3b2f3edf5cabb3c599984190d6c/SYNC.md
+```
