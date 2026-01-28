@@ -14,13 +14,15 @@
 
 ## What We Did This Session
 
-- Fixed waterline position (lowered so whole boat visible)
-- Fixed treasure/diver clipping through seafloor
-- Made fins tapered properly (narrow ankle, wide toes)
-- Made the Orca boat bigger (scale 2.4)
-- Added auto-deposit treasure when near surface
-- Hid hammer except during smash animation
-- Fixed walking fin direction to point forward like feet
+- **Fixed diver animation system completely** - abandoned front-view attempts, now pure side-view with 2.5D flip
+- Fixed helmet orientation (viewport on positive X side = front after scale flip)
+- Fixed arm positioning for side-view (tighter spread, proper layering)
+- Fixed walking animation (forward lean 0.35 rad, arms in front with bent elbows)
+- Fixed hammer swing direction (now swings DOWN from above head, not up)
+- Made hammer head copper colored for visibility
+- Fixed drawing order (belt before front arm so arms visible)
+- Fixed knee bending direction in walking animation
+- Updated design doc to v2.0 with all implementation details
 
 ---
 
@@ -28,38 +30,40 @@
 
 **Shipwreck Explorer:**
 - Core gameplay working (explore, collect treasure, smash chests, deposit at boat)
+- **Diver animations NOW WORKING** - 2.5D side-view with smooth flip transitions
+- Animation states: swimming, floating/treading, walking on seafloor
+- Hammer smash working with proper down-swing
 - Fish schools, sharks, whales, air line all functional
-- **BROKEN: Diver animation system**
-
-**The Problem:**
-Multiple attempts to implement front-view (facing player when idle) vs side-view (swimming profile) all failed. The diver keeps looking wrong - limbs on one side, no smooth transitions, helmet not turning.
-
-**Root Cause:**
-The diver is drawn as a 2D side-view sprite. The bulldozer game works because it uses Three.js for actual 3D rotation. We tried pseudo-3D projection approaches but they didn't work.
 
 ---
 
-## What's Next
+## Key Technical Details
 
-Need fresh eyes on the animation system. Options to consider:
-1. Switch to Three.js for the diver (like bulldozer)
-2. Create completely separate front-view and side-view drawing functions
-3. Simplify and keep diver always in side-view
+The diver animation system uses:
+- `flipProgress` (0 = mid-turn, 1 = fully facing direction)
+- 2.5D effect via `ctx.scale(scaleX, 1)` where scaleX transitions through 0
+- Side-view drawing order: back arm → torso → harness → belt → front arm → legs → helmet
+- Walking: fixed `ctx.rotate(0.35)` for forward lean, arms at shoulder angle 1.2
+- Hammer uses LEFT arm angles (front arm after flip)
 
 ---
 
-## Open Questions / Mental Context
+## Files Updated
 
-- Should study the bulldozer code more carefully to understand how it handles rotation
-- The diver state now has viewAngle and targetViewAngle properties (may want to keep or remove)
-- Animation code is in drawDiver() around line 3099
-- ViewAngle update logic is around line 1656
+- `ShipwreckExplorer.html` - Main game with fixed animations
+- `ShipwreckExplorer-idea.md` - Design doc updated to v2.0
+- `index.html` - Cache busting v=33
 
 ---
 
 ## Notes for Mobile Session
 
-Shipwreck Explorer gameplay is solid but diver animations need rework. Taking a break to get fresh perspective. When returning, consider whether to use Three.js like the bulldozer or find a simpler 2D solution.
+Diver animations are now working well. The key insight was:
+1. Pure side-view only (no front-view attempts)
+2. 2.5D flip using scale X through 0
+3. Proper drawing order for layered limbs
+4. Helmet viewport at positive X (front after flip)
+5. Walking uses fixed rotation, not rotationMultiplier
 
 ---
 
