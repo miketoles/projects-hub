@@ -10,6 +10,7 @@ Hey Claude! Mike stepped away from the CR project. Here's where things stand:
 
 **Project:** CR (Scatterplot Data Platform)
 **Path:** `~/dev/CR`
+**GitHub:** Needs setup - run `gh auth login` then `gh repo create miketoles/CR --private --source=. --push`
 
 **Completed in this session:**
 - Built complete Phase 1 of the Scatterplot Data Platform
@@ -19,12 +20,24 @@ Hey Claude! Mike stepped away from the CR project. Here's where things stand:
 - ScatterplotGrid component (96 intervals, click+drag)
 - REST API for all CRUD operations
 - SQLite database with seed data
+- Updated CLAUDE.md with end-of-session workflow
 
 **The app is runnable:** `cd ~/dev/CR && npm run dev`
 
 **Demo accounts:**
 - admin@example.com / admin123
 - bcba@example.com / bcba123
+
+---
+
+## TODO: Create CR GitHub Repo
+
+To make CR code accessible from mobile Claude:
+```bash
+gh auth login          # One-time setup
+cd ~/dev/CR
+gh repo create miketoles/CR --private --source=. --push
+```
 
 ---
 
@@ -53,7 +66,8 @@ Mike wants to change authentication to use **network/Windows credentials**:
 - Heat map visualization
 - Excel export with ExcelJS
 
-### Phase 4: Deployment
+### Phase 4: Deployment + Auth
+- **Switch to Windows/AD auth** (no manual login)
 - Docker container for hospital server
 - PostgreSQL for production
 - Coordinate with hospital IT
@@ -76,8 +90,17 @@ Mike wants to change authentication to use **network/Windows credentials**:
 
 When resuming CR:
 1. `~/dev/CR/STATUS.md` - Full project status
-2. `~/dev/CR/docs/design-plan.md` - Original design doc (if exists)
+2. `~/dev/CR/docs/DESIGN-PLAN.md` - Architecture and design
 3. `~/dev/CR/mockup/quick-entry.html` - Original prototype reference
+
+---
+
+## Recent CLAUDE.md Updates
+
+Added to `~/CLAUDE.md`:
+- **End of Session Workflow** - Always update sync, commit, push to GitHub
+- **New Project Setup** - Include GitHub repo creation
+- **CR project instructions** - Added to project-specific section
 
 ---
 
@@ -86,6 +109,7 @@ When resuming CR:
 - **Projects Hub:** ~/dev/projects-hub
 - **Active Projects:** [ACTIVE.md](./ACTIVE.md)
 - **All Projects:** [PROJECTS.md](./PROJECTS.md)
+- **Sync URL for mobile:** https://raw.githubusercontent.com/miketoles/projects-hub/main/SYNC.md
 
 ---
 
