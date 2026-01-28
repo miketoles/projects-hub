@@ -1,6 +1,6 @@
 # Active Projects
 
-*Last updated: January 27, 2026*
+*Last updated: January 28, 2026*
 
 What I'm actively working on right now.
 
@@ -24,9 +24,11 @@ What I'm actively working on right now.
 
 **What's built:**
 - Next.js 16 + TypeScript + Tailwind
-- ScatterplotGrid (96 intervals, click+drag)
+- ScatterplotGrid (96 intervals, click+drag) - fully functional
 - Client/behavior management
 - SQLite database with backup utility
+- Day/night theme toggle (Simple theme)
+- Grid cells always white for readability
 
 ### 2. ScatterplotCreator
 - **Path:** `~/dev/ScatterplotCreator`

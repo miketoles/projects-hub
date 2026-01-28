@@ -16,52 +16,62 @@
 
 ## What We Did This Session
 
-- Renamed project from CR → NRT (Neurorehabilitation Team)
-- Established two-track approach: Quick Win + Full Platform
-- Updated all project files and references
-- Created DESIGN.md skeleton for comprehensive planning
-- Added database backup utility
-- Added Mike's auth philosophy to CLAUDE.md
+- **Fixed ScatterplotGrid click/drag logic** - Now matches the mockup exactly:
+  - Single click toggles cells (IND ↔ ERR)
+  - Drag uses "format painter" style (starting cell determines brush)
+  - Check column now has full drag support
+  - Added `hasDragged` tracking to distinguish click vs drag
+
+- **Created Simple theme** in `/Users/miketoles/dev/UI Schemas/simple/`:
+  - `simple-light.html` - White background, dark text (Day mode)
+  - `simple-dark.html` - Black background, light text (Night mode)
+  - `index.html` - Gallery page
+  - Added to master UI Schemas index
+
+- **Implemented day/night toggle in NRT**:
+  - Added Simple themes to `globals.css`
+  - Updated ThemeProvider with `toggleDayNight()` function
+  - Navigation now has sun/moon icon toggle button
+  - **simple-dark is the default** for development
+
+- **Key design decision:** Grid cells are ALWAYS white with black text for readability, even in dark mode. Time column and headers follow the theme, but data entry cells stay white.
 
 ---
 
 ## Current State
 
-**Track 1 (Quick Win):** Scatterplot data entry app is functional
-- ScatterplotGrid (96 intervals, click+drag)
-- Client/behavior management
-- SQLite database with backup utility
+**NRT Platform:**
+- Scatterplot data entry working with correct click/drag behavior
+- Day/night theme toggle functional
+- Simple theme with clean black/white aesthetic
+- Grid is always readable (white cells, visible grid lines)
 
-**Track 2 (Full Platform):** DESIGN.md created, ready for brainstorming
+**UI Schemas:**
+- New "Simple" collection added with 2 themes
+- Located at `~/dev/UI Schemas/simple/`
 
 ---
 
 ## What's Next
 
-- [ ] Flesh out DESIGN.md with TBI/ABA model details
 - [ ] Excel export for scatterplot reports
 - [ ] Remove login requirement (AD/Windows auth)
+- [ ] Flesh out DESIGN.md with TBI/ABA model details
 - [ ] Test with real team members
 
 ---
 
 ## Open Questions / Mental Context
 
-- NRT is potentially a complete CentralReach replacement
-- Craig Hospital is the only facility in the world using ABA for TBI patients
-- Need to deeply understand TBI/ABA workflows before building further
-- Quick win should ship fast, but architecture must support full vision
+- Theme architecture is now solid - can easily add new color schemes
+- Grid always stays readable regardless of theme choice
+- Mike mentioned wanting to discuss a new game project
 
 ---
 
 ## Notes for Mobile Session
 
-Ready to brainstorm the TBI/ABA model and what makes Craig Hospital's approach unique. This will inform DESIGN.md and ensure the platform truly serves the team's needs.
-
-Key questions:
-- What workflows are unique to TBI vs traditional ABA?
-- What does CentralReach do poorly for your use case?
-- What would make RBTs and BCBAs love this tool?
+NRT is in good shape with working data entry and theming. Ready to pivot to discussing the new game project Mike mentioned.
 
 ---
 
@@ -71,4 +81,4 @@ Key questions:
 
 ---
 
-*For all projects: see ACTIVE.md | Mobile Claude fetches: cdn.jsdelivr.net/gh/miketoles/projects-hub@main/SYNC.md*
+*For all projects: see ACTIVE.md | Mobile Claude fetches: raw.githubusercontent.com/miketoles/projects-hub/main/SYNC.md*
