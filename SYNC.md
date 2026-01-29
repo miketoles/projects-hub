@@ -63,7 +63,16 @@
 
 ## Notes for Next Session
 
-Game is in great shape! Possible next steps:
+**Known Issues to Fix (Mobile):**
+1. Oxygen drains too fast - make it last longer
+2. Portrait bug - finger off right edge causes astronaut to launch LEFT
+3. Portrait scaling - astronaut looks huge
+4. Landscape scaling - everything too big, zoomed in, only top half of LM visible
+5. Finger controls cramped - not enough space, astronaut gets too close to touch
+
+**Hypothesis:** Everything too big on mobile - fixing scale might resolve most issues.
+
+**Future Ideas:**
 - More alien behaviors/interactions
 - Achievement system
 - Different lunar locations
