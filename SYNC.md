@@ -14,83 +14,88 @@
 
 ## What We Did This Session
 
-- **Built astronaut animation mockup** - Full 2.5D side-view astronaut with articulated limbs
-- **Implemented finger-height hop control** - Touch high = big floaty bounds, touch low = quick hops (core mechanic!)
-- **Tuned bounding gait** - Alternating feet, push-off motion, not bunny hop
-- **Added organic variation** - Random hop strength, arm wobble, body squash/stretch
-- **Fixed direction flipping** - Only changes direction when on ground, prevents mid-air glitching
-- **Fixed lean direction** - Astronaut leans into movement both directions
-- **Dynamic dust system** - More particles for harder landings
-- **Updated GAME-IDEAS.md** with full animation implementation details
+- **Extensive animation tuning** - Many iterations (v33-v44) to get astronaut movement feeling right
+- **Fixed direction flipping bug** - Was caused by stale finger world coordinates; now updates each frame
+- **Fixed "uncanny valley" leg movement** - Legs now stay mostly under body with slight alternating spread
+- **Tuned body tilt** - Reduced from ~24° to ~4.5° max to prevent "swimming" look
+- **Added arm swing** - Arms now swing opposite to each other like natural walking
+- **Simplified animation to sine-based** - Smoother than velocity-driven, less jerky
 
 ---
 
-## Current State
+## Current State (v44)
 
-**Moon Rocks Mockup:**
-- Astronaut animation feels good - bouncy Apollo-style movement
-- Finger height controls hop intensity (0.25x to 5x range)
-- Bounding gait with alternating feet
-- Organic variation makes it feel alive
-- Lunar lander, flag, parallax mountains all in place
-- Monochrome grey/black/white aesthetic
+**Moon Rocks Mockup - Working but still evaluating:**
+- Astronaut bounces with legs mostly under body (center of gravity correct)
+- Small leg spread alternates each hop (not tied-together look)
+- Arms swing opposite to each other
+- Knees bend 35-70° during hops
+- Subtle body tilt (~4.5° max)
+- Direction only changes when on ground
+- Finger position properly tracks with camera movement
 
-**Shipwreck Explorer:** (previous session)
-- Core gameplay working
-- Diver animations working with 2.5D flip
+**Key Versions to Remember:**
+- **v33** - First "safe" version after fixing major issues
+- **v44** - Current version, not bad but Mike is still evaluating
+
+**Still Evaluating:**
+- Mike says "not bad" but wants to think about it
+- May still have subtle uncanny valley quality
+- Legs/movement feel is close but might need more tweaking
 
 ---
 
 ## Key Technical Details
 
-**Moon Rocks Animation System:**
+**Current Animation System (v44):**
 ```javascript
-// Finger height → hop intensity
-const fingerYNorm = finger.y / canvas.height;  // 0 = top, 1 = bottom
-hopIntensity = 4.5 - fingerYNorm * 4.25;       // 0.25x to 5.0x
+// Sine-based smooth animation
+const hp = astro.hopProgress;
+const spread = Math.sin(hp * Math.PI);
 
-// Only change direction when grounded
-if (!astro.airborne) {
-    // Can flip direction
+// Small leg separation, alternates each hop
+const legSign = foot === 0 ? 1 : -1;
+const legSpread = spread * 0.12;  // ~7 degrees max
+astro.leftHipAngle = -legSpread * legSign;
+astro.rightHipAngle = legSpread * legSign;
+
+// Knees bend equally
+const kneeBend = 0.6 + spread * 0.6;  // 35-70 degrees
+
+// Arms swing opposite
+if (foot === 0) {
+    astro.leftShoulderAngle = 0.1 + armSwing;   // Back
+    astro.rightShoulderAngle = -0.3 - armSwing; // Forward
 }
-
-// Organic variation each hop
-astro.hopVariation = hopIntensity * (0.94 + Math.random() * 0.12);
-astro.hopSpeedVar = 2.0 - hopIntensity * 0.35;  // Big = floaty, small = snappy
 ```
 
-**2.5D Flip:** Scale X transitions through 0 for smooth turn animation
-**Articulated Limbs:** Hip/knee angles for legs, shoulder/elbow for arms
-**Body Squash:** Compresses on landing, stretches at apex
+**Finger tracking fix:**
+```javascript
+// Store SCREEN position, compute world position each frame
+state.finger.screenX = x;  // On touch/mouse events
+// Then each frame:
+state.finger.x = state.finger.screenX + state.camera.x;
+```
 
 ---
 
-## Files Updated
+## Files
 
-- `~/dev/game-ideas/moon-rocks/astronaut-mockup.html` - Main animation mockup (v19)
-- `~/dev/game-ideas/moon-rocks/index.html` - Cache busting redirect
-- `~/dev/game-ideas/GAME-IDEAS.md` - Design doc with implementation details
-
----
-
-## Reference Materials
-
-Apollo footage gifs in `~/dev/game-ideas/moon-rocks/reference/`:
-- bounce.gif, bounce2.gif, bounce3.gif - Bouncy walking
-- bounce-jump.gif - Bigger jumps
-- fall.gif, fall2.gif - Falling/stumbling
+- `~/dev/game-ideas/moon-rocks/astronaut-mockup.html` - Main mockup (v44)
+- `~/dev/game-ideas/moon-rocks/index.html` - Cache busting redirect (v=44)
+- `~/dev/game-ideas/moon-rocks/reference/` - Apollo bounce gifs for reference
 
 ---
 
 ## Notes for Mobile Session
 
-The astronaut animation is working well. Key insight: **finger height controls hop intensity** is a great zen mechanic - gives intuitive control over movement feel.
+Animation is close but Mike wants to think about it. The movement has been through many iterations trying to match Apollo footage feel. Key challenges were:
+1. Legs looking like "ballet dancer" or "splits" - fixed by reducing hip angles
+2. Center of gravity looking wrong - fixed by keeping legs under body
+3. Direction flipping randomly - fixed by updating finger coords each frame
+4. Uncanny valley feel - improved by using sine curves instead of velocity-driven
 
-Next steps could be:
-- Add the lunar rover
-- Add rock collection
-- Add oxygen system
-- Or pivot to another game idea
+If continuing, look at the Apollo reference gifs and compare to current movement. The goal is "WHEEEEE!" not "WTF?".
 
 ---
 
@@ -101,8 +106,3 @@ Next steps could be:
 ---
 
 *For all projects: see ACTIVE.md*
-
-**Mobile Claude fetch URL (cache-busted):**
-```
-https://cdn.jsdelivr.net/gh/miketoles/projects-hub@1729c174b1dee3b2f3edf5cabb3c599984190d6c/SYNC.md
-```
