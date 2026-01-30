@@ -1,83 +1,86 @@
 # Sync File for Claude
 
-*Last synced: January 28, 2026 by Claude Code*
+*Last synced: January 29, 2026 by Claude Code*
 
 ---
 
 ## Current Focus
 
-**Project:** Moon Rocks (Game Ideas)
-**Path:** `~/dev/game-ideas/moon-rocks`
-**Run:** `cd ~/dev/game-ideas/moon-rocks && python3 -m http.server 8001` → http://localhost:8001
+**Project:** MikeText
+**Path:** `~/dev/MikeText`
+**Run:** Open `~/dev/MikeText/MikeText/MikeText.xcodeproj` in Xcode, Cmd+R
 
 ---
 
 ## What We Did This Session
 
-### Animation Work (Earlier)
-- Extensive animation tuning (v33-v44) to get astronaut movement feeling right
-- Fixed direction flipping bug caused by stale finger world coordinates
-- Fixed "uncanny valley" leg movement - legs now stay under body with slight alternating spread
-- Tuned body tilt, added arm swing, simplified to sine-based animation
+### MikeText - Text Editor for Mac (Complete)
 
-### Game Development (v1-v21)
-- Built full playable game from the v44 animation mockup
-- Rock collection system with 6 rock types by rarity
-- Oxygen system with drain/refill mechanics
-- Detailed Lunar Module based on Apollo reference photos
-- Auto-collect rocks, unlimited carrying, slam-dunk deposits while jumping
-- Infinite terrain generation in both directions
-- Added cute alien characters (from plush toy reference) that spawn in groups of 1-3, speak gibberish, run away when approached
-- **Oxygen warning at 55%** - large animated "RETURN NOW" warning
-- **Deposit HUD** - visor-style manifest showing each rock type deposited, sorted by total score, fades after 5 seconds
-- **Apollo-style footprints** - ribbed bootprints appear on landing, proper perspective (foreshortened for side view), fade over ~30 seconds
+Built a full-featured, minimal text editor with these features:
+
+**Core Features:**
+- Basic text editing with monospace font
+- Open/Save/Create documents
+- Tabbed interface (multiple documents in tabs)
+- Opens with new document (no file dialog on launch)
+
+**Visual Options:**
+- Color modes: Dark (black/white), Light (white/black), Console (grey/neon green)
+- Font picker: Courier New, Menlo, Monaco, SF Mono, Andale Mono, Consolas
+- Font size controls (Cmd+/-, Cmd+0 reset)
+- Line numbers toggle (Cmd+Shift+L)
+- Word wrap toggle (Cmd+Shift+W)
+- Syntax highlighting for 12+ languages (Cmd+Shift+H)
+- Show invisibles: Space (·), Tab (→), LF (↵), CR (←) - Cmd+Shift+I
+
+**Other:**
+- Status bar with full file path, file type, line/char count
+- Open Recent persists across sessions
+- Session restore (reopens last open documents)
+- No auto-substitutions (no smart quotes, dashes, or double-space-to-period)
+- All settings persist via UserDefaults
+
+**Installed:** Exported to Applications folder, pinned to Dock
+
+**Known Issue:** Window size/position persistence works on app launch, but opening a new document mid-session reverts to original launch size. Documented for future fix.
+
+### Also This Session
+
+- Added preferred "Lean Open-Source" tech stack to main CLAUDE.md
+- Updated MikeText DESIGN.md and STATUS.md with all features
 
 ---
 
-## Current State (v21)
+## Current State
 
-**Moon Rocks - Fully Playable:**
-- Touch/click to move astronaut with lunar bouncy physics
-- Auto-collect rocks, return to LM to deposit and refill O2
-- Score based on rock rarity (Basalt 10pts → Meteorite 500pts)
-- Blue/purple glow on collectible rocks
-- Sound effects: breathing, rock pickup, lander arrival, deposits, alien speech
-- Stars twinkle with color variation, Earth in sky
-- Footprints appear on landing and fade over time
+**MikeText is ready for daily use.**
 
-**Key Files:**
-- `~/dev/game-ideas/moon-rocks/game.html` - Main game (v21)
-- `~/dev/game-ideas/moon-rocks/STATUS.md` - Full documentation
-- `~/dev/game-ideas/moon-rocks/reference/` - Apollo photos
+Key files:
+- `~/dev/MikeText/MikeText/MikeText/` - Xcode project source
+- `~/dev/MikeText/SourceFiles/` - Backup copies
+- `~/dev/MikeText/DESIGN.md` - Design document
+- `~/dev/MikeText/STATUS.md` - Current status
 
 ---
 
-## Technical Wins
+## Preferred Tech Stack (Added to CLAUDE.md)
 
-1. **Finger tracking fix** - Store screen position, compute world position each frame
-2. **Animation feel** - Sine-based curves, legs under body, arm swing opposite
-3. **Footprint perspective** - Foreshortened ellipses with ribbed pattern for side-view
-4. **HUD design** - Visor-style with scanlines, cyan glow, fades naturally
+For new web apps:
+- **Frontend:** React 18, Vite, TypeScript, Tailwind CSS
+- **Backend:** Node.js, Express, better-sqlite3
+- **Database:** SQLite (single file, portable)
+- **Auth:** Dev user picker / Prod header-based (IIS/nginx)
+- **Exports:** Recharts, ExcelJS, jsPDF, pptxgenjs
+
+All MIT/Apache/Public Domain licensed, no corporate lock-in, no subscriptions.
 
 ---
 
 ## Notes for Next Session
 
-**Known Issues to Fix (Mobile):**
-1. Oxygen drains too fast - make it last longer
-2. Portrait bug - finger off right edge causes astronaut to launch LEFT
-3. Portrait scaling - astronaut looks huge
-4. Landscape scaling - everything too big, zoomed in, only top half of LM visible
-5. Finger controls cramped - not enough space, astronaut gets too close to touch
-
-**Hypothesis:** Everything too big on mobile - fixing scale might resolve most issues.
-
-**Future Ideas:**
-- More alien behaviors/interactions
-- Achievement system
-- Different lunar locations
-- Rover vehicle
-- Polish and share with grandson
+- MikeText window frame issue to fix later (documented in STATUS.md)
+- NRT Scatterplot Data Entry ready to build with lean stack
+- Shipwreck Explorer game plan exists at `~/.claude/plans/ticklish-wobbling-volcano.md`
 
 ---
 

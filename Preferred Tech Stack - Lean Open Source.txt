@@ -1,0 +1,13 @@
+Preferred Tech Stack - Lean Open Source
+
+Frontend: React 18, Vite, TypeScript, Tailwind CSS
+
+Backend: Node.js, Express, better-sqlite3
+
+Database: SQLite
+
+Auth: Dev user picker / Prod header-based
+
+Export libraries: Recharts, ExcelJS, jsPDF, pptxgenjs, idb
+
+Design principles: Open source, no lock-in, simple, portable, no subscriptions
