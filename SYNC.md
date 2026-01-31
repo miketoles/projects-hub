@@ -1,68 +1,62 @@
 # Sync File for Claude
 
-*Last synced: January 30, 2026 by Claude Code*
+*Last synced: January 31, 2026 by Claude Code*
 
 ---
 
 ## Current Focus
 
-**Primary:** NRT Scatterplot System rebuild
-**Secondary:** Game testing (Moon Rocks, Shipwreck Explorer, Bulldozer)
+**Primary:** NRT Scatterplot System (docs cleaned up, ready to build)
+**Secondary:** ScatterplotCreator (new build with Refresh button)
 
 ---
 
 ## What We Did This Session
 
-### 1. Reviewed NRT Scatterplot System Design (v2.2)
+### 1. NRT Documentation Cleanup
 
-Read the complete 3,345-line design document. Key decision made:
+Implemented two-tier documentation structure:
 
-**Rebuild from scratch with lean open-source stack** instead of continuing with existing Next.js/Prisma code.
+**Tier 1 - Main Design Doc** (`NRT Scatterplot System Design.md`)
+- Now 3,656 lines (added Continuity & Handoff Guide section)
+- Comprehensive but not unwieldy
 
-The mockup at `~/dev/NRT/mockup/quick-entry.html` defines the paint-it-in interface that MUST be preserved.
+**Tier 2 - Operations Guide** (`NRT-OPERATIONS-GUIDE.md`)
+- Raspberry Pi dev server setup
+- Running Pi as production (alternative to IIS)
+- Detailed continuity procedures
+- CentralReach migration notes
 
-### 2. Started Game Servers for Testing
+**Archived:** Monday conversation guide moved to `docs/archive/`
+**Deleted:** Redundant continuity files (merged into above)
 
-| Game | URL | Port |
-|------|-----|------|
-| Moon Rocks | http://localhost:8080 | 8080 |
-| Shipwreck Explorer | http://localhost:8081 | 8081 |
-| Bulldozer | http://localhost:8082 | 8082 |
+### 2. ScatterplotCreator - Added Refresh Button
 
-### 3. Updated Project Hub Files
+Problem identified: When two users have app open, User B doesn't see User A's new patients without closing/reopening.
 
-- ACTIVE.md - Added MikeText, updated NRT status, added games
-- PROJECTS.md - Complete refresh with all current projects
-- SYNC.md - This file
+Fix: Added 🔄 Refresh button to header that reloads patient list from shared data file.
+
+**New build ready:**
+- `~/dev/ScatterplotCreator/dist/NRT Scatterplot Creator Setup 1.0.0.exe`
+- `~/dev/ScatterplotCreator/dist/NRT-Scatterplot-Creator.zip`
+
+Updated DESIGN.md and STATUS.md to document the change.
 
 ---
 
-## NRT Rebuild Plan
+## NRT Status
 
-**Stack:**
-- Frontend: React 18 + Vite + TypeScript + Tailwind CSS
-- Backend: Node.js + Express + better-sqlite3
-- Database: SQLite (SQLCipher for encryption later)
-- Auth: No login - dev mode user picker, prod reads X-Remote-User header
+**Docs:** Complete and organized
+**Code:** Not started yet - ready for Phase 0
 
-**Phase 0 (Next Session):**
-- [ ] Create `nrt-scatterplot/frontend/` + `backend/` structure
-- [ ] Initialize Vite + React + TypeScript
-- [ ] Initialize Express + better-sqlite3
-- [ ] Create SQLite schema from design doc
-- [ ] Set up Tailwind CSS
-- [ ] Dev mode user picker
-- [ ] Port ScatterplotGrid (preserving paint-it-in behavior)
+**Phase 0 (Next):**
+- Create `nrt-scatterplot/frontend/` + `backend/` structure
+- Initialize Vite + React + TypeScript
+- Initialize Express + better-sqlite3
+- Create SQLite schema from design doc
+- Port ScatterplotGrid (preserving paint-it-in behavior)
 
-### Paint-It-In Interface (Critical to Preserve)
-
-| Behavior | Description |
-|----------|-------------|
-| **Format painter drag** | Drag brush determined by starting cell's value, not toolbar |
-| **Single click toggle** | IND ↔ ERR (shaded ↔ blank observed) |
-| **Check column** | Row-level: ✓ checked / ✗ skipped. Blank when row has any IND |
-| **Auto-promotion** | Marking a cell IND makes other cells in row become ERR |
-| **Keyboard shortcuts** | I = Shaded, E = Check row, S = Skip row, C = Clear |
+**Key reference:** `~/dev/NRT/mockup/quick-entry.html` defines paint-it-in interface
 
 ---
 
@@ -70,12 +64,12 @@ The mockup at `~/dev/NRT/mockup/quick-entry.html` defines the paint-it-in interf
 
 | Project | Status | Next Step |
 |---------|--------|-----------|
-| **NRT** | Design complete (v2.2) | Phase 0: Project setup |
-| **MikeText** | Complete, daily use | None (maintenance only) |
+| **NRT** | Docs complete | Phase 0: Project setup |
+| **ScatterplotCreator** | New build ready | Deploy to stakeholders |
+| **MikeText** | Complete, daily use | Maintenance only |
 | **Moon Rocks** | Playable (v21) | Fix mobile scaling |
 | **Shipwreck Explorer** | Playable MVP (v33) | More content |
 | **Bulldozer** | Feature complete | Grandson visits |
-| **ScatterplotCreator** | In review | Stakeholder feedback |
 
 ---
 
@@ -83,11 +77,10 @@ The mockup at `~/dev/NRT/mockup/quick-entry.html` defines the paint-it-in interf
 
 | File | Purpose |
 |------|---------|
-| `~/dev/NRT/docs/NRT Scatterplot System Design.md` | Complete NRT design (v2.2) |
+| `~/dev/NRT/docs/NRT Scatterplot System Design.md` | Complete NRT design (3,656 lines) |
+| `~/dev/NRT/docs/NRT-OPERATIONS-GUIDE.md` | Deployment/operations details |
 | `~/dev/NRT/mockup/quick-entry.html` | Paint-it-in interface reference |
-| `~/dev/MikeText/DESIGN.md` | MikeText design and status |
-| `~/dev/game-ideas/moon-rocks/STATUS.md` | Moon Rocks status |
-| `~/dev/ShipwreckExplorer/STATUS.md` | Shipwreck status |
+| `~/dev/ScatterplotCreator/dist/` | New installer ready to deploy |
 
 ---
 
