@@ -1,6 +1,6 @@
 # All Projects
 
-*Last updated: January 26, 2026*
+*Last updated: January 30, 2026*
 
 A complete index of all Mike's projects in `~/dev/`, organized by status.
 
@@ -8,16 +8,26 @@ A complete index of all Mike's projects in `~/dev/`, organized by status.
 
 ## Active Development
 
-| Project | Description | Tech Stack | Docs |
-|---------|-------------|------------|------|
-| **ScatterplotCreator** | Electron app for BCBAs to manage patient scatterplots | Electron, Node.js, HTML/CSS/JS | DESIGN.md |
-| **3dArchery** | Multi-discipline archery scoring PWA | PWA, Netlify, Stripe | DESIGN-DOC-V2.md |
-| **hospital-mini-apps** | PWA platform for hospital iPhone mini-apps | Next.js 16, React 19, TypeScript, Tailwind | DESIGN.md |
-| **polymarket-arb-bot** | Polymarket arbitrage trading bot | Python, web3, Telegram | requirements.txt |
-| **bulldozer app** | Satisfying digging game for toddlers | HTML5, Canvas, JavaScript | DESIGN.md |
-| **Quiz App** | Kahoot-like training app for RBTs | React 19, Vite, TypeScript, Supabase | DESIGN.md |
-| **spiritlogic** | Main brand/landing site | HTML, CSS, Vercel | DESIGN.md |
-| **AbletonPlugins** | JUCE audio plugins (Arp, Distortion) | C++, JUCE, CMake | DESIGN.md |
+| Project | Description | Tech Stack | Status |
+|---------|-------------|------------|--------|
+| **NRT** | Neurorehabilitation Team Platform (TBI/ABA) | React, Vite, Express, SQLite | Design complete, rebuilding |
+| **MikeText** | Minimal text editor for Mac | Swift, SwiftUI | Complete, daily use |
+| **ScatterplotCreator** | Electron app for BCBAs to manage patient scatterplots | Electron, Node.js, HTML/CSS/JS | In stakeholder review |
+| **3dArchery** | Multi-discipline archery scoring PWA | PWA, Netlify, Stripe | Expanding to v2 |
+| **hospital-mini-apps** | PWA platform for hospital iPhone mini-apps | Next.js 16, React 19, TypeScript | In development |
+
+---
+
+## Games
+
+| Game | Description | Tech | Status |
+|------|-------------|------|--------|
+| **Moon Rocks** | Lunar rock collection with bouncy astronaut | HTML5 Canvas, JavaScript | Playable (v21) |
+| **Shipwreck Explorer** | Underwater treasure hunting | HTML5 Canvas, JavaScript | Playable MVP (v33) |
+| **Bulldozer** | Satisfying digging game for toddlers | HTML5 Canvas, JavaScript | Feature complete |
+| **SpaceAttack** | Space Invaders arcade shooter | HTML5 Canvas, JavaScript | Complete |
+| **CatGame** | 3D stealth game (cat hunting prey) | Godot 4.x | Planning/Design |
+| **TrashTruckGame** | 2D trash truck simulator | HTML5 Canvas | Planning |
 
 ---
 
@@ -25,11 +35,8 @@ A complete index of all Mike's projects in `~/dev/`, organized by status.
 
 | Project | Description | Tech Stack | Notes |
 |---------|-------------|------------|-------|
-| **NRT** | Neurorehabilitation Team Platform (TBI/ABA) | Next.js, Prisma, SQLite | Potential CentralReach replacement |
 | **ABA-Platform** | Role-based ABA patient data platform | Web-based (TBD) | PRD.md, DATA_MODEL.md |
 | **SpiritlogicDB** | Mobile database app for non-technical users | Mobile (TBD) | Comprehensive DESIGN.md |
-| **CatGame** | 3D stealth game (cat hunting prey) | Godot 4.x | DESIGN_V3.md |
-| **TrashTruckGame** | 2D trash truck simulator | HTML5, Canvas | DESIGN.md |
 | **Pantry** | Photo-to-grocery-list app | Web/Mobile | PRD.md, ROADMAP.md |
 
 ---
@@ -49,7 +56,9 @@ A complete index of all Mike's projects in `~/dev/`, organized by status.
 
 | Project | Description | Status |
 |---------|-------------|--------|
+| **MikeText** | Mac text editor | Complete, daily use |
 | **SpaceAttack** | Space Invaders arcade shooter | Complete |
+| **polymarket-arb-bot** | Polymarket arbitrage trading bot | Running on Railway |
 | **Spiritlogic Shared UI** | JUCE UI theme module | Active (reusable) |
 | **UI Schemas** | Color/theme gallery | Reference |
 
@@ -59,7 +68,9 @@ A complete index of all Mike's projects in `~/dev/`, organized by status.
 
 | Project | Description | Why Paused |
 |---------|-------------|------------|
-| **ABA Tracker** | Web app for ABA patient tracking | Superseded by ABA-Platform |
+| **Quiz App** | Kahoot-like training app for RBTs | Waiting for NRT work |
+| **AbletonPlugins** | JUCE audio plugins (Arp, Distortion) | Waiting on JUCE learning |
+| **ABA Tracker** | Web app for ABA patient tracking | Superseded by NRT |
 | **LuckySnap** | Photo-based app | Low priority |
 | **Scatterplot Printer** | Earlier scatterplot tool | Superseded by ScatterplotCreator |
 
@@ -72,24 +83,46 @@ A complete index of all Mike's projects in `~/dev/`, organized by status.
 | **meta** | Project index and local paths |
 | **Protocols** | ABA protocol templates (Word docs) |
 | **projects-hub** | This repo - central command |
+| **spiritlogic** | Main brand/landing site |
 
 ---
 
 ## By Technology
 
-**JavaScript/TypeScript:** 3dArchery, Quiz App, hospital-mini-apps, bulldozer app, SpaceAttack, TrashTruckGame
+**Swift/SwiftUI:** MikeText
+**JavaScript/TypeScript:** 3dArchery, Quiz App, hospital-mini-apps, Moon Rocks, Shipwreck Explorer, Bulldozer, SpaceAttack, TrashTruckGame
+**React/Vite:** NRT (new), Quiz App
 **Electron:** ScatterplotCreator
 **Python:** polymarket-arb-bot, RBT99
 **C++/JUCE:** AbletonPlugins, Spiritlogic Shared UI
 **Godot:** CatGame
-**Next.js/React:** hospital-mini-apps, Quiz App
-**HTML5/Canvas:** bulldozer app, SpaceAttack, TrashTruckGame, UI Schemas
+**HTML5/Canvas:** Moon Rocks, Shipwreck Explorer, Bulldozer, SpaceAttack, TrashTruckGame, UI Schemas
 
 ---
 
 ## Project Locations
 
 All projects live in `~/dev/`:
-- Most are local-only (no GitHub repo yet)
-- 13 of 25 are git repos
-- Design docs exist for 18 projects
+- Games in `~/dev/game-ideas/` (Moon Rocks) or `~/dev/` (others)
+- 15+ are git repos
+- Design docs exist for 20+ projects
+
+---
+
+## Quick Start Commands
+
+```bash
+# NRT (after rebuild)
+cd ~/dev/nrt-scatterplot && npm run dev
+
+# MikeText
+open ~/dev/MikeText/MikeText/MikeText.xcodeproj
+
+# Games
+cd ~/dev/game-ideas/moon-rocks && python3 -m http.server 8080
+cd ~/dev/ShipwreckExplorer && python3 -m http.server 8081
+cd ~/dev/bulldozer\ app && python3 -m http.server 8082
+
+# ScatterplotCreator
+cd ~/dev/ScatterplotCreator && npm start
+```

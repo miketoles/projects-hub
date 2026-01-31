@@ -1,6 +1,6 @@
 # Active Projects
 
-*Last updated: January 28, 2026*
+*Last updated: January 30, 2026*
 
 What I'm actively working on right now.
 
@@ -11,59 +11,70 @@ What I'm actively working on right now.
 ### 1. NRT (Neurorehabilitation Team Platform) - HIGH PRIORITY
 - **Path:** `~/dev/NRT`
 - **GitHub:** https://github.com/miketoles/NRT
-- **Status:** Phase 1 - Quick Win (Scatterplot Data Entry)
-- **Next step:** Excel export + AD auth + flesh out DESIGN.md
-- **Run it:** `cd ~/dev/NRT && npm run dev` then http://localhost:3000
-- **Demo logins:** admin@example.com/admin123, bcba@example.com/bcba123
+- **Status:** Design complete (v2.2), ready to rebuild with lean stack
+- **Next step:** Phase 0 - Create new project structure with Vite + Express + better-sqlite3
+- **Design Doc:** `~/dev/NRT/docs/NRT Scatterplot System Design.md` (3,345 lines)
 
-**Vision:** Bespoke ABA platform for Craig Hospital's TBI patients. Potentially a complete CentralReach replacement.
+**Vision:** Bespoke ABA platform for Craig Hospital's TBI patients. Complete CentralReach replacement.
 
-**Two-Track Approach:**
-- Track 1 (Quick Win): Scatterplot data entry + Excel reports
-- Track 2 (Full Platform): Comprehensive TBI/ABA workflows
+**Key Decision (Jan 30):** Rebuilding from scratch with lean open-source stack instead of continuing with Next.js/Prisma. The paint-it-in interface from `mockup/quick-entry.html` will be preserved exactly.
 
-**What's built:**
-- Next.js 16 + TypeScript + Tailwind
-- ScatterplotGrid (96 intervals, click+drag) - fully functional
-- Client/behavior management
-- SQLite database with backup utility
-- Day/night theme toggle (Simple theme)
-- Grid cells always white for readability
+**New Stack:**
+- Frontend: React 18 + Vite + TypeScript + Tailwind CSS
+- Backend: Node.js + Express + better-sqlite3
+- Auth: No login - dev mode user picker, prod reads X-Remote-User header
+- Database: SQLite (SQLCipher for encryption later)
 
-### 2. ScatterplotCreator
+### 2. MikeText - Mac Local Edition
+- **Path:** `~/dev/MikeText`
+- **Status:** Complete and ready for daily use
+- **Tech:** Swift/SwiftUI, macOS 14+
+
+**What it is:** A clean, minimal text editor that shows files as-is. No proprietary formats, no smart quotes, no surprises.
+
+**Features:**
+- Syntax highlighting for 12+ languages
+- 6 monospace fonts, font size controls
+- Dark/Light/Console color modes
+- Show invisibles (spaces, tabs, line endings)
+- Line numbers, word wrap toggles
+- Tabbed interface, session restore
+- Open Recent, all settings persist
+
+**Known issue:** Window size/position can reset when opening new docs mid-session.
+
+### 3. ScatterplotCreator
 - **Path:** `~/dev/ScatterplotCreator`
 - **GitHub:** https://github.com/miketoles/Scatterplot
 - **Status:** In stakeholder review
 - **Next step:** Continue gathering feedback, address any issues
-- **Recent:** Fixed print sorting, grey backgrounds, increased font sizes for readability
 
-### 3. 3dArchery
+### 4. Games (Active Development)
+| Game | Path | Status | Port |
+|------|------|--------|------|
+| **Moon Rocks** | `~/dev/game-ideas/moon-rocks` | Playable (v21), mobile scaling issues | 8080 |
+| **Shipwreck Explorer** | `~/dev/ShipwreckExplorer` | Playable MVP (v33) | 8081 |
+| **Bulldozer** | `~/dev/bulldozer app` | Feature complete, grandson's favorite | 8082 |
+
+### 5. 3dArchery
 - **Path:** `~/dev/3dArchery`
 - **Status:** Expanding to v2 (multi-discipline)
 - **Next step:** Implement Indoor scoring (NFAA 300, Vegas)
-- **Plan:** See plan file for indoor scoring implementation
 
-### 4. hospital-mini-apps
+### 6. hospital-mini-apps
 - **Path:** `~/dev/hospital-mini-apps`
 - **Status:** In development
 - **Next step:** Continue building mini-app platform
-- **Blocked by:** None
-
-### 5. polymarket-arb-bot
-- **Path:** `~/dev/polymarket-arb-bot`
-- **Status:** Running on Railway
-- **Next step:** Monitor for opportunities
-- **Blocked by:** None
 
 ---
 
 ## This Week's Goals
 
-- [x] Build CR Phase 1 (Data Platform foundation)
-- [ ] CR Phase 2: Offline sync
+- [ ] NRT Phase 0: Project setup with lean stack
+- [ ] Port ScatterplotGrid preserving paint-it-in behavior
 - [ ] Present ScatterplotCreator to stakeholders
+- [ ] Fix Moon Rocks mobile scaling issues
 - [ ] Add Indoor scoring to 3dArchery
-- [ ] Continue hospital-mini-apps development
 
 ---
 
@@ -71,9 +82,9 @@ What I'm actively working on right now.
 
 | Project | Why Parked | Resume When |
 |---------|------------|-------------|
-| Quiz App | Other priorities | After ScatterplotCreator demo |
-| bulldozer app | Feature complete for now | When grandson visits |
+| Quiz App | Other priorities | After NRT Phase 1 |
 | AbletonPlugins | Waiting on JUCE learning | Free weekend |
+| polymarket-arb-bot | Running on Railway | Monitor only |
 
 ---
 
@@ -81,7 +92,8 @@ What I'm actively working on right now.
 
 | Project | Completed | Notes |
 |---------|-----------|-------|
-| CR Phase 1 | Jan 27, 2026 | Full working app with data entry |
-| ScatterplotCreator v1 | Jan 2026 | All 6 UI changes done, ready for demo |
-| polymarket-arb-bot | Jan 2026 | Running on Railway |
-| SpaceAttack | Jan 2026 | Complete arcade game |
+| MikeText Mac Local | Jan 29, 2026 | Full-featured, ready for daily use |
+| NRT Design Doc v2.2 | Jan 29, 2026 | 3,345 lines, comprehensive spec |
+| Shipwreck Explorer animations | Jan 28, 2026 | 2.5D diver with smooth flip transitions |
+| Moon Rocks v21 | Jan 28, 2026 | Footprints, aliens, oxygen warning |
+| ScatterplotCreator v1 | Jan 2026 | All 6 UI changes done |

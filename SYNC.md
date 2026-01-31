@@ -6,29 +6,55 @@
 
 ## Current Focus
 
-**Project:** NRT Scatterplot System
-**Path:** `~/dev/NRT`
-**Design Doc:** `~/dev/NRT/docs/NRT Scatterplot System Design.md` (v2.2, 3345 lines)
+**Primary:** NRT Scatterplot System rebuild
+**Secondary:** Game testing (Moon Rocks, Shipwreck Explorer, Bulldozer)
 
 ---
 
 ## What We Did This Session
 
-### Reviewed Full Design Doc and Current State
+### 1. Reviewed NRT Scatterplot System Design (v2.2)
 
-1. Read the entire 3,345-line design document (v2.2)
-2. Compared existing Next.js code vs design doc's lean stack
-3. Reviewed the quick-entry.html mockup in detail
+Read the complete 3,345-line design document. Key decision made:
 
-**Key Decision:** Mike wants to **rebuild from scratch** using the design doc's lean stack (React + Vite, Express, better-sqlite3) rather than continue with the existing Next.js/Prisma code.
+**Rebuild from scratch with lean open-source stack** instead of continuing with existing Next.js/Prisma code.
+
+The mockup at `~/dev/NRT/mockup/quick-entry.html` defines the paint-it-in interface that MUST be preserved.
+
+### 2. Started Game Servers for Testing
+
+| Game | URL | Port |
+|------|-----|------|
+| Moon Rocks | http://localhost:8080 | 8080 |
+| Shipwreck Explorer | http://localhost:8081 | 8081 |
+| Bulldozer | http://localhost:8082 | 8082 |
+
+### 3. Updated Project Hub Files
+
+- ACTIVE.md - Added MikeText, updated NRT status, added games
+- PROJECTS.md - Complete refresh with all current projects
+- SYNC.md - This file
 
 ---
 
-## Critical: Preserve the Paint-It-In Interface
+## NRT Rebuild Plan
 
-The quick-entry.html mockup at `~/dev/NRT/mockup/quick-entry.html` defines the exact interaction model. **This behavior must be preserved in the rebuild.**
+**Stack:**
+- Frontend: React 18 + Vite + TypeScript + Tailwind CSS
+- Backend: Node.js + Express + better-sqlite3
+- Database: SQLite (SQLCipher for encryption later)
+- Auth: No login - dev mode user picker, prod reads X-Remote-User header
 
-### Core Behaviors to Keep
+**Phase 0 (Next Session):**
+- [ ] Create `nrt-scatterplot/frontend/` + `backend/` structure
+- [ ] Initialize Vite + React + TypeScript
+- [ ] Initialize Express + better-sqlite3
+- [ ] Create SQLite schema from design doc
+- [ ] Set up Tailwind CSS
+- [ ] Dev mode user picker
+- [ ] Port ScatterplotGrid (preserving paint-it-in behavior)
+
+### Paint-It-In Interface (Critical to Preserve)
 
 | Behavior | Description |
 |----------|-------------|
@@ -38,51 +64,18 @@ The quick-entry.html mockup at `~/dev/NRT/mockup/quick-entry.html` defines the e
 | **Auto-promotion** | Marking a cell IND makes other cells in row become ERR |
 | **Keyboard shortcuts** | I = Shaded, E = Check row, S = Skip row, C = Clear |
 
-### State Model (from mockup)
-
-```
-grid[96][B] where B = number of behaviors (max 4)
-Values: empty | ind | err | skip
-
-rowStatus[96] where each row is: empty | checked | skipped
-```
-
-### Render Rules
-
-1. If any cell in row is `ind`, check column is blank
-2. If row status is `checked` and no `ind` cells, check column shows ✓
-3. If row status is `skipped`, check column shows ✗ and all cells show ✗
-4. ERR cells appear visually blank (ERR is data, not a glyph)
-
 ---
 
-## Current State
+## Active Projects Summary
 
-**Design Doc:** Complete and ready to build (v2.2)
-
-**Existing Code:** Next.js + Prisma (will be replaced)
-
-**Mockup:** `~/dev/NRT/mockup/quick-entry.html` - authoritative reference for data entry UI
-
----
-
-## Next Session: Rebuild with Lean Stack
-
-When Mike returns, we'll start **Phase 0: Project Setup**:
-
-- [ ] Create new project structure: `nrt-scatterplot/frontend/` + `backend/`
-- [ ] Initialize Vite + React + TypeScript frontend
-- [ ] Initialize Express + better-sqlite3 backend
-- [ ] Create SQLite schema from design doc
-- [ ] Set up Tailwind CSS
-- [ ] Dev mode user picker for testing
-- [ ] Port the ScatterplotGrid component (preserving paint-it-in behavior)
-
-**Stack:**
-- Frontend: React 18, Vite, TypeScript, Tailwind CSS
-- Backend: Node.js, Express, better-sqlite3
-- Database: SQLite (with SQLCipher for encryption later)
-- No login - dev mode user picker, prod reads X-Remote-User header
+| Project | Status | Next Step |
+|---------|--------|-----------|
+| **NRT** | Design complete (v2.2) | Phase 0: Project setup |
+| **MikeText** | Complete, daily use | None (maintenance only) |
+| **Moon Rocks** | Playable (v21) | Fix mobile scaling |
+| **Shipwreck Explorer** | Playable MVP (v33) | More content |
+| **Bulldozer** | Feature complete | Grandson visits |
+| **ScatterplotCreator** | In review | Stakeholder feedback |
 
 ---
 
@@ -90,9 +83,11 @@ When Mike returns, we'll start **Phase 0: Project Setup**:
 
 | File | Purpose |
 |------|---------|
-| `~/dev/NRT/docs/NRT Scatterplot System Design.md` | Complete design (v2.2) |
-| `~/dev/NRT/mockup/quick-entry.html` | Reference mockup - authoritative UI behavior |
-| `~/dev/NRT/STATUS.md` | Project status |
+| `~/dev/NRT/docs/NRT Scatterplot System Design.md` | Complete NRT design (v2.2) |
+| `~/dev/NRT/mockup/quick-entry.html` | Paint-it-in interface reference |
+| `~/dev/MikeText/DESIGN.md` | MikeText design and status |
+| `~/dev/game-ideas/moon-rocks/STATUS.md` | Moon Rocks status |
+| `~/dev/ShipwreckExplorer/STATUS.md` | Shipwreck status |
 
 ---
 
@@ -102,4 +97,4 @@ When Mike returns, we'll start **Phase 0: Project Setup**:
 
 ---
 
-*For all projects: see ACTIVE.md*
+*For all projects: see ACTIVE.md and PROJECTS.md*
