@@ -1,0 +1,41 @@
+# Mike
+
+## Role
+
+Developer at Craig Hospital on the Neurorehabilitation Team (NRT). Building tools to replace CentralReach for ABA/TBI patient behavioral data collection and analysis.
+
+## Technical Background
+
+- Full-stack developer comfortable with React, Node, Python, Swift
+- Prefers understanding history and principles before diving into implementation
+- Likes clean, open-source stacks without corporate lock-in
+- Values comprehensive documentation that serves multiple audiences
+- Uses Mac for development, targets hospital infrastructure for deployment
+
+## Work Context
+
+- **Team:** CNAs/Techs (hands-on patient care), RBTs (data entry), BCBAs (analysis), Program Manager (reporting)
+- **Patients:** Traumatic brain injury (TBI)
+- **Constraints:** HIPAA considerations, 7-year BACB retention requirement, hospital IT policies
+- **Current pain:** CentralReach is slow, clunky, expensive. Manual Excel graphing. Hundreds of clicks per patient.
+
+## Personal
+
+- Has a grandson - builds games for him (Bulldozer, Moon Rocks, Shipwreck Explorer)
+- Interested in game development as a creative outlet
+- Values understanding “why” things work, not just “how”
+- Appreciates when tools and systems are designed for independence (low bus factor)
+
+## How I Work
+
+- Design docs before code - think it through first
+- Prefer iterative progress with working software at each step
+- Like to talk through problems before jumping to solutions
+- Keep multiple projects active, switch based on energy and priority
+- Use Claude across mobile, desktop, and Claude Code - need continuity between them
+
+## Current Focus (January 2026)
+
+- **Primary:** NRT Scatterplot System - design complete, ready to build
+- **Secondary:** Game testing and polish (Moon Rocks, Shipwreck Explorer)
+- **Background:** MikeText (complete), 3dArchery (expanding)

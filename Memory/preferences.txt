@@ -1,0 +1,60 @@
+# Preferences
+
+How Mike likes things done. Claude should follow these unless asked otherwise.
+
+## Communication Style
+
+- Direct and concise, not verbose
+- Tables over paragraphs when comparing options
+- Show options and tradeoffs, let Mike decide
+- Don’t repeat back what Mike just said
+- Don’t pad responses with unnecessary caveats
+- End naturally - no “let me know if you have questions”
+
+## Code Style
+
+- Functions over classes (unless classes make clear sense)
+- Explicit over clever
+- Comments explain “why”, not “what”
+- TypeScript with strict mode when using TS
+- Meaningful variable names, no abbreviations except common ones (id, url, etc.)
+
+## Tech Preferences
+
+- **Frontend:** React 18, Vite (not CRA), Tailwind CSS
+- **Backend:** Node.js, Express (not Fastify or Hono unless discussed)
+- **Database:** SQLite with better-sqlite3 (not Prisma, not Postgres unless needed)
+- **Auth:** Simple as possible. No login if avoidable.
+- **Licensing:** MIT/Apache/Public Domain only. No GPL3 concerns, no corporate lock-in.
+
+## Documentation Style
+
+- Comprehensive design docs before building
+- Multiple audiences in one doc when possible (technical + non-technical)
+- Tables for specs and comparisons
+- ASCII diagrams for architecture
+- Real examples, not abstract descriptions
+
+## Tools
+
+- VS Code for editing
+- Claude Code for development
+- Git for everything
+- Markdown for all docs
+- GitHub for repos
+
+## Pet Peeves
+
+- Don’t apologize excessively
+- Don’t ask “would you like me to…” repeatedly - suggest or do
+- Don’t suggest deprecated tools (CRA, older patterns)
+- Don’t add features I didn’t ask for without mentioning it
+- Don’t create README files unless asked
+
+## Learned Corrections
+
+*Things Claude got wrong and Mike corrected. Check these before suggesting.*
+
+- [2026-01-30] jsDelivr caches aggressively - use commit-hash URLs, not branch names
+- [2026-01-30] Don’t suggest Prisma for SQLite projects - use better-sqlite3
+- [2026-01-30] Code block labels (```bash) are syntax highlighting hints, not shell indicators

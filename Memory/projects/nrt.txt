@@ -1,0 +1,117 @@
+# NRT Project Context
+
+Persistent context for the NRT Scatterplot System project.
+
+-----
+
+## What It Is
+
+Scatterplot data entry and reporting system for Craig Hospital’s Neurorehabilitation Team. First module of a larger platform to replace CentralReach.
+
+**The problem:** Paper scatterplots → CR transcription = 10+ minutes per patient, hundreds of clicks, manual Excel graphing, everyone hates it.
+
+**The solution:** Paint-it-in data entry (2 min per patient), instant graphs, one-click exports.
+
+-----
+
+## Key Files
+
+|File                                             |Purpose                            |
+|-------------------------------------------------|-----------------------------------|
+|`~/dev/NRT/docs/NRT Scatterplot System Design.md`|Complete design spec (3,345 lines) |
+|`~/dev/NRT/mockup/quick-entry.html`              |Authoritative UI behavior reference|
+
+-----
+
+## Current Status
+
+**Phase:** Design complete (v2.2), ready for Phase 0 build
+
+**Next steps:**
+
+1. Create project structure (frontend/ + backend/)
+1. Initialize Vite + React + TypeScript
+1. Initialize Express + better-sqlite3
+1. Create SQLite schema
+1. Dev mode user picker
+1. Port ScatterplotGrid component
+
+-----
+
+## Critical Implementation Details
+
+### Paint-It-In Interface (DO NOT CHANGE)
+
+The mockup defines exact behavior. Key rules:
+
+|Behavior           |Description                                         |
+|-------------------|----------------------------------------------------|
+|Format painter drag|Drag brush = starting cell’s value, NOT toolbar     |
+|Single click toggle|Cycles through states                               |
+|Check column       |Row-level: ✓ = observed, ✗ = skipped                |
+|Auto-promotion     |Marking cell IND makes other cells in row become ERR|
+|Keyboard shortcuts |I=Shaded, E=Check row, S=Skip row, C=Clear          |
+
+### Data Model Essentials
+
+- **ScatterplotSheet:** One day’s data for one patient (7AM → 7AM)
+- **Interval:** 96 per sheet, 15 minutes each, index 0 = 7:00 AM
+- **Cell values:** 0=checkmark, 1=shaded, null=blank
+- **Validation states:** NeedsValidation → Validated (or → NeedsRevalidation if errors)
+
+### Auth
+
+- **Dev mode:** User picker dropdown (Jane, Bob, Sarah, etc.)
+- **Production:** Read X-Remote-User header from IIS/reverse proxy
+- **No login screen** - this is a feature, not a limitation
+
+-----
+
+## Tech Stack
+
+|Layer   |Choice                                 |
+|--------|---------------------------------------|
+|Frontend|React 18 + Vite + TypeScript + Tailwind|
+|Backend |Node.js + Express + better-sqlite3     |
+|Database|SQLite (SQLCipher for encryption later)|
+|Exports |Recharts, ExcelJS, jsPDF, pptxgenjs    |
+
+-----
+
+## Stakeholders
+
+|Role           |What They Care About                     |
+|---------------|-----------------------------------------|
+|RBTs           |Data entry speed, not losing work        |
+|BCBAs          |Graphs, trends, intervention annotations |
+|Program Manager|Reports for leadership, program dashboard|
+|IT             |Security, runs on hospital infrastructure|
+
+-----
+
+## Decisions Made
+
+|Date      |Decision                    |Rationale                                                  |
+|----------|----------------------------|-----------------------------------------------------------|
+|2026-01-30|Rebuild from scratch        |Existing Next.js/Prisma code not worth continuing          |
+|2026-01-30|SQLite not Postgres         |Simple, portable, single file, good enough for scale       |
+|2026-01-30|No login                    |Users already log into hospital network, don’t add friction|
+|2026-01-30|Dev on Pi, flip to IIS later|Faster iteration, IT flexibility                           |
+|2026-01-30|User picker auth for v1     |Small trusted team, Windows Auth can wait                  |
+
+-----
+
+## Open Questions
+
+- [ ] CR API capabilities (call scheduled)
+- [ ] IT approval for Pi on network
+- [ ] SQLCipher vs full-disk encryption decision
+- [ ] Historical data migration approach (depends on CR API)
+
+-----
+
+## Related Documents
+
+- Continuity Guide: What if Mike wins the lottery
+- Monday Conversation Guide: Stakeholder meeting prep
+- Dev Server Guide: Raspberry Pi setup and IIS migration path

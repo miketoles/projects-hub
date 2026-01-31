@@ -1,0 +1,80 @@
+# Learnings
+
+Accumulated knowledge that should persist across all sessions. Claude should check this before making suggestions.
+
+-----
+
+## Technical Knowledge
+
+### Infrastructure
+
+- jsDelivr CDN caches aggressively - always use commit-hash URLs for fresh content, not branch names
+- Craig Hospital likely uses IIS - plan for Windows Auth via X-Remote-User header
+- Raspberry Pi 5 is viable for small internal production apps - has wifi built in, runs standard Linux
+
+### NRT Specific
+
+- Paint-it-in interface: drag brush is determined by starting cell’s value, NOT a toolbar selection
+- Scatterplot grid: 96 intervals (15 min each), 7AM to 7AM next day
+- Cell values: 0=checkmark (observed, no behavior), 1=shaded (behavior occurred), null=blank (not observed)
+- Validation rule: Can’t validate your own work, corrections need re-validation by third person
+- ScatterplotSheet date = the date the 24-hour period STARTS (7AM)
+
+### Tech Stack Decisions
+
+- React 18 + Vite (not CRA - it’s deprecated)
+- better-sqlite3 (not Prisma - too much abstraction for SQLite)
+- Express (simple, well-understood)
+- SQLite with SQLCipher for encryption (or rely on OS full-disk encryption)
+- Tailwind CSS for styling
+- All MIT/Apache licensed - no corporate lock-in
+
+-----
+
+## Project Decisions
+
+### NRT (January 2026)
+
+- Rebuild from scratch with lean stack, not continue existing Next.js/Prisma code
+- No login for users - dev mode has user picker, production reads X-Remote-User header
+- Dev server on Raspberry Pi, flip to IIS later if needed
+- User picker auth is acceptable for v1 (small trusted team)
+- 7-year retention required (BACB compliance)
+- Soft deletes only - never truly delete records
+
+### MikeText (January 2026)
+
+- Complete and ready for daily use
+- Known bug: window size/position can reset mid-session - documented, not urgent to fix
+
+-----
+
+## Mike’s Patterns
+
+- Likes to understand history/principles before implementation
+- Prefers comprehensive design docs before writing code
+- Values “bus factor” - systems should work without him
+- Documents should serve multiple audiences (technical + non-technical sections)
+- Prefers iterative progress with working software at each step
+- Switches between projects based on energy and priority
+
+-----
+
+## Communication Patterns
+
+- Direct answers preferred over hedging
+- Tables are great for comparisons
+- End responses naturally, no “let me know if you have questions”
+- Don’t repeat back what he just said
+- Show options, let him decide
+
+-----
+
+## Corrections Log
+
+*Specific things Claude got wrong that Mike corrected.*
+
+|Date      |Wrong                                      |Right                                                         |
+|----------|-------------------------------------------|--------------------------------------------------------------|
+|2026-01-30|Suggested branch URL for jsDelivr          |Use commit-hash URLs to avoid caching                         |
+|2026-01-30|Code block said “bash” while discussing zsh|Clarified: that’s syntax highlighting, not shell specification|

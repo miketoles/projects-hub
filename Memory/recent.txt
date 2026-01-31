@@ -1,0 +1,25 @@
+# Recent Sessions
+
+Rolling log of the last 20 session summaries.
+
+---
+
+## 2026-01-31 (Mobile, late night)
+- Terminal/zsh education session
+- NRT stakeholder prep: continuity guide, Monday talking points
+- Designed memory system for Claude continuity
+- Raspberry Pi dev server planning
+- Tested GitHub issue as mobile inbox
+
+## 2026-01-30 (Claude Code, evening)
+- Reviewed NRT Scatterplot System Design (v2.2, 3,345 lines)
+- Key decision: Rebuild from scratch with lean stack (Vite + Express + better-sqlite3)
+- Started game servers for testing (Moon Rocks, Shipwreck Explorer, Bulldozer)
+- Updated project hub files (ACTIVE.md, PROJECTS.md, SYNC.md)
+- Set up memory system files
+
+## 2026-01-29 (Claude Code)
+- Completed MikeText Mac Local Edition
+- Full-featured text editor ready for daily use
+- Syntax highlighting, multiple fonts, color modes
+- Session restore, Open Recent, all settings persist

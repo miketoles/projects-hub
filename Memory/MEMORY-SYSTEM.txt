@@ -1,0 +1,299 @@
+# Memory System
+
+*Mike’s personal memory system for Claude continuity across sessions and interfaces.*
+
+-----
+
+## Overview
+
+This system gives Claude persistent memory across mobile, desktop, and Claude Code sessions. Instead of starting fresh every time, Claude reads context from these files and updates them at session end.
+
+**Location:** `~/projects-hub/MEMORY/`
+
+**Principle:** Claude should feel like the same assistant across all interfaces, remembering who Mike is, what he’s working on, and what was decided.
+
+-----
+
+## File Structure
+
+```
+~/projects-hub/
+├── MEMORY/
+│   ├── profile.md        # Who Mike is (stable)
+│   ├── preferences.md    # How Mike likes things (evolves slowly)
+│   ├── recent.md         # Last 20 session summaries (rolling)
+│   ├── learnings.md      # Accumulated wisdom (grows forever)
+│   └── projects/
+│       ├── nrt.md        # NRT-specific context
+│       ├── miketext.md   # MikeText-specific context
+│       └── games.md      # Games-specific context
+│
+├── SYNC.md               # Quick session handoff (still useful)
+├── ACTIVE.md             # Active projects status
+└── PROJECTS.md           # Full project index
+```
+
+-----
+
+## What Goes Where
+
+|File            |Contents                                                     |Update Frequency                   |
+|----------------|-------------------------------------------------------------|-----------------------------------|
+|`profile.md`    |Who Mike is, background, role, personal                      |Rarely (major life changes)        |
+|`preferences.md`|Communication style, code style, tool preferences, pet peeves|Occasionally (when patterns emerge)|
+|`recent.md`     |Last 20 session summaries                                    |Every session                      |
+|`learnings.md`  |Technical knowledge, project decisions, corrections          |When something new is learned      |
+|`projects/*.md` |Project-specific persistent context                          |When project decisions are made    |
+
+-----
+
+## For Claude Code
+
+### CLAUDE.md Addition
+
+Add this to your CLAUDE.md:
+
+```markdown
+## Memory System
+
+### On Session Start
+1. Read ~/projects-hub/MEMORY/profile.md
+2. Read ~/projects-hub/MEMORY/preferences.md  
+3. Read ~/projects-hub/MEMORY/recent.md
+4. If working on a specific project, read ~/projects-hub/MEMORY/projects/[project].md
+5. Skim ~/projects-hub/MEMORY/learnings.md for relevant entries
+
+### On Session End (before git push, or on "sync up" command)
+1. Append 3-5 line summary to recent.md with date and interface
+2. If any corrections or new learnings, append to learnings.md
+3. If project decisions were made, update projects/[project].md
+4. Commit and push
+
+### On "Sync Up" Command
+Same as session end, but also:
+1. Generate a fresh commit-hash URL for SYNC.md
+2. Provide the URL for Mike to use in other Claude interfaces
+```
+
+### Sync Up Command
+
+When Mike says “sync up”:
+
+1. Update memory files as described above
+1. Commit and push to GitHub
+1. Get the current commit hash: `git rev-parse HEAD`
+1. Provide URL in this format:
+
+```
+https://cdn.jsdelivr.net/gh/miketoles/projects-hub@[FULL-COMMIT-HASH]/MEMORY/recent.md
+```
+
+Mike pastes this URL into mobile/desktop Claude to sync.
+
+-----
+
+## For Mobile / Desktop Claude
+
+### On Session Start
+
+If Mike provides a sync URL or uploads memory files, read them.
+
+If starting fresh, ask: “Want me to sync up? Paste a recent.md URL or upload your memory files.”
+
+### During Session
+
+Operate normally, but note:
+
+- Corrections to make to learnings.md
+- Decisions that should be recorded
+- Session summary points
+
+### On Session End (or “Sync Up” Command)
+
+Mobile/Desktop Claude cannot write files directly. Instead:
+
+1. Generate the updates that SHOULD be made
+1. Format them as a downloadable file OR
+1. Provide text Mike can paste into the repo
+
+**Option A: Downloadable file**
+Create a file called `memory-update-[date].md` with all the updates, Mike downloads and merges.
+
+**Option B: Quick text**
+Provide the text to append to recent.md, Mike copies it.
+
+**Option C: Instructions for CC**
+Tell Mike: “Next CC session, tell it: ‘Append this to recent.md: [summary]’”
+
+-----
+
+## recent.md Format
+
+```markdown
+## YYYY-MM-DD (Interface, time of day)
+- Bullet point summary
+- Key decisions or outcomes
+- What was created or changed
+- What's next
+```
+
+Example:
+
+```markdown
+## 2026-01-30 (Mobile, late night)
+- NRT stakeholder prep for Monday
+- Created continuity guide and conversation guide
+- Designed memory system for Claude continuity
+- Next: Start NRT Phase 0 build
+```
+
+-----
+
+## learnings.md Format
+
+Organized by category:
+
+```markdown
+## Technical Knowledge
+- [date] Specific technical fact or pattern
+
+## Project Decisions  
+- [date] Decision and brief rationale
+
+## Mike's Patterns
+- Observation about how Mike works
+
+## Corrections Log
+| Date | Wrong | Right |
+|------|-------|-------|
+| date | what was wrong | what's correct |
+```
+
+-----
+
+## Pruning recent.md
+
+When recent.md exceeds 20 sessions:
+
+1. Move oldest entries to `~/projects-hub/MEMORY/archive/recent-[year]-[month].md`
+1. Keep the 20 most recent in recent.md
+
+-----
+
+## Quick Reference
+
+**Mike says:** “Sync up”
+**Claude does:** Update memory files, commit, push, provide commit-hash URL
+
+**Mike pastes:** A jsDelivr commit-hash URL
+**Claude does:** Fetch it, now has recent context
+
+**Mike uploads:** Memory files from iCloud
+**Claude does:** Read them, now has context
+
+**Mike starts fresh:** “I don’t have my memory files”
+**Claude says:** “No problem. Tell me what you’re working on and I’ll catch up. We can sync properly later.”
+
+-----
+
+## Why This Works
+
+|Problem                               |Solution                        |
+|--------------------------------------|--------------------------------|
+|Claude forgets everything             |Memory files persist in Git     |
+|Different Claude instances don’t share|All read from same repo         |
+|Manual sync is tedious                |“Sync up” command automates it  |
+|Context gets stale                    |recent.md is always current     |
+|Lessons get lost                      |learnings.md accumulates forever|
+
+-----
+
+## Bootstrap Instructions
+
+To start using this system:
+
+1. Copy MEMORY folder to ~/projects-hub/
+1. Add the CLAUDE.md instructions to your Claude Code config
+1. On first CC session: “Read my memory files and sync up”
+1. On mobile/desktop: Upload memory files or paste sync URL
+
+-----
+
+*This system is Mike’s personal Supermemory - owned, controlled, and portable.*
+
+-----
+
+## Fallback: Manual Sync Strategy (Original Method)
+
+If the memory system isn’t working or you need to revert to a simpler approach, here’s the original manual sync strategy that works reliably.
+
+### Files Used
+
+```
+~/projects-hub/
+├── SYNC.md       # Current session context, what we're working on
+├── ACTIVE.md     # Active projects with status and next steps
+└── PROJECTS.md   # Complete project index
+```
+
+### How It Works
+
+**SYNC.md** is the quick handoff file. CC updates it at the end of each session with:
+
+- What was done this session
+- Current focus
+- Key decisions
+- What’s next
+
+**ACTIVE.md** tracks all active projects with status and next steps.
+
+**PROJECTS.md** is the complete index of all projects organized by category.
+
+### Syncing to Mobile/Desktop Claude
+
+1. CC commits and pushes to GitHub
+1. CC generates a commit-hash URL:
+   
+   ```
+   https://cdn.jsdelivr.net/gh/miketoles/projects-hub@[FULL-COMMIT-HASH]/SYNC.md
+   ```
+1. Mike pastes the URL into mobile/desktop Claude
+1. Claude fetches it and has context
+
+**Why commit-hash URLs:** jsDelivr caches branch URLs aggressively. Commit-hash URLs are never cached because they’re immutable.
+
+### Syncing from Mobile/Desktop to CC
+
+1. At end of mobile/desktop session, Claude summarizes what was discussed
+1. Mike either:
+- Pastes the summary into the “From Mobile Session” section of SYNC.md manually, or
+- Tells CC at next session: “We discussed X, Y, Z on mobile”
+
+### Manual URL Generation
+
+If CC isn’t available to generate the URL:
+
+```bash
+cd ~/projects-hub
+git add -A && git commit -m "Sync update"
+git push
+git rev-parse HEAD  # Copy this hash
+```
+
+Then construct: `https://cdn.jsdelivr.net/gh/miketoles/projects-hub@[HASH]/SYNC.md`
+
+### When to Use Manual Method
+
+- Memory system files get corrupted
+- Something breaks and you need simple
+- CC isn’t available to manage memory files
+- You just want a quick sync without full memory overhead
+
+### Reverting to Manual Method
+
+1. Stop updating memory files
+1. Go back to maintaining SYNC.md manually
+1. Use commit-hash URLs for syncing
+1. Memory files stay in repo (don’t delete), just stop using them
+
+The manual method is simpler but requires more effort. The memory system automates more but has more moving parts. Both work.

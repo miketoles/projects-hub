@@ -1,0 +1,63 @@
+# Memory System - Quick Start
+
+## Setup (5 minutes)
+
+### 1. Copy files to projects-hub
+
+Put the MEMORY folder in your projects-hub:
+
+```
+~/projects-hub/
+├── MEMORY/
+│   ├── MEMORY-SYSTEM.md
+│   ├── profile.md
+│   ├── preferences.md
+│   ├── recent.md
+│   ├── learnings.md
+│   └── projects/
+│       └── nrt.md
+├── SYNC.md          (keep existing)
+├── ACTIVE.md        (keep existing)
+└── PROJECTS.md      (keep existing)
+```
+
+### 2. Add to CLAUDE.md
+
+Add this to your Claude Code CLAUDE.md file:
+
+```markdown
+## Memory System
+
+### On "Sync Up" Command (works anytime)
+1. If memory files haven't been read this session, read them first
+2. Append 3-5 line summary to recent.md (date + interface + bullets)
+3. Add any new learnings to learnings.md
+4. Update projects/[project].md if decisions were made
+5. Commit and push
+6. Provide commit-hash URL for mobile/desktop sync
+
+"Sync up" = get current + save state. One command.
+```
+
+### 3. Commit and push
+
+```bash
+cd ~/projects-hub
+git add -A
+git commit -m "Add memory system"
+git push
+```
+
+### 4. Test it
+
+Start a CC session and say: “Read my memory files”
+
+-----
+
+## Daily Use
+
+**CC sessions:** Just work. Say “sync up” when done.
+
+**Mobile/Desktop:** Paste the commit-hash URL from CC, or upload memory files from iCloud.
+
+**That’s it.**
