@@ -12,40 +12,39 @@
 
 ## What We Did This Session
 
-### NRT Scatterplot App - Major Implementation Progress
+### NRT Scatterplot App - Observation Model Refinement
 
-Built a functional scatterplot data entry and validation system:
+Established the core philosophy for all NRT behavioral data: **"Was an observer present?"**
 
-**Frontend (React + Vite + TypeScript + Tailwind):**
-- Patient list with add patient form (max 4 behaviors enforced)
-- Date selection screen with status badges (Draft, Awaiting Validation, Validated)
-- Paint-it-in scatterplot grid (click+drag format painter behavior)
-- Check column with drag support for row-level actions
-- Validation queue showing sheets awaiting review
-- Visual differentiation: blue banner for first review, orange for corrections review
-- Changed row highlighting during re-validation
-- User picker for dev/testing multi-user workflows
+**Key Design Decisions:**
 
-**Backend (Express + better-sqlite3):**
-- SQLite database with full schema
-- CRUD endpoints for patients, behaviors, scatterplot sheets
-- Interval batch updates with auto-save
-- Validation queue filtering (excludes your own work)
-- Status management (Draft → NeedsValidation → Validated or NeedsRevalidation)
+1. **3-State Database Model**
+   - `1` = behavior occurred
+   - `0` = observed, no behavior
+   - No record = not observed
+   - Eliminated -1, null, and special markers
 
-**Key Features Implemented:**
-1. **Draft Status** - Users can start entry, leave, and come back without being locked out
-2. **Validation Workflow** - Can't validate your own most recent changes
-3. **Corrections Flow** - Validator edits → NeedsRevalidation → Someone else confirms
-4. **Read-Only Mode** - Own submitted entries are view-only until validated
-5. **Auto-Save** - All changes save automatically, no data loss on crashes
+2. **Row-Level Observation**
+   - You can't partially observe an interval - you're either with the patient or not
+   - If any cell in a row has data, ALL cells must have data (no partial rows)
+   - Skip is a row-level action only
 
-**Design Doc Updated (v2.3):**
-- Added Draft status documentation
-- Added date selection screen flow
-- Added validation visual differentiation details
-- Updated interval values to include skip (-1)
-- Clarified 4-behavior limit enforcement
+3. **Automatic Row Fill-In**
+   - When user marks any cell, backend auto-fills other behaviors in that row with value=0
+   - Example: User shades Bx3 → DB stores Bx1=0, Bx2=0, Bx3=1
+   - Reasoning: If observer marked anything, they were present for all behaviors
+
+4. **Row Consistency Enforced**
+   - Can't clear individual cells in observed rows (converts to 0 instead of delete)
+   - Only way to clear observed row is to skip entire row
+
+**Files Updated:**
+- `schema.sql` - value constraint: CHECK (value IN (0,1))
+- `scatterplots.js` - auto-fill and row consistency logic
+- `App.tsx` - updated cellToDbValue and buildGridFromData
+- Design doc updated to v2.4 with full philosophy documentation
+
+**Database Reset Required:** Deleted old DB files - new schema applies on next server start.
 
 ---
 
@@ -61,14 +60,15 @@ cd ~/dev/NRT/app-scatterplot/backend && npm run dev
 cd ~/dev/NRT/app-scatterplot/frontend && npm run dev
 ```
 
-**Database:** `backend/data/nrt.db` (SQLite with WAL mode)
+**Database:** `backend/data/nrt.db` (SQLite with WAL mode) - will be recreated on first run
 
 **What's Working:**
-- Full data entry flow
+- Full data entry flow with 3-state model
+- Automatic row fill-in
+- Row consistency enforcement
 - Validation queue
 - Multi-user switching (dev mode)
 - Auto-save
-- Status transitions
 
 **Still TODO:**
 - Graphing/reporting (Phase 2)
@@ -82,7 +82,7 @@ cd ~/dev/NRT/app-scatterplot/frontend && npm run dev
 
 | File | Purpose |
 |------|---------|
-| `~/dev/NRT/docs/NRT Scatterplot System Design.md` | Complete design (v2.3) |
+| `~/dev/NRT/docs/NRT Scatterplot System Design.md` | Complete design (v2.4) |
 | `~/dev/NRT/app-scatterplot/frontend/src/App.tsx` | Main React app |
 | `~/dev/NRT/app-scatterplot/backend/src/routes/scatterplots.js` | API endpoints |
 | `~/dev/NRT/app-scatterplot/backend/src/db/schema.sql` | Database schema |
