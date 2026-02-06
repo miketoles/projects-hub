@@ -15,36 +15,36 @@
 
 ## What We Did This Session
 
-- Created **NRT Unified Master Plan** at `~/dev/NRT/docs/NRT-MASTER-PLAN.md` (588 lines, 12 sections)
-- Codex reviewed and applied 3 Medium fixes (inventory timing, A0 deliverable, bundle directory clarification)
-- Agent A (Claude Code) reviewed Codex edits — all verified clean
-- Agent A signed off. Agent B + Mike sign-off pending.
+- Created **NRT Unified Master Plan** at `~/dev/NRT/docs/NRT-MASTER-PLAN.md` (~600 lines, 12 sections)
+- Two-agent review cycle: Codex applied 3 Medium fixes, Claude Code verified. Then Codex added G5/B2 sequencing (diagnose ESM in Phase A, fix in Phase C, gate Phase D), Claude Code verified clean.
+- All review findings resolved. Plan is internally consistent on: baseline reviews, compliance artifacts (12-17), corrections authority (core/main), and B2 pre-Phase-D gating.
+- Agent A signed off. **Agent B + Mike sign-off is the next gate.**
 
 ---
 
 ## Current State
 
-Phases 0-2 complete. Feb 5 review cycle resolved all 18 risks. 40 backend tests, zero frontend tests. Master plan is finalized with all findings resolved. Awaiting Agent B review and Mike sign-off before Phase A begins.
+Phases 0-2 complete. 18 risks resolved. 40 backend tests, zero frontend tests. Master plan finalized and verified. Ready for sign-off, then Phase A execution.
 
 ---
 
 ## What's Next
 
-- [ ] **Agent B: Review master plan** ← START HERE
-- [ ] Mike: Resolve Conflict Register items CR1-CR4
-- [ ] Both agents + Mike sign off (Section 12 of master plan)
-- [ ] Phase A: Testing framework (~3 days, starts after sign-off)
+- [ ] **Agent B: Review master plan and sign off** ← START HERE
+- [ ] Mike: Resolve CR1-CR4 and sign off
+- [ ] Phase A Day 3: Freshness check + B2 ESM diagnosis + create tasks/ dir + update STATUS.md
 
 ---
 
 ## Open Questions / Mental Context
 
-- **Master plan:** `~/dev/NRT/docs/NRT-MASTER-PLAN.md` — all 3 review findings fixed, ready for sign-off
-- **4 Conflicts needing Mike's input:**
-  - CR1: STATUS.md says "Phase 3: Offline" but offline is removed → recommend update
-  - CR2: System Design doc has offline specs → recommend mark as "Future/ABA only"
-  - CR3: UI/UX Plan Phases 3-5 unsequenced → recommend defer to backlog
-  - CR4: Two SDE specs at different paths → recommend authoritative is `~/dev/NRT/docs/SDE Scatterplot Data Entry Design.md`
+- **Master plan:** `~/dev/NRT/docs/NRT-MASTER-PLAN.md` — fully reviewed, all findings closed
+- **B2 (npm start ESM):** Now sequenced as diagnose-in-A → fix-in-C → gate-D. No longer deferred.
+- **4 Conflicts needing Mike's input (Section 3.1):**
+  - CR1: STATUS.md says offline → recommend update to testing-first
+  - CR2: System Design offline specs → recommend mark "Future/ABA only"
+  - CR3: UI/UX Phases 3-5 → recommend defer to backlog
+  - CR4: Two SDE specs → recommend `~/dev/NRT/docs/SDE Scatterplot Data Entry Design.md` as authoritative
 
 ---
 
