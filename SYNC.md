@@ -6,33 +6,36 @@
 
 ## Current Focus
 
-**Project:** NRT Core (Nurse Resource Tool)
-**Path:** `~/dev/NRT/core/frontend` + `~/dev/NRT/core/backend`
-**Branch:** main
-**Run:** `npm run dev` in both → frontend http://localhost:5175, backend http://127.0.0.1:3003
+**Project:** ScatterplotCreator (L-Drive Unavailable Handling)
+**Path:** `~/dev/ScatterplotCreator`
+**Run:** `npm start` (Electron app)
 
 ## What We Did This Session
 
-- Triaged 3 feature requests into `tasks/todo.md` backlog:
-  1. PatientsView master-detail layout redesign [mike]
-  2. "ID: " prefix on patient identifiers [mike]
-  3. Scatterplot draft/save model redesign — no DB writes until explicit save, blank vs x visual distinction, date guard (no today/future), deep planning required [mike]
+- Reviewed and approved Codex's Phase 1 (Messaging + Error Handling), Phase 2 (Last-Known Snapshot), and Phase 3 (Support Diagnostics) implementations — all passed strict code review
+- All acceptance criteria met across all 3 phases, no material findings
+- Drafted email to users about Daniel's VMware/Okta credential issue (not the app)
+- Confirmed both deferred Phase 1 items were also fixed by Codex in Phase 2 (persist-before-validate, retry/health-check race via promise queue)
+
+## Current State
+
+All 3 phases of L-drive unavailable handling are code-reviewed and approved. The patch is ready to ship. Features: graceful read-only mode on network disconnect, automatic detection/recovery (30s health check), last-known data cache for offline viewing, Connection Status + Copy Diagnostics in Settings for support triage.
 
 ## What's Next
 
-- [ ] **IT meeting Monday** — B1 environment access, dev server setup ← NEXT
-- [ ] Continue collecting triage feedback from Ari + Mike's own testing
-- [ ] When ready: deep plan for scatterplot save model redesign (biggest backlog item)
-- [ ] When ready: ui-expert agent + /plan for PatientsView layout
+- [ ] **Ship the L-drive patch** — build installer, distribute to users ← NEXT
+- [ ] Full app review of ScatterplotCreator (security, code quality, UX) — plan first
+- [ ] Return to Parkour Runner game (Phase 5 Combat parked)
+- [ ] NRT Core: IT meeting Monday, continue triage feedback
 
 ## Open Questions
 
-- B1 environment: what does IT need from us Monday?
-- More triage items expected from Ari testing
+- When to schedule the full ScatterplotCreator app review
+- Parkour Runner: pick up Phase 5 combat or revisit earlier phases first
 
 ## Notes for Mobile Session
 
-Monday IT meeting prep. Think about what questions to bring re: TLS/proxy/AD setup. Keep testing the prototype and triaging feedback — backlog is growing nicely.
+The L-drive patch is fully reviewed and ready. Think about timing for the full app review vs getting back to the game. Daniel's credential issue email is drafted — send it out.
 
 ## From Mobile Session
 
@@ -42,6 +45,8 @@ Monday IT meeting prep. Think about what questions to bring re: TLS/proxy/AD set
 
 | Project | Status | Next Action |
 |---------|--------|-------------|
+| ScatterplotCreator | :green_circle: | Ship L-drive patch, then full app review |
+| Parkour Runner | :yellow_circle: | Phase 5 combat parked, resume when ready |
 | NRT Core | :yellow_circle: | IT meeting Monday, collecting triage feedback |
 
 ---
