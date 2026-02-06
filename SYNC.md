@@ -1,93 +1,53 @@
 # Sync File for Claude
 
-*Last synced: February 1, 2026 by Claude Code*
+*Last synced: February 5, 2026 by Claude Code*
 
 ---
 
 ## Current Focus
 
-**Primary:** NRT Scatterplot System - Validation Workflow Refinement
+**Project:** NRT Core
+**Repo:** https://github.com/miketoles/NRT
+**Path:** `~/dev/NRT/core/`
+**Run:** `cd core/backend && npm run dev` → http://127.0.0.1:3003 | `cd core/frontend && npm run dev` → http://localhost:5175
 
 ---
 
 ## What We Did This Session
 
-### NRT Scatterplot App - Major Validation Workflow Fixes (14 Bug Fixes)
-
-**Critical Bug Fixes:**
-
-1. **Validators can now see validation buttons** - Fixed mode priority logic (isValidation before isReadOnly)
-
-2. **Validation mode works from any navigation path** - Added `effectiveIsValidation` computed from sheet status + `canValidate` from backend
-
-3. **Changed rows detection fixed** - Use `modified_by === corrected_by` instead of timestamp comparison (timestamps failed due to row fill-in timing)
-
-4. **Skipped rows (X) display correctly after submission** - Empty rows show as X (red) after submission, blank during Draft
-
-5. **Cell-level editability in Corrections Review** - Only corrected cells are editable, verified cells are locked
-
-**New Features:**
-
-- Mode-based background colors: white (entry), light blue (validation), light orange (re-validation)
-- Review column with "← Changed" markers for modified rows
-- Banner shows "X cells verified • Y cells corrected (needs review)"
-- Context-aware button text: "Confirm Corrections" vs "Mark as Validated"
-
-**API Enhancements:**
-
-- `canValidate` field in GET responses
-- `changedCells` array (behaviorId + intervalIndex pairs)
-- `verifiedCells` and `correctedCells` counts
-
-**Open Questions (documented in design doc):**
-
-1. Should re-validator be able to unlock all cells if they spot additional issues?
-2. What if they notice errors in "verified" (locked) cells?
-3. What's the escalation path for disagreements?
+- Completed Phase 2: Navigation & Routing (URL routing, ConfirmDialog, useUnsavedChanges, breadcrumbs, admin gating)
+- Created `core/frontend/STATUS.md` covering all 3 completed phases
+- Rebuilt prototype with Phase 2 changes
+- Added zip packaging step to `scripts/build-prototype.sh` (53MB distributable zip)
 
 ---
 
-## NRT Status
+## Current State
 
-**Location:** `~/dev/NRT/app-scatterplot/`
-- `frontend/` - React app (port 5173)
-- `backend/` - Express API (port 3001)
-
-**To Run:**
-```bash
-cd ~/dev/NRT/app-scatterplot/backend && npm start
-cd ~/dev/NRT/app-scatterplot/frontend && npm run dev
-```
-
-**Database:** `backend/data/nrt.db` (SQLite) - Fresh database with only dev users, no patients
-
-**Design Doc:** v2.8 - Fully synchronized with implementation
-
-**What's Working:**
-- Full data entry flow with 3-state model
-- Automatic row fill-in and row consistency
-- Validation queue with proper permissions
-- Corrections review with cell-level control
-- Multi-user switching (dev mode)
-- Auto-save
-- Empty rows display as X after submission
-
-**Still TODO:**
-- Decide on Corrections Review open questions (unlock all? escalation path?)
-- Notes entry UI
-- Graphing/reporting (Phase 2)
-- Production auth (Windows AD)
+All 3 frontend UI/UX phases are complete and pushed. Phase 0: MVP, Phase 1: Accessibility (WCAG 2.1 AA), Phase 2: Navigation & Routing. Prototype is synced and zip-packaged for tester. No Phase 3 defined yet.
 
 ---
 
-## Key Files
+## What's Next
 
-| File | Purpose |
-|------|---------|
-| `~/dev/NRT/docs/NRT Scatterplot System Design.md` | Complete design (v2.8) |
-| `~/dev/NRT/app-scatterplot/STATUS.md` | Current status, 14 bug fixes |
-| `~/dev/NRT/app-scatterplot/frontend/src/App.tsx` | Main React app |
-| `~/dev/NRT/app-scatterplot/backend/src/routes/scatterplots.js` | API endpoints |
+- [ ] Define Phase 3 direction (offline, testing, auth, notes UI, or reporting)
+- [ ] Decide on Corrections Review open questions from legacy app
+- [ ] Production auth (Windows AD)
+
+---
+
+## Open Questions / Mental Context
+
+- Phase 3 direction is open — multiple possibilities discussed but none chosen
+- Legacy `app-scatterplot` still has open questions on cell-level corrections review
+- Backend `npm start` (dist bundle) has ESM require issues — use `npm run dev` only
+
+---
+
+## Notes for Mobile Session
+
+- Think about what Phase 3 should prioritize for tester feedback
+- Consider whether offline support or testing framework is more urgent
 
 ---
 
@@ -97,4 +57,4 @@ cd ~/dev/NRT/app-scatterplot/frontend && npm run dev
 
 ---
 
-*For all projects: see ACTIVE.md and PROJECTS.md*
+*Fetch: raw.githubusercontent.com/miketoles/projects-hub/main/SYNC.md*
