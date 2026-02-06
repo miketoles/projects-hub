@@ -1,6 +1,6 @@
 # Sync File for Claude
 
-*Last synced: February 5, 2026 by Claude Code*
+*Last synced: February 6, 2026 by Claude Code*
 
 ---
 
@@ -15,44 +15,55 @@
 
 ## What We Did This Session
 
-- Analyzed Phase 3 options: Offline Support vs Testing Framework
-- Decided: **Testing first, offline deferred**
-- Wrote full Phase 3 plan at `~/dev/NRT/docs/Phase3-Plan.md`
+- Created **NRT Unified Master Plan** at `~/dev/NRT/docs/NRT-MASTER-PLAN.md`
+- Consolidated ALL active plans, decisions, reviews, and workstreams into one document
+- Validated all file paths against filesystem (found 7 gaps, all documented)
+- Identified 4 conflicts between existing docs (logged in Conflict Register)
+- Agent A signed off. Agent B review pending.
 
 ---
 
 ## Current State
 
-All 3 frontend UI/UX phases complete (MVP → Accessibility → Routing). Backend has Vitest with 3 test files; frontend has zero tests. Prototype runs locally via start.bat with bundled Node + Caddy.
+Phases 0-2 complete. Feb 5 review cycle resolved all 18 risks. 40 backend tests, zero frontend tests. Ari actively testing prototype. IT infrastructure request pending. Master plan defines Phases A-E with entry/exit criteria.
 
 ---
 
 ## What's Next
 
-- [ ] Review Phase 3 plan on mobile ← START HERE
-- [ ] Phase 3A: Install Vitest + jsdom in frontend (~1 day)
-- [ ] Phase 3B: Frontend pure logic tests (~1 day)
-- [ ] Phase 3C: Expand backend API tests (~1-2 days)
-- [ ] Phase 3D: Add retry wrapper on apiFetch (~30 min)
+- [ ] **Agent B: Review master plan** ← START HERE
+- [ ] Both agents + Mike sign off on master plan
+- [ ] Phase A: Testing framework (~3 days)
+- [ ] Phase C: Full review bundle (9 categories)
+- [ ] Phase D: Production deployment (blocked on IT)
 
 ---
 
 ## Open Questions / Mental Context
 
-- **Why not offline?** Prototype runs localhost (no network hop). Full offline needs service worker + IndexedDB + conflict resolution for 23 endpoints — 2-3 weeks. A retry wrapper on apiFetch handles wifi blips in 30 min.
-- **What to test:** Pure functions first (route param validation, grid transforms, CHSA calcs) — no DOM needed. Then backend API routes (patient CRUD, scatterplot save/load).
-- **What NOT to test:** E2E (Playwright — too flaky while UI changes), component rendering (low value).
-- **Key question:** Is wifi reliability actually causing problems today, or is offline hypothetical?
+- **Master plan location:** `~/dev/NRT/docs/NRT-MASTER-PLAN.md` — 12 sections, all required format
+- **4 Conflicts found (need Mike's input):**
+  - CR1: STATUS.md says "Phase 3: Offline" but offline is removed from scatterplot roadmap
+  - CR2: System Design doc has offline specs that won't be built for scatterplot
+  - CR3: UI/UX Plan Phases 3-5 (component consolidation, polish, responsive) not sequenced — deferred to backlog?
+  - CR4: Two SDE specs at different paths — which is authoritative?
+- **7 Gaps found:** tasks/ dir missing, docs/modules/ dir missing, REVIEW_BUNDLE numbering conflicts (resolved: new reviews use slots 12-17), npm start ESM issue undiagnosed, IT status unknown
+- **Corrections review:** Resolved — Core's re-validation loop (option c) is the answer
 
 ---
 
 ## Notes for Mobile Session
 
-Review Phase 3 plan (`~/dev/NRT/docs/Phase3-Plan.md`) and decide:
-1. Agree with testing-first approach?
-2. Is wifi causing real user problems, or is offline a future concern?
-3. Any specific bugs/regressions tests should target first?
-4. Any Phase 3 ideas beyond testing + retry wrapper?
+**Agent B: Please review `~/dev/NRT/docs/NRT-MASTER-PLAN.md` and check off Section 12 items:**
+1. Plan completeness — no orphaned items?
+2. Phase sequence — dependencies make sense?
+3. Review process — executable by any agent?
+4. Ari feedback path — clear?
+5. Corrections review decision — sound?
+6. Could hand this to Craig Hospital IT?
+7. Any unresolved concerns?
+
+**Also: Mike needs to resolve Conflict Register items CR1-CR4.**
 
 ---
 
