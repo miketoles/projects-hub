@@ -15,43 +15,46 @@
 
 ## What We Did This Session
 
-- Created **NRT Unified Master Plan** (~600 lines, 12 required sections, 2-agent review)
-- Agent A (Claude Code) + Codex review cycle: 3 Medium fixes applied and verified, G5/B2 ESM gating added and verified
-- CR1-CR4 conflicts resolved by Mike (all locked with execution actions)
-- Agent A signed off. Mike signed off. **Agent B sign-off is the final gate.**
+- Completed full Phase A (testing framework), Phase C (9 compliance reviews), and Phase D prep (Track A)
+- Agent B reviewed and approved all phases — 64 tests passing (46 BE + 18 FE)
+- Locked AC-2 decision: staff-accessible scatterplot soft delete with safeguards (Option A)
+- Rebuilt stale prototype (now includes rate limiter, retry wrapper, B2 start script fix)
+- Final freshness sweep: all 4 status files consistent, review bundle current, prototype fresh
 
 ---
 
 ## Current State
 
-Master plan is finalized, reviewed, and internally consistent. Agent A + Mike approved. Agent B review is the last step before Phase A execution begins.
+All pre-deployment work is complete. Master plan approved, Phase C compliance reviews done (0 CRITICAL/HIGH code-level findings), Phase D prep Track A finished. 64 tests pass. Prototype rebuilt. Everything is **READY-WAITING-ON-B1** (target deployment environment access).
 
 ---
 
 ## What's Next
 
-- [ ] **Agent B: Review and sign off** ← ONLY REMAINING GATE
-- [ ] Phase A begins after sign-off
+- [ ] **B1 environment access** — TLS/proxy/AD header trust verification ← GATING
+- [ ] Phase D Track B: backup scheduling, post-deploy smoke test (4 user journeys)
+- [ ] Commit all uncommitted Phase A/C/D changes (13 modified files, +1507/-359 lines)
+- [ ] B2 backlog: full TypeScript strict-mode fix (Option 1) — tracked, deferred
 
 ---
 
 ## Open Questions / Mental Context
 
-- All conflicts (CR1-CR4) resolved and locked
-- B2 (npm start ESM) sequenced: diagnose in Phase A, fix in Phase C, gate Phase D
-- No open findings or unresolved items
+- All changes are uncommitted in git (HEAD is still `4836ea5`). Intentional workflow state but should commit before B1 work begins.
+- B2 (backend build) resolved via runtime TS execution (Option 2). Option 1 (full type fix) is tracked backlog.
+- Prototype zip is ~54MB at `prototypes/nrt-core-prototype.zip`, ready for Ari.
 
 ---
 
 ## Notes for Mobile Session
 
-See Agent B prompt below. Mike will paste it into Claude Mobile.
+Think about B1 environment logistics: who provides access, what's the timeline, any IT coordination needed? Also worth deciding when to commit the accumulated changes.
 
 ---
 
 ## From Mobile Session
 
-*(empty - paste Agent B findings here)*
+*(empty - paste mobile notes here)*
 
 ---
 
