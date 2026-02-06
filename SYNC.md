@@ -13,21 +13,26 @@
 
 ## What We Did This Session
 
-- Fresh session start — no new code changes yet
+- Triaged 3 feature requests into `tasks/todo.md` backlog:
+  1. PatientsView master-detail layout redesign [mike]
+  2. "ID: " prefix on patient identifiers [mike]
+  3. Scatterplot draft/save model redesign — no DB writes until explicit save, blank vs x visual distinction, date guard (no today/future), deep planning required [mike]
 
 ## What's Next
 
-- [ ] **B1 environment access** — TLS/proxy/AD header trust verification ← START HERE
-- [ ] Phase D Track B: backup scheduling, post-deploy smoke test
-- [ ] B2 backlog: full TypeScript strict-mode fix (Option 1) — deferred
+- [ ] **IT meeting Monday** — B1 environment access, dev server setup ← NEXT
+- [ ] Continue collecting triage feedback from Ari + Mike's own testing
+- [ ] When ready: deep plan for scatterplot save model redesign (biggest backlog item)
+- [ ] When ready: ui-expert agent + /plan for PatientsView layout
 
 ## Open Questions
 
-- B1 environment timeline: who provides access, what IT coordination is needed?
+- B1 environment: what does IT need from us Monday?
+- More triage items expected from Ari testing
 
 ## Notes for Mobile Session
 
-Think about B1 logistics and whether to hand Ari the fresh prototype zip (~54MB) now or wait for deployment.
+Monday IT meeting prep. Think about what questions to bring re: TLS/proxy/AD setup. Keep testing the prototype and triaging feedback — backlog is growing nicely.
 
 ## From Mobile Session
 
@@ -37,7 +42,7 @@ Think about B1 logistics and whether to hand Ari the fresh prototype zip (~54MB)
 
 | Project | Status | Next Action |
 |---------|--------|-------------|
-| NRT Core | :yellow_circle: | Waiting on B1 environment access |
+| NRT Core | :yellow_circle: | IT meeting Monday, collecting triage feedback |
 
 ---
 
