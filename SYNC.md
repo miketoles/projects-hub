@@ -1,41 +1,42 @@
 # Sync File for Claude
 
-*Last synced: February 6, 2026 by Claude Code*
+*Last synced: February 7, 2026 by Claude Code*
 
 ---
 
 ## Current Focus
 
-**Project:** ScatterplotCreator (L-Drive Unavailable Handling)
+**Project:** ScatterplotCreator — v1.0.3 release
 **Path:** `~/dev/ScatterplotCreator`
 **Run:** `npm start` (Electron app)
 
 ## What We Did This Session
 
-- Reviewed and approved Codex's Phase 1 (Messaging + Error Handling), Phase 2 (Last-Known Snapshot), and Phase 3 (Support Diagnostics) implementations — all passed strict code review
-- All acceptance criteria met across all 3 phases, no material findings
-- Drafted email to users about Daniel's VMware/Okta credential issue (not the app)
-- Confirmed both deferred Phase 1 items were also fixed by Codex in Phase 2 (persist-before-validate, retry/health-check race via promise queue)
+- Completed full 60-finding security remediation across 8 phases (0-7) using dual-agent workflow (Claude=planner/reviewer, Codex=builder)
+- Phase 5: PHI hardening — safeStorage cache encryption, 7-day TTL, temp PDF cleanup
+- Phase 6: Documentation refresh — updated all stale docs, removed dead pdfkit dep, bumped to v1.0.3
+- Phase 7: Supply chain cleanup — electron-builder 25→26.7.0, electron 40.0→40.2.1, install.bat hardening
+- Release packaging: built installer + portable ZIP (~90MB each), SHA-256 verified
 
 ## Current State
 
-All 3 phases of L-drive unavailable handling are code-reviewed and approved. The patch is ready to ship. Features: graceful read-only mode on network disconnect, automatic detection/recovery (30s health check), last-known data cache for offline viewing, Connection Status + Copy Diagnostics in Settings for support triage.
+v1.0.3 artifacts built and verified. All 8 remediation phases passed review with zero findings across 17 agent cycles. 28 unit tests, 0 npm vulnerabilities. Artifacts at `dist/NRT Scatterplot Creator Setup 1.0.3.exe` and `dist/NRT Scatterplot Creator-Portable-1.0.3.zip`.
 
 ## What's Next
 
-- [ ] **Ship the L-drive patch** — build installer, distribute to users ← NEXT
-- [ ] Full app review of ScatterplotCreator (security, code quality, UX) — plan first
-- [ ] Return to Parkour Runner game (Phase 5 Combat parked)
-- [ ] NRT Core: IT meeting Monday, continue triage feedback
+- [ ] Windows smoke test using `docs/test-matrix.md` ← START HERE
+- [ ] Deploy v1.0.3 to hospital L: drive / stakeholders
+- [ ] Parkour runner game (Phase 1 scaffolding planned)
 
 ## Open Questions
 
-- When to schedule the full ScatterplotCreator app review
-- Parkour Runner: pick up Phase 5 combat or revisit earlier phases first
+- Deployment timing — when to push v1.0.3 to the hospital team
+- Parkour Runner: name brainstorm (survival/zombie theme needs something grittier than "Parkour Chill")
+- The dual-agent workflow (Claude + Codex via HANDOFF.md) worked great — worth reusing
 
 ## Notes for Mobile Session
 
-The L-drive patch is fully reviewed and ready. Think about timing for the full app review vs getting back to the game. Daniel's credential issue email is drafted — send it out.
+Think about deployment timing for v1.0.3. The parkour runner plan is approved and waiting — Phaser 3 + Vite + TypeScript + Nano Banana Pro for HD pixel art.
 
 ## From Mobile Session
 
@@ -45,11 +46,10 @@ The L-drive patch is fully reviewed and ready. Think about timing for the full a
 
 | Project | Status | Next Action |
 |---------|--------|-------------|
-| ScatterplotCreator | :green_circle: | Ship L-drive patch, then full app review |
-| Parkour Runner | :yellow_circle: | Phase 5 combat parked, resume when ready |
-| NRT Core | :yellow_circle: | IT meeting Monday, collecting triage feedback |
+| ScatterplotCreator | :green_circle: | Smoke test on Windows, then deploy v1.0.3 |
+| Parkour Runner | :yellow_circle: | Phase 1 scaffolding ready to start |
+| NRT Core | :yellow_circle: | IT meeting, collecting triage feedback |
 
 ---
 
-*Fetch (cache-busting): https://cdn.jsdelivr.net/gh/miketoles/projects-hub@main/SYNC.md*
-*Fetch (fallback): https://raw.githubusercontent.com/miketoles/projects-hub/main/SYNC.md*
+*Fetch: https://raw.githubusercontent.com/miketoles/projects-hub/main/SYNC.md*
