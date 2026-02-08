@@ -1,6 +1,6 @@
 # Active Projects
 
-*Last updated: January 30, 2026*
+*Last updated: February 7, 2026*
 
 What I'm actively working on right now.
 
@@ -25,29 +25,31 @@ What I'm actively working on right now.
 - Auth: No login - dev mode user picker, prod reads X-Remote-User header
 - Database: SQLite (SQLCipher for encryption later)
 
-### 2. MikeText - Mac Local Edition
+### 2. MikeText - Multiplatform Text Editor
 - **Path:** `~/dev/MikeText`
-- **Status:** Complete and ready for daily use
-- **Tech:** Swift/SwiftUI, macOS 14+
+- **Status:** Multiplatform build complete (macOS + iPhone + iPad), pending runtime testing
+- **Tech:** Swift/SwiftUI, macOS 26.1 / iOS 26.1
 
-**What it is:** A clean, minimal text editor that shows files as-is. No proprietary formats, no smart quotes, no surprises.
+**What it is:** A clean, minimal text editor that shows files as-is. No proprietary formats, no smart quotes, no surprises. Now runs on macOS, iPhone, and iPad.
 
-**Features:**
+**Features (all platforms):**
 - Syntax highlighting for 12+ languages
 - 6 monospace fonts, font size controls
 - Dark/Light/Console color modes
-- Show invisibles (spaces, tabs, line endings)
-- Line numbers, word wrap toggles
-- Tabbed interface, session restore
-- Open Recent, all settings persist
+- Line numbers, word wrap, show invisibles toggles
 
-**Known issue:** Window size/position can reset when opening new docs mid-session.
+**macOS-specific:** Tabbed interface, session restore, Open Recent, invisibles layout manager
+**iOS-specific:** Settings sheet (gear button), compact iPhone status bar, iPad keyboard shortcuts (Cmd+Shift+L/W/H/I, Cmd+Plus/Minus/0)
+
+**Architecture:** Dual-agent workflow (Claude=planner/reviewer, Codex=builder) via HANDOFF.md. 4 phases completed (platform abstraction, iOS plain text, iOS highlighting, iOS polish). iCloud Drive sync testing deferred (Phase 3).
+
+**Next:** Runtime test Phase 4 on iPhone simulator, then commit.
 
 ### 3. ScatterplotCreator
 - **Path:** `~/dev/ScatterplotCreator`
 - **GitHub:** https://github.com/miketoles/Scatterplot
-- **Status:** In stakeholder review
-- **Next step:** Continue gathering feedback, address any issues
+- **Status:** v1.0.3 built (60-finding security remediation complete, 28 unit tests, 0 npm vulns)
+- **Next step:** Windows smoke test, then deploy to hospital L: drive
 
 ### 4. Games (Active Development)
 | Game | Path | Status | Port |
@@ -70,11 +72,10 @@ What I'm actively working on right now.
 
 ## This Week's Goals
 
-- [ ] NRT Phase 0: Project setup with lean stack
-- [ ] Port ScatterplotGrid preserving paint-it-in behavior
-- [ ] Present ScatterplotCreator to stakeholders
-- [ ] Fix Moon Rocks mobile scaling issues
-- [ ] Add Indoor scoring to 3dArchery
+- [ ] MikeText: Runtime test Phase 4 on iPhone simulator, commit
+- [ ] ScatterplotCreator: Windows smoke test v1.0.3, deploy
+- [ ] Parkour Runner: Phase 1 scaffolding (Phaser 3 + Vite + TypeScript)
+- [ ] NRT: Continue collecting triage feedback from IT meeting
 
 ---
 
@@ -92,8 +93,8 @@ What I'm actively working on right now.
 
 | Project | Completed | Notes |
 |---------|-----------|-------|
+| MikeText multiplatform build | Feb 7, 2026 | 4 phases complete (macOS + iOS/iPad), pending runtime test |
+| ScatterplotCreator v1.0.3 | Feb 7, 2026 | 60-finding security remediation, 8 phases, installer + portable ZIP |
 | MikeText Mac Local | Jan 29, 2026 | Full-featured, ready for daily use |
 | NRT Design Doc v2.2 | Jan 29, 2026 | 3,345 lines, comprehensive spec |
-| Shipwreck Explorer animations | Jan 28, 2026 | 2.5D diver with smooth flip transitions |
-| Moon Rocks v21 | Jan 28, 2026 | Footprints, aliens, oxygen warning |
 | ScatterplotCreator v1 | Jan 2026 | All 6 UI changes done |

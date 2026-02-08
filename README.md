@@ -32,6 +32,8 @@ Central command for all my projects. Enables seamless context-switching between 
 | `ACTIVE.md` | What's actively being worked on | When priorities change |
 | `PROJECTS.md` | Master index of all projects | When adding/completing projects |
 
+**Current focus (Feb 7):** MikeText multiplatform (macOS + iOS/iPad), ScatterplotCreator v1.0.3 deployment
+
 ## Templates
 
 Standard files for every project:

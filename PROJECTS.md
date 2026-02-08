@@ -1,6 +1,6 @@
 # All Projects
 
-*Last updated: January 30, 2026*
+*Last updated: February 7, 2026*
 
 A complete index of all Mike's projects in `~/dev/`, organized by status.
 
@@ -11,8 +11,8 @@ A complete index of all Mike's projects in `~/dev/`, organized by status.
 | Project | Description | Tech Stack | Status |
 |---------|-------------|------------|--------|
 | **NRT** | Neurorehabilitation Team Platform (TBI/ABA) | React, Vite, Express, SQLite | Design complete, rebuilding |
-| **MikeText** | Minimal text editor for Mac | Swift, SwiftUI | Complete, daily use |
-| **ScatterplotCreator** | Electron app for BCBAs to manage patient scatterplots | Electron, Node.js, HTML/CSS/JS | In stakeholder review |
+| **MikeText** | Multiplatform text editor (macOS + iOS/iPad) | Swift, SwiftUI | Multiplatform build complete, testing |
+| **ScatterplotCreator** | Electron app for BCBAs to manage patient scatterplots | Electron, Node.js, HTML/CSS/JS | v1.0.3 built, pending smoke test |
 | **3dArchery** | Multi-discipline archery scoring PWA | PWA, Netlify, Stripe | Expanding to v2 |
 | **hospital-mini-apps** | PWA platform for hospital iPhone mini-apps | Next.js 16, React 19, TypeScript | In development |
 
@@ -27,6 +27,7 @@ A complete index of all Mike's projects in `~/dev/`, organized by status.
 | **Bulldozer** | Satisfying digging game for toddlers | HTML5 Canvas, JavaScript | Feature complete |
 | **SpaceAttack** | Space Invaders arcade shooter | HTML5 Canvas, JavaScript | Complete |
 | **CatGame** | 3D stealth game (cat hunting prey) | Godot 4.x | Planning/Design |
+| **Parkour Runner** | Survival parkour runner (zombie theme) | Phaser 3, Vite, TypeScript | Plan approved, Phase 1 ready |
 | **TrashTruckGame** | 2D trash truck simulator | HTML5 Canvas | Planning |
 
 ---
@@ -56,7 +57,7 @@ A complete index of all Mike's projects in `~/dev/`, organized by status.
 
 | Project | Description | Status |
 |---------|-------------|--------|
-| **MikeText** | Mac text editor | Complete, daily use |
+| **MikeText** | Multiplatform text editor (macOS + iOS/iPad) | Multiplatform build complete |
 | **SpaceAttack** | Space Invaders arcade shooter | Complete |
 | **polymarket-arb-bot** | Polymarket arbitrage trading bot | Running on Railway |
 | **Spiritlogic Shared UI** | JUCE UI theme module | Active (reusable) |
@@ -90,7 +91,7 @@ A complete index of all Mike's projects in `~/dev/`, organized by status.
 ## By Technology
 
 **Swift/SwiftUI:** MikeText
-**JavaScript/TypeScript:** 3dArchery, Quiz App, hospital-mini-apps, Moon Rocks, Shipwreck Explorer, Bulldozer, SpaceAttack, TrashTruckGame
+**JavaScript/TypeScript:** 3dArchery, Quiz App, hospital-mini-apps, Moon Rocks, Shipwreck Explorer, Bulldozer, SpaceAttack, TrashTruckGame, Parkour Runner
 **React/Vite:** NRT (new), Quiz App
 **Electron:** ScatterplotCreator
 **Python:** polymarket-arb-bot, RBT99
