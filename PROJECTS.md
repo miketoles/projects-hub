@@ -1,6 +1,6 @@
 # All Projects
 
-*Last updated: February 7, 2026*
+*Last updated: February 8, 2026*
 
 A complete index of all Mike's projects in `~/dev/`, organized by status.
 
@@ -10,9 +10,10 @@ A complete index of all Mike's projects in `~/dev/`, organized by status.
 
 | Project | Description | Tech Stack | Status |
 |---------|-------------|------------|--------|
-| **NRT** | Neurorehabilitation Team Platform (TBI/ABA) | React, Vite, Express, SQLite | Design complete, rebuilding |
+| **NRT** | Neurorehabilitation Team Platform (TBI/ABA) | React 19, Vite 7, Express, SQLite | Core built, prototype installer working |
+| **SNF** | Skilled Nursing Facility software | TBD (design phase) | Design doc + customer discovery drafted |
 | **MikeText** | Multiplatform text editor (macOS + iOS/iPad) | Swift, SwiftUI | Multiplatform build complete, testing |
-| **ScatterplotCreator** | Electron app for BCBAs to manage patient scatterplots | Electron, Node.js, HTML/CSS/JS | v1.0.3 built, pending smoke test |
+| **ScatterplotCreator** | Electron app for BCBAs to manage patient scatterplots | Electron 40, Node.js, HTML/CSS/JS | v1.0.3 built, pending smoke test |
 | **3dArchery** | Multi-discipline archery scoring PWA | PWA, Netlify, Stripe | Expanding to v2 |
 | **hospital-mini-apps** | PWA platform for hospital iPhone mini-apps | Next.js 16, React 19, TypeScript | In development |
 
@@ -36,6 +37,7 @@ A complete index of all Mike's projects in `~/dev/`, organized by status.
 
 | Project | Description | Tech Stack | Notes |
 |---------|-------------|------------|-------|
+| **SNF** | Skilled Nursing Facility software | React SPA + Node.js (proposed) | DESIGN-DOC.md, CUSTOMER-DISCOVERY.md at `~/dev/SNF` |
 | **ABA-Platform** | Role-based ABA patient data platform | Web-based (TBD) | PRD.md, DATA_MODEL.md |
 | **SpiritlogicDB** | Mobile database app for non-technical users | Mobile (TBD) | Comprehensive DESIGN.md |
 | **Pantry** | Photo-to-grocery-list app | Web/Mobile | PRD.md, ROADMAP.md |
@@ -57,7 +59,6 @@ A complete index of all Mike's projects in `~/dev/`, organized by status.
 
 | Project | Description | Status |
 |---------|-------------|--------|
-| **MikeText** | Multiplatform text editor (macOS + iOS/iPad) | Multiplatform build complete |
 | **SpaceAttack** | Space Invaders arcade shooter | Complete |
 | **polymarket-arb-bot** | Polymarket arbitrage trading bot | Running on Railway |
 | **Spiritlogic Shared UI** | JUCE UI theme module | Active (reusable) |
@@ -85,6 +86,7 @@ A complete index of all Mike's projects in `~/dev/`, organized by status.
 | **Protocols** | ABA protocol templates (Word docs) |
 | **projects-hub** | This repo - central command |
 | **spiritlogic** | Main brand/landing site |
+| **agent-workflow** | HANDOFF_TEMPLATE.md for dual-agent (Claude+Codex) workflow |
 
 ---
 
@@ -92,7 +94,7 @@ A complete index of all Mike's projects in `~/dev/`, organized by status.
 
 **Swift/SwiftUI:** MikeText
 **JavaScript/TypeScript:** 3dArchery, Quiz App, hospital-mini-apps, Moon Rocks, Shipwreck Explorer, Bulldozer, SpaceAttack, TrashTruckGame, Parkour Runner
-**React/Vite:** NRT (new), Quiz App
+**React/Vite:** NRT Core, SNF (proposed)
 **Electron:** ScatterplotCreator
 **Python:** polymarket-arb-bot, RBT99
 **C++/JUCE:** AbletonPlugins, Spiritlogic Shared UI
@@ -113,8 +115,12 @@ All projects live in `~/dev/`:
 ## Quick Start Commands
 
 ```bash
-# NRT (after rebuild)
-cd ~/dev/nrt-scatterplot && npm run dev
+# NRT Core (development)
+cd ~/dev/NRT/core/frontend && npm run dev   # Frontend at localhost:5175
+cd ~/dev/NRT/core/backend && npm run dev    # Backend at localhost:3003
+
+# NRT Core (build prototype)
+cd ~/dev/NRT && ./scripts/build-prototype.sh  # Creates prototypes/nrt-core-prototype.zip
 
 # MikeText
 open ~/dev/MikeText/MikeText/MikeText.xcodeproj
