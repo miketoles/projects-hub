@@ -6,47 +6,43 @@
 
 ## Current Focus
 
-**Project:** ScatterplotCreator — v1.0.3 release
-**Path:** `~/dev/ScatterplotCreator`
-**Run:** `npm start` (Electron app)
+**Project:** MikeText — multiplatform (macOS + iOS/iPad)
+**Path:** `~/dev/MikeText`
+**Run:** Open `MikeText/MikeText.xcodeproj` in Xcode → Run
 
 ## What We Did This Session
 
-- Completed full 60-finding security remediation across 8 phases (0-7) using dual-agent workflow (Claude=planner/reviewer, Codex=builder)
-- Phase 5: PHI hardening — safeStorage cache encryption, 7-day TTL, temp PDF cleanup
-- Phase 6: Documentation refresh — updated all stale docs, removed dead pdfkit dep, bumped to v1.0.3
-- Phase 7: Supply chain cleanup — electron-builder 25→26.7.0, electron 40.0→40.2.1, install.bat hardening
-- Release packaging: built installer + portable ZIP (~90MB each), SHA-256 verified
+- Completed Phase 4 (iOS polish) code review — **PASS**
+- Verified settings sheet, compact status bar, line number gutter, iPad keyboard shortcuts
+- All 4 implementation phases (1, 2a, 2b, 4) built by Codex and reviewed by Claude
+- Both macOS and iOS simulator builds passing
 
 ## Current State
 
-v1.0.3 artifacts built and verified. All 8 remediation phases passed review with zero findings across 17 agent cycles. 28 unit tests, 0 npm vulnerabilities. Artifacts at `dist/NRT Scatterplot Creator Setup 1.0.3.exe` and `dist/NRT Scatterplot Creator-Portable-1.0.3.zip`.
+MikeText is a SwiftUI text editor with syntax highlighting, line numbers, invisibles, and multiple color modes. Originally macOS-only, now compiles for macOS + iPhone + iPad. Phase 4 changes are uncommitted (pending Mike's runtime verification). Phase 3 (iCloud Drive sync) is deferred — no code needed, just manual testing on real devices.
 
 ## What's Next
 
-- [ ] Windows smoke test using `docs/test-matrix.md` ← START HERE
-- [ ] Deploy v1.0.3 to hospital L: drive / stakeholders
-- [ ] Parkour runner game (Phase 1 scaffolding planned)
+- [ ] Runtime-test Phase 4 on iPhone simulator (settings sheet, line numbers, status bar) ← START HERE
+- [ ] Commit Phase 4 changes after verification
+- [ ] Phase 3: iCloud Drive sync testing on real device (checklist at `tasks/phase3-icloud-testing-checklist.md`)
+- [ ] ScatterplotCreator: smoke test v1.0.3 on Windows, then deploy
 
 ## Open Questions
 
-- Deployment timing — when to push v1.0.3 to the hospital team
-- Parkour Runner: name brainstorm (survival/zombie theme needs something grittier than "Parkour Chill")
-- The dual-agent workflow (Claude + Codex via HANDOFF.md) worked great — worth reusing
+- Whether to get a paid Apple Developer account (enables app-specific iCloud container, App Store)
+- Parkour Runner game still queued — Phase 1 scaffolding approved
 
 ## Notes for Mobile Session
 
-Think about deployment timing for v1.0.3. The parkour runner plan is approved and waiting — Phaser 3 + Vite + TypeScript + Nano Banana Pro for HD pixel art.
-
-## From Mobile Session
-
-*(empty — paste mobile notes here)*
+MikeText multiplatform is functionally complete. Think about whether you want to do the iCloud sync testing soon (needs real iPhone + same Apple ID) or move on to other projects.
 
 ## Active Projects Quick Status
 
 | Project | Status | Next Action |
 |---------|--------|-------------|
-| ScatterplotCreator | :green_circle: | Smoke test on Windows, then deploy v1.0.3 |
+| MikeText | :green_circle: | Runtime test Phase 4, then commit |
+| ScatterplotCreator | :green_circle: | Smoke test on Windows, deploy v1.0.3 |
 | Parkour Runner | :yellow_circle: | Phase 1 scaffolding ready to start |
 | NRT Core | :yellow_circle: | IT meeting, collecting triage feedback |
 
