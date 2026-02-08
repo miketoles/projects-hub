@@ -1,50 +1,54 @@
 # Sync File for Claude
 
-*Last synced: February 7, 2026 by Claude Code*
+*Last synced: February 8, 2026 by Claude Code*
 
 ---
 
 ## Current Focus
 
-**Project:** MikeText — multiplatform (macOS + iOS/iPad)
-**Path:** `~/dev/MikeText`
-**Run:** Open `MikeText/MikeText.xcodeproj` in Xcode → Run
+**Project:** NRT Core Prototype Installer + SNF Design
+**Path:** `~/dev/NRT` and `~/dev/SNF`
+**Run:** `./scripts/build-prototype.sh` → `prototypes/nrt-core-prototype.zip` (61MB)
 
 ## What We Did This Session
 
-- Completed Phase 4 (iOS polish) code review — **PASS**
-- Verified settings sheet, compact status bar, line number gutter, iPad keyboard shortcuts
-- All 4 implementation phases (1, 2a, 2b, 4) built by Codex and reviewed by Claude
-- Both macOS and iOS simulator builds passing
+- Fixed prototype installer (5 cycles): CJS build, CORS fix, batch variable bugs, server diagnostics
+- Tester-verified on Windows: unzip → start.bat → fully working (patients, doctors, CHSA, settings)
+- build-prototype.sh now downloads Windows better-sqlite3 prebuild on Mac — no Windows build step
+- Wrote comprehensive lessons to `tasks/lessons.md` (global + NRT-specific)
+- Established mandatory lessons-check procedure for both Claude and Codex
+- Drafted SNF design documents (DESIGN-DOC.md + CUSTOMER-DISCOVERY.md)
 
 ## Current State
 
-MikeText is a SwiftUI text editor with syntax highlighting, line numbers, invisibles, and multiple color modes. Originally macOS-only, now compiles for macOS + iPhone + iPad. Phase 4 changes are uncommitted (pending Mike's runtime verification). Phase 3 (iCloud Drive sync) is deferred — no code needed, just manual testing on real devices.
+NRT prototype installer is complete and working. Single Mac command builds a 61MB zip. Tester unzips and clicks start.bat. SNF design doc is drafted, pending customer call. All other projects unchanged from yesterday.
 
 ## What's Next
 
-- [ ] Runtime-test Phase 4 on iPhone simulator (settings sheet, line numbers, status bar) ← START HERE
-- [ ] Commit Phase 4 changes after verification
-- [ ] Phase 3: iCloud Drive sync testing on real device (checklist at `tasks/phase3-icloud-testing-checklist.md`)
-- [ ] ScatterplotCreator: smoke test v1.0.3 on Windows, then deploy
+- [ ] Send updated zip to Ari for extended testing ← START HERE
+- [ ] SNF customer call prep (review ~/dev/SNF/CUSTOMER-DISCOVERY.md)
+- [ ] MikeText: runtime test Phase 4 on iPhone simulator, commit
+- [ ] ScatterplotCreator: smoke test v1.0.3 on Windows, deploy
 
 ## Open Questions
 
-- Whether to get a paid Apple Developer account (enables app-specific iCloud container, App Store)
-- Parkour Runner game still queued — Phase 1 scaffolding approved
+- SNF facility contacted Mike — design doc ready, need to schedule the call
+- NRT prototype lessons captured — future prototypes should build in one pass
+- MikeText Phase 4 still uncommitted (pending runtime verification from yesterday)
 
 ## Notes for Mobile Session
 
-MikeText multiplatform is functionally complete. Think about whether you want to do the iCloud sync testing soon (needs real iPhone + same Apple ID) or move on to other projects.
+Review SNF customer discovery questions before the call. Think about which module to propose first (survey readiness recommended in design doc as biggest market gap).
 
 ## Active Projects Quick Status
 
 | Project | Status | Next Action |
 |---------|--------|-------------|
+| NRT Core | :green_circle: | Prototype working, send to tester |
+| SNF | :yellow_circle: | Design doc drafted, schedule customer call |
 | MikeText | :green_circle: | Runtime test Phase 4, then commit |
 | ScatterplotCreator | :green_circle: | Smoke test on Windows, deploy v1.0.3 |
 | Parkour Runner | :yellow_circle: | Phase 1 scaffolding ready to start |
-| NRT Core | :yellow_circle: | IT meeting, collecting triage feedback |
 
 ---
 
