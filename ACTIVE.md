@@ -1,6 +1,6 @@
 # Active Projects
 
-*Last updated: February 8, 2026*
+*Last updated: February 11, 2026*
 
 What I'm actively working on right now.
 
@@ -70,10 +70,14 @@ What I'm actively working on right now.
 | **Shipwreck Explorer** | `~/dev/ShipwreckExplorer` | Playable MVP (v33) | 8081 |
 | **Bulldozer** | `~/dev/bulldozer app` | Feature complete, grandson's favorite | 8082 |
 
-### 6. 3dArchery
+### 6. STX Archery (3dArchery)
 - **Path:** `~/dev/3dArchery`
-- **Status:** Expanding to v2 (multi-discipline)
-- **Next step:** Implement Indoor scoring (NFAA 300, Vegas)
+- **GitHub:** https://github.com/miketoles/3darchery
+- **Status:** Phase A complete (Steps 1-7). App runs on iOS simulator. 72 tests, 96 files committed.
+- **Next step:** Review Codex's Step 8 (ASA engine + ring renderer), then Steps 9-10
+
+**Stack:** Expo (React Native), TypeScript, @shopify/react-native-skia, react-native-gesture-handler, expo-sqlite
+**Architecture:** Three-agent workflow (CC=planner/reviewer, Codex=builder, CD=strategic reviewer) via HANDOFF.md
 
 ### 7. hospital-mini-apps
 - **Path:** `~/dev/hospital-mini-apps`
@@ -84,11 +88,11 @@ What I'm actively working on right now.
 
 ## This Week's Goals
 
-- [ ] Send NRT prototype zip to Ari for extended testing ← TOP PRIORITY
+- [ ] STX Archery: Review Codex's Step 8 build (ASA engine + ring renderer) ← TOP PRIORITY
+- [ ] Send NRT prototype zip to Ari for extended testing
 - [ ] SNF: Schedule customer call, review discovery template
 - [ ] MikeText: Runtime test Phase 4 on iPhone simulator, commit
 - [ ] ScatterplotCreator: Windows smoke test v1.0.3, deploy
-- [ ] Parkour Runner: Phase 1 scaffolding (Phaser 3 + Vite + TypeScript)
 
 ---
 
@@ -106,6 +110,7 @@ What I'm actively working on right now.
 
 | Project | Completed | Notes |
 |---------|-----------|-------|
+| STX Archery Phase A | Feb 11, 2026 | Steps 1-7 complete, 18 cycles, 72 tests, device verified |
 | NRT Core prototype installer | Feb 8, 2026 | 5 cycles, fully working on Windows, lessons captured |
 | SNF design documents | Feb 8, 2026 | DESIGN-DOC.md + CUSTOMER-DISCOVERY.md |
 | MikeText multiplatform build | Feb 7, 2026 | 4 phases complete (macOS + iOS/iPad), pending runtime test |
