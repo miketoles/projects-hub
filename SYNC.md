@@ -19,21 +19,21 @@
 - Updated spiritlogic.dev landing page for Apple Developer enrollment (company info, products, contact email, footer)
 - Reviewed Cycles 41-43 (UX polish, deploy/marketing) — all PASS
 - Cleaned up 28 uncommitted files from Cycles 37-41, committed in 4 logical groups and pushed
-- Added Tier 1 animal target art pack: 15 wildlife illustrations (1536x1024 PNG) + scoring-zones.json
+- Added Tier 1 animal target art pack: 16 wildlife illustrations (1536x1024 PNG) + scoring-zones.json
 - STX Archery Netlify deploy live with new landing page + privacy policy
+- Added mule deer doe (16th animal) + 2 field plates, repo fully clean
 
 ---
 
 ## Current State
 
-STX Archery v3.0 is feature-complete through Cycle 44. All 22 scoring engines built (151 tests), full app integration (scoring, equipment, GPS, weather, stats, export), premium/IAP via RevenueCat, promo code system, and marketing landing page deployed to Netlify. 29 test suites / 171 tests passing. Animal art pack (15 animals) committed with placeholder scoring zones. spiritlogic.dev updated with real company presence. Repo is fully clean.
+STX Archery v3.0 is feature-complete through Cycle 44. All 22 scoring engines built (151 tests), full app integration (scoring, equipment, GPS, weather, stats, export), premium/IAP via RevenueCat, promo code system, and marketing landing page deployed to Netlify. 29 test suites / 171 tests passing. Animal art pack (16 animals + 2 field plates) committed with placeholder scoring zones. spiritlogic.dev updated with real company presence. 3dArchery repo fully clean. DUNS application submitted, waiting for number.
 
 ---
 
 ## What's Next
 
 - [ ] Wait for DUNS number → Apple Developer Organization enrollment + Google Play ← BLOCKED
-- [ ] Get mule deer doe image from ChatGPT (16th animal, pending)
 - [ ] Step 22: App Store submission (EAS builds, real RevenueCat API keys, store assets)
 - [ ] Tune animal scoring zones against actual images (refine vitalCenter/radius values)
 - [ ] Step 23: CC Final Gate Report (ship/no-ship checklist)
@@ -43,7 +43,6 @@ STX Archery v3.0 is feature-complete through Cycle 44. All 22 scoring engines bu
 ## Open Questions
 
 - DUNS number pending — blocks Apple Developer + Google Play enrollment
-- Mule deer doe image still pending from ChatGPT (15 of 16 animals committed)
 - Android build not yet tested (deferred to Step 22)
 - Animal scoring zone coordinates are placeholder estimates — need visual overlay tuning
 

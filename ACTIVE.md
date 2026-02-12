@@ -73,8 +73,8 @@ What I'm actively working on right now.
 ### 6. STX Archery (3dArchery)
 - **Path:** `~/dev/3dArchery`
 - **GitHub:** https://github.com/miketoles/3darchery
-- **Status:** Feature-complete (Cycle 44). 22 scoring engines, full app integration, premium/IAP, promo codes, marketing site deployed. 29 suites / 171 tests. Animal art pack (15 animals) committed.
-- **Next step:** Step 22 (App Store submission: EAS builds, real API keys, store assets)
+- **Status:** Feature-complete (Cycle 44). 22 scoring engines, full app integration, premium/IAP, promo codes, marketing site deployed. 29 suites / 171 tests. Animal art pack (16 animals + 2 field plates) committed. DUNS submitted, awaiting number.
+- **Next step:** Wait for DUNS → Apple Developer enrollment → Step 22 (App Store submission)
 
 **Stack:** Expo (React Native), TypeScript, @shopify/react-native-skia, react-native-gesture-handler, expo-sqlite, react-native-purchases (RevenueCat)
 **Architecture:** Three-agent workflow (CC=planner/reviewer, Codex=builder) via HANDOFF.md
