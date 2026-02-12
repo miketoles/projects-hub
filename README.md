@@ -32,7 +32,7 @@ Central command for all my projects. Enables seamless context-switching between 
 | `ACTIVE.md` | What's actively being worked on | When priorities change |
 | `PROJECTS.md` | Master index of all projects | When adding/completing projects |
 
-**Current focus (Feb 11):** STX Archery Phase A complete (Steps 1-7), Codex building Step 8 overnight
+**Current focus (Feb 11):** STX Archery feature-complete (Cycle 44), landing page + animal art pack deployed, App Store submission next
 
 ## Templates
 

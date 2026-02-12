@@ -15,42 +15,41 @@
 
 ## What We Did This Session
 
-- Reviewed Step 5 (Round Manager + Undo) — PASS, zero MEDIUM+ concerns
-- Accepted Step 6 (Component Library) — 8 core + 7 stub components
-- Step 7 verified locally by Mike on iPhone 17 Pro sim (iOS 26.1) — all 11 checks pass
-- **Phase A complete** (Steps 1-7): scaffold, scoring, rendering, touch, round manager, components, device build
-- Committed and pushed 96 files (full Phase A) to GitHub
-- Wrote Step 8 (ASA Engine + Ring Target Renderer) prompt for Codex
+- Reviewed Cycles 41-43 (UX polish, deploy/marketing) — all PASS
+- Cleaned up 28 uncommitted files from Cycles 37-41, committed in 4 logical groups and pushed
+- Updated spiritlogic.dev landing page for Apple Developer enrollment (real company info, products, focus areas)
+- Added Tier 1 animal target art pack: 15 realistic wildlife illustrations (1536x1024 PNG) + scoring-zones.json
+- STX Archery Netlify deploy live with new landing page + privacy policy
 
 ---
 
 ## Current State
 
-STX Archery v2 rewrite is through Phase A. The app runs on iOS simulator with IBO 3D scoring, Skia rendering, touch interactions (place/move/delete arrows), round management with undo, and a component library. 72 tests pass across 7 suites. Codex is building Step 8 (ASA scoring engine + generic ring target renderer) overnight.
+STX Archery v3.0 is feature-complete through Cycle 44. All 22 scoring engines built (151 tests), full app integration (scoring, equipment, GPS, weather, stats, export), premium/IAP via RevenueCat, promo code system, and marketing landing page deployed to Netlify. 29 test suites / 171 tests passing. Animal art pack (15 animals) committed with placeholder scoring zones. spiritlogic.dev updated with real company presence. Repo is fully clean.
 
 ---
 
 ## What's Next
 
-- [ ] Review Codex's Step 8 build (ASA engine + ring renderer) ← START HERE
-- [ ] Steps 9-10: Indoor engines + all remaining 13 engines
-- [ ] Phase C: App shell (scoring screen, SQLite, navigation)
-- [ ] Phase D: Equipment, GPS, weather, stats, export
-- [ ] Phase E: RevenueCat IAP ($14.99), App Store submission
+- [ ] Step 22: App Store submission (EAS builds, real RevenueCat API keys, store assets) ← START HERE
+- [ ] Tune animal scoring zones against actual images (refine vitalCenter/radius values)
+- [ ] App icon finalization (1024x1024 for App Store)
+- [ ] Step 23: CC Final Gate Report (ship/no-ship checklist)
+- [ ] Apple Developer Organization enrollment (spiritlogic.dev is ready for review)
 
 ---
 
 ## Open Questions
 
-- Android build not yet tested (deferred to Step 14 Intermediate Gate)
-- ASA 12-ring zones use circular approximation (no SVG data for sub-zones)
-- Codex is building Step 8 overnight — review when Mike wakes up
+- Android build not yet tested (deferred to Step 22)
+- Animal scoring zone coordinates are placeholder estimates — need visual overlay tuning
+- Apple Developer enrollment timing: spiritlogic.dev landing page is live, ready for Apple review
 
 ---
 
 ## Notes for Mobile Session
 
-Phase A milestone: 18 cycles of CC+Codex collaboration produced a working app from scratch. Three-agent workflow (CC=planner/reviewer, Codex=builder, CD=strategic reviewer) is proven effective. Phase B (all 22+ scoring engines) is next — the biggest volume of work.
+STX Archery is essentially done. 44 cycles of CC+Codex collaboration took it from architecture plan to feature-complete app with marketing site. The remaining work is all submission/deployment: EAS builds, API keys, store listing, and the final gate review. The animal art pack adds visual polish for 3D target rendering.
 
 ---
 

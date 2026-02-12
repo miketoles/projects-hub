@@ -73,11 +73,12 @@ What I'm actively working on right now.
 ### 6. STX Archery (3dArchery)
 - **Path:** `~/dev/3dArchery`
 - **GitHub:** https://github.com/miketoles/3darchery
-- **Status:** Phase A complete (Steps 1-7). App runs on iOS simulator. 72 tests, 96 files committed.
-- **Next step:** Review Codex's Step 8 (ASA engine + ring renderer), then Steps 9-10
+- **Status:** Feature-complete (Cycle 44). 22 scoring engines, full app integration, premium/IAP, promo codes, marketing site deployed. 29 suites / 171 tests. Animal art pack (15 animals) committed.
+- **Next step:** Step 22 (App Store submission: EAS builds, real API keys, store assets)
 
-**Stack:** Expo (React Native), TypeScript, @shopify/react-native-skia, react-native-gesture-handler, expo-sqlite
-**Architecture:** Three-agent workflow (CC=planner/reviewer, Codex=builder, CD=strategic reviewer) via HANDOFF.md
+**Stack:** Expo (React Native), TypeScript, @shopify/react-native-skia, react-native-gesture-handler, expo-sqlite, react-native-purchases (RevenueCat)
+**Architecture:** Three-agent workflow (CC=planner/reviewer, Codex=builder) via HANDOFF.md
+**Landing page:** https://stx-archery.com (Netlify) + spiritlogic.dev updated
 
 ### 7. hospital-mini-apps
 - **Path:** `~/dev/hospital-mini-apps`
@@ -88,11 +89,11 @@ What I'm actively working on right now.
 
 ## This Week's Goals
 
-- [ ] STX Archery: Review Codex's Step 8 build (ASA engine + ring renderer) ← TOP PRIORITY
+- [ ] STX Archery: Step 22 — App Store submission (EAS builds, API keys, store assets) ← TOP PRIORITY
+- [ ] STX Archery: Tune animal scoring zones against actual images
+- [ ] Apple Developer Organization enrollment (spiritlogic.dev ready for review)
 - [ ] Send NRT prototype zip to Ari for extended testing
 - [ ] SNF: Schedule customer call, review discovery template
-- [ ] MikeText: Runtime test Phase 4 on iPhone simulator, commit
-- [ ] ScatterplotCreator: Windows smoke test v1.0.3, deploy
 
 ---
 
@@ -110,6 +111,8 @@ What I'm actively working on right now.
 
 | Project | Completed | Notes |
 |---------|-----------|-------|
+| STX Archery feature-complete | Feb 11, 2026 | 44 cycles, 22 engines, 171 tests, landing page + animal art deployed |
+| spiritlogic.dev update | Feb 11, 2026 | Real company landing page for Apple Developer enrollment |
 | STX Archery Phase A | Feb 11, 2026 | Steps 1-7 complete, 18 cycles, 72 tests, device verified |
 | NRT Core prototype installer | Feb 8, 2026 | 5 cycles, fully working on Windows, lessons captured |
 | SNF design documents | Feb 8, 2026 | DESIGN-DOC.md + CUSTOMER-DISCOVERY.md |
