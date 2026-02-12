@@ -15,10 +15,11 @@
 
 ## What We Did This Session
 
+- Submitted D&B DUNS number application (BIR form, financial statement, CO Articles of Org, EIN letter)
+- Updated spiritlogic.dev landing page for Apple Developer enrollment (company info, products, contact email, footer)
 - Reviewed Cycles 41-43 (UX polish, deploy/marketing) — all PASS
 - Cleaned up 28 uncommitted files from Cycles 37-41, committed in 4 logical groups and pushed
-- Updated spiritlogic.dev landing page for Apple Developer enrollment (real company info, products, focus areas)
-- Added Tier 1 animal target art pack: 15 realistic wildlife illustrations (1536x1024 PNG) + scoring-zones.json
+- Added Tier 1 animal target art pack: 15 wildlife illustrations (1536x1024 PNG) + scoring-zones.json
 - STX Archery Netlify deploy live with new landing page + privacy policy
 
 ---
@@ -31,19 +32,20 @@ STX Archery v3.0 is feature-complete through Cycle 44. All 22 scoring engines bu
 
 ## What's Next
 
-- [ ] Step 22: App Store submission (EAS builds, real RevenueCat API keys, store assets) ← START HERE
+- [ ] Wait for DUNS number → Apple Developer Organization enrollment + Google Play ← BLOCKED
+- [ ] Get mule deer doe image from ChatGPT (16th animal, pending)
+- [ ] Step 22: App Store submission (EAS builds, real RevenueCat API keys, store assets)
 - [ ] Tune animal scoring zones against actual images (refine vitalCenter/radius values)
-- [ ] App icon finalization (1024x1024 for App Store)
 - [ ] Step 23: CC Final Gate Report (ship/no-ship checklist)
-- [ ] Apple Developer Organization enrollment (spiritlogic.dev is ready for review)
 
 ---
 
 ## Open Questions
 
+- DUNS number pending — blocks Apple Developer + Google Play enrollment
+- Mule deer doe image still pending from ChatGPT (15 of 16 animals committed)
 - Android build not yet tested (deferred to Step 22)
 - Animal scoring zone coordinates are placeholder estimates — need visual overlay tuning
-- Apple Developer enrollment timing: spiritlogic.dev landing page is live, ready for Apple review
 
 ---
 
