@@ -1,6 +1,6 @@
 # Sync File for Claude
 
-*Last synced: February 11, 2026 by Claude Code*
+*Last synced: February 12, 2026 by Claude Code*
 
 ---
 
@@ -15,42 +15,40 @@
 
 ## What We Did This Session
 
-- Submitted D&B DUNS number application (BIR form, financial statement, CO Articles of Org, EIN letter)
-- Updated spiritlogic.dev landing page for Apple Developer enrollment (company info, products, contact email, footer)
-- Reviewed Cycles 41-43 (UX polish, deploy/marketing) — all PASS
-- Cleaned up 28 uncommitted files from Cycles 37-41, committed in 4 logical groups and pushed
-- Added Tier 1 animal target art pack: 16 wildlife illustrations (1536x1024 PNG) + scoring-zones.json
-- STX Archery Netlify deploy live with new landing page + privacy policy
-- Added mule deer doe (16th animal) + 2 field plates, repo fully clean
+- Architecture review of PNG-RENDERER-SPEC.md (B1 migration: SVG paths -> PNG images + elliptical scoring)
+- Found 1 BLOCKER (ASA validation throws on legacy IDs) + 2 MEDIUM + 2 LOW issues
+- Applied 5 patches to spec, promoted to v1.1 FINAL
+- Updated HANDOFF.md (Cycle 45), wrote PROMPT FOR CODEX handoff block
+- Codex build in progress: PNG renderer migration across rendering, scoring, and round manager layers
 
 ---
 
 ## Current State
 
-STX Archery v3.0 is feature-complete through Cycle 44. All 22 scoring engines built (151 tests), full app integration (scoring, equipment, GPS, weather, stats, export), premium/IAP via RevenueCat, promo code system, and marketing landing page deployed to Netlify. 29 test suites / 171 tests passing. Animal art pack (16 animals + 2 field plates) committed with placeholder scoring zones. spiritlogic.dev updated with real company presence. 3dArchery repo fully clean. DUNS application submitted, waiting for number.
+STX Archery is feature-complete (Cycle 44, 29 suites / 206 tests). Animal catalog module built (17 animals, pack system). PNG renderer migration spec reviewed and finalized — Codex is building it now (Cycle 45). This replaces SVG-path animal rendering with PNG images + elliptical vital zone scoring. The spec touches 8 files: renderer, IBO/WA-3D/ASA scoring engines, round manager, shoot screen, types, and shared utilities. DUNS application still pending (blocks Apple Developer enrollment).
 
 ---
 
 ## What's Next
 
-- [ ] Wait for DUNS number → Apple Developer Organization enrollment + Google Play ← BLOCKED
+- [ ] Review Codex's PNG renderer build (Cycle 45) when complete <- NEXT
+- [ ] Wait for DUNS number -> Apple Developer Organization enrollment + Google Play <- BLOCKED
 - [ ] Step 22: App Store submission (EAS builds, real RevenueCat API keys, store assets)
-- [ ] Tune animal scoring zones against actual images (refine vitalCenter/radius values)
-- [ ] Step 23: CC Final Gate Report (ship/no-ship checklist)
+- [ ] Visual tuning of zone fractions (0.3/0.6/1.0/2.5) after first PNG render test
 
 ---
 
 ## Open Questions
 
 - DUNS number pending — blocks Apple Developer + Google Play enrollment
-- Android build not yet tested (deferred to Step 22)
-- Animal scoring zone coordinates are placeholder estimates — need visual overlay tuning
+- Zone ring fractions (0.3/0.6/1.0/2.5) may need visual tuning after first PNG render on device
+- ASA_TARGET_CENTERS only maps 5 legacy animals — new catalog IDs fall back to canvas center (acceptable for now)
 
 ---
 
 ## Notes for Mobile Session
 
-STX Archery is essentially done. 44 cycles of CC+Codex collaboration took it from architecture plan to feature-complete app with marketing site. The remaining work is all submission/deployment: EAS builds, API keys, store listing, and the final gate review. The animal art pack adds visual polish for 3D target rendering.
+PNG renderer migration is the last major code change before App Store submission. Once Codex finishes and CC reviews, the app will render actual animal PNG images instead of SVG silhouettes, with elliptical scoring zones. After that it's submission mechanics: EAS builds, API keys, store listing, final gate review.
 
 ---
 
