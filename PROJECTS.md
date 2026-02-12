@@ -14,7 +14,7 @@ A complete index of all Mike's projects in `~/dev/`, organized by status.
 | **SNF** | Skilled Nursing Facility software | TBD (design phase) | Design doc + customer discovery drafted |
 | **MikeText** | Multiplatform text editor (macOS + iOS/iPad) | Swift, SwiftUI | Multiplatform build complete, testing |
 | **ScatterplotCreator** | Electron app for BCBAs to manage patient scatterplots | Electron 40, Node.js, HTML/CSS/JS | v1.0.3 built, pending smoke test |
-| **STX Archery** | Multi-discipline archery scoring app | Expo, React Native, Skia, TypeScript | PNG renderer migration (Cycle 45), Codex building |
+| **STX Archery** | Multi-discipline archery scoring app | Expo, React Native, Skia, TypeScript | B2 approved for merge (37 suites / 223 tests), sim testing |
 | **hospital-mini-apps** | PWA platform for hospital iPhone mini-apps | Next.js 16, React 19, TypeScript | In development |
 
 ---
