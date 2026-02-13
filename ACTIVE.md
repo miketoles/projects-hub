@@ -73,8 +73,8 @@ What I'm actively working on right now.
 ### 6. STX Archery (3dArchery)
 - **Path:** `~/dev/3dArchery`
 - **GitHub:** https://github.com/miketoles/3darchery
-- **Status:** B1 (PNG renderer) + B2 (Animal Selector + Course Templates) both complete. 37 suites / 223 tests. B2 approved for merge, sim testing in progress. DUNS submitted, awaiting number.
-- **Next step:** Sim-test B2 → merge → DUNS → App Store submission
+- **Status:** B3 merged (animal names + target nav), B4 approved (UX audit fixes). 38 suites / 234 tests. 20-finding UX audit complete, critical/high items fixed. DUNS pending.
+- **Next step:** Sim-test B4 → merge → DUNS → TestFlight → App Store submission
 
 **Stack:** Expo (React Native), TypeScript, @shopify/react-native-skia, react-native-gesture-handler, expo-sqlite, react-native-purchases (RevenueCat)
 **Architecture:** Three-agent workflow (CC=planner/reviewer, Codex=builder) via HANDOFF.md
@@ -89,9 +89,9 @@ What I'm actively working on right now.
 
 ## This Week's Goals
 
-- [ ] STX Archery: Sim-test B2 → merge to main ← TOP PRIORITY
-- [ ] STX Archery: Step 22 — App Store submission (EAS builds, API keys, store assets)
-- [ ] Apple Developer Organization enrollment (DUNS pending)
+- [ ] STX Archery: Sim-test B4 UX fixes → merge ← TOP PRIORITY
+- [ ] DUNS → Apple Developer enrollment → TestFlight
+- [ ] STX Archery: Address 10 deferred UX items, beta testing
 - [ ] Send NRT prototype zip to Ari for extended testing
 - [ ] SNF: Schedule customer call, review discovery template
 
@@ -111,7 +111,9 @@ What I'm actively working on right now.
 
 | Project | Completed | Notes |
 |---------|-----------|-------|
-| STX Archery B2 approved | Feb 12, 2026 | Animal Selector + Course Templates: 51 cycles, 37 suites / 223 tests, all 7 review fixes applied |
+| STX Archery B4 approved | Feb 12, 2026 | UX audit fixes: navigation safety, confirmation dialogs, save feedback, tab refresh, dedup |
+| STX Archery B3 merged | Feb 12, 2026 | Animal names in summary/export, target navigation, export message fix |
+| STX Archery B2 merged | Feb 12, 2026 | Animal Selector + Course Templates: 51 cycles, 37 suites / 223 tests |
 | STX Archery PNG spec review | Feb 12, 2026 | Architecture review of PNG-RENDERER-SPEC, 5 patches applied, v1.1 FINAL |
 | STX Archery feature-complete | Feb 11, 2026 | 44 cycles, 22 engines, 171 tests, landing page + animal art deployed |
 | spiritlogic.dev update | Feb 11, 2026 | Real company landing page for Apple Developer enrollment |
