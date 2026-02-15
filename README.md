@@ -32,7 +32,7 @@ Central command for all my projects. Enables seamless context-switching between 
 | `ACTIVE.md` | What's actively being worked on | When priorities change |
 | `PROJECTS.md` | Master index of all projects | When adding/completing projects |
 
-**Current focus (Feb 12):** STX Archery B4 (UX Audit Fixes) APPROVED — 38 suites / 234 tests. Sim-test then merge. B3 (animal names + nav) already merged.
+**Current focus (Feb 14):** STX Archery B11 (Button-Based Precision Shot Placement) sim-tested — 45 suites / 279 tests. "Feels much better, much more natural and simpler."
 
 ## Templates
 

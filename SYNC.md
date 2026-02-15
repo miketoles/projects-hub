@@ -1,6 +1,6 @@
 # Sync File for Claude
 
-*Last synced: Feb 12, 2026 by Claude Code*
+*Last synced: Feb 14, 2026 by Claude Code*
 
 ---
 
@@ -15,48 +15,45 @@
 
 ## What We Did This Session
 
-- B3 (Cycle 52): Animal names in summary/export + target navigation — MERGED
-- Fixed export success messages ("Shared" → "Saved... to disk")
-- Ran comprehensive 20-finding UX audit across all app screens
-- B4 (Cycle 53): UX audit fixes — 7 tasks, APPROVED FOR MERGE
-  - Added back buttons to Quick Shoot + Export (users were trapped)
-  - Confirmation dialogs for destructive actions (delete round/bow/arrow, clear all data)
-  - Equipment create save feedback, bow edit save confirmation
-  - Rounds + Stats tabs auto-refresh on focus
-  - Deduped resolveAnimalShortName, PDF scorecard display names
-- Created beta tester guide (docs/TESTER-GUIDE.md)
-- Gates: 38 suites / 234 tests, all green
+- B11: Button-based precision shot placement — replaced broken gesture-mode-switching with explicit UI buttons (KISS)
+- Three modes working: Normal (tap to place), Zoom (long-press aim + quick tap), Edit (tap-select or hold-drag)
+- Added quick-tap support in Zoom mode after sim-testing feedback
+- Mike sim-tested: "This feels much better, much more natural and simpler"
+- Crossed off ring-specific tones (not needed with simplified placement)
+- Gates: 45 suites / 279 tests, tsc clean
 
 ---
 
 ## Current State
 
-App is feature-rich: scoring, animal targets, course templates, equipment, exports (CSV/PDF/JSON/share card), stats. B4 UX fixes approved, needs sim-test before merge. 10 deferred UX items remain (tab icons, "Shoot Again" fix, etc). DUNS pending for Apple Developer enrollment.
+App has 11 builds complete (B1-B11). Scoring, animal targets, course templates, equipment, exports, stats, session resume, and now button-based precision shot placement all working. B11 is the biggest UX win — eliminates 5 categories of gesture bugs from B8-B10 by using buttons for mode switching instead of gesture timing. Weather warning color (red → green) is a minor pending polish item. DUNS still pending for Apple Developer enrollment.
 
 ---
 
 ## What's Next
 
-- [ ] Sim-test B4 UX fixes → merge ← START HERE
+- [ ] More sim-testing of B11 Zoom/Edit modes ← START HERE
+- [ ] Weather warning color: red → green (small polish)
 - [ ] DUNS → Apple Developer enrollment → TestFlight
-- [ ] Address deferred UX items (10 remaining)
-- [ ] Beta testing with TESTER-GUIDE.md
-- [ ] App Store submission (EAS builds, store assets)
+- [ ] Address remaining deferred UX items
+- [ ] Beta testing + App Store submission
 
 ---
 
 ## Open Questions / Mental Context
 
-- Equipment create "stale bow list" bug: code looks correct but seen once — needs runtime verification
-- Mike prefers VS Code plugin over Desktop (faster)
+- Debugger warning seen once during Zoom mode testing — could not reproduce, likely hot reload artifact
+- B11 approach: mode switching via buttons only, no gesture timing disambiguation — proven stable
+- Mike prefers VS Code plugin for Claude Code
 - TestFlight needs Apple Developer ($99 individual or org with DUNS)
 
 ---
 
 ## Notes for Mobile Session
 
-- 10 deferred UX items in HANDOFF.md — good to prioritize on mobile
-- Beta tester recruitment, App Store listing copy, pricing strategy
+- B11 Zoom mode feel: long-press shows reticle at finger, micro-adjust while holding, release to place ("thwap")
+- Edit mode: tap arrow to select → tap new position, OR hold-drag
+- Deferred UX items still in HANDOFF.md — good to prioritize on mobile
 
 ---
 
