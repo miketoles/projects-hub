@@ -1,6 +1,6 @@
 # Sync File for Claude
 
-*Last synced: Feb 17, 2026 by Claude Code*
+*Last synced: Feb 18, 2026 by Claude Code*
 
 ---
 
@@ -13,35 +13,31 @@
 
 ## What We Did This Session
 
-- Reviewed + approved B14a (GPS round tracking) and B14b (target location adjustment + GPS rounds indicator)
-- Fixed splash screen + adaptive icon (were white placeholders, now navy/gold STX)
-- Wrote full v1.0 completion plan: `docs/V1-COMPLETION-PLAN.md`
-- Wrote full pricing + product strategy: `docs/PRICING-STRATEGY.md`
-- Triangulated pricing with CC + Codex + ChatGPT — unanimous verdict: **$19.99 launch**
-- Resolved all v1.0 build decisions (GPS checkpoints, promo label migration, free tier, Android)
+- Reviewed B14c (BugCatcher) spec — CC + Codex joint design review
+- Finalized BugCatcher architecture: registry/bridge pattern for snapshot access
+- Updated V1-COMPLETION-PLAN.md: B14c inserted before B15a, items renumbered
+- Copied BugCatcher-Spec-v3.3.md into repo docs (from iCloud Drive)
+- All planning docs committed to 3dArchery main branch
 
 ## What's Next
 
 - [ ] Archive `docs/ADVANCED-MANAGEMENT.md` + `docs/PREMIUM-FEATURES.md` to `docs/archive/` ← START HERE (5 min, no build)
+- [ ] B14c: Build BugCatcher (install deps first: react-native-view-shot, jszip, expo-file-system, expo-sharing)
 - [ ] B15a: Promo code redesign (named codes + V5 migration for label column)
-- [ ] B15b+c+d: GPS refactor (toggle + RDP simplification + checkpoint saves + resume merge)
-- [ ] B16: Target photos (expo-image-picker + V5 migration)
-- [ ] B17: Android / Google Play setup
-- [ ] DUNS → Apple Developer enrollment → TestFlight → iOS submission
+- [ ] B15b+c+d: GPS refactor (toggle + RDP + checkpoint saves + resume merge)
+- [ ] B16: Target photos, B17: Android/Google Play, then final gate pass
 
 ## Open Questions
 
-- Free tier: 5 rounds (Mike confirmed) vs 7 rounds (Codex preferred) — Mike said 5, but worth one more thought
-- Price raise trigger: Tiny Coach + 25-50 ratings + ≥3-5% paid conversion — all confirmed
+- Error boundary: add one as part of B14c (gives captureFrame site), or defer to post-v1.0?
+- Free tier: 5 rounds (Mike confirmed) — still worth 1 more thought vs 7 (Codex preferred)
 
 ## Notes for Mobile Session
 
-- **Pricing is locked: $19.99 launch → $29.99 when Tiny Coach ships (with market gates)**
-- Free tier = 5 rounds across all formats, full shot placement visible (not hidden behind paywall)
-- The key build insight to ponder: B15b+c+d are one combined GPS cycle — GPS toggle, path simplification (RDP), and checkpoint saves at each target transition all go together
-- "Session" in the codebase = a round of play — user-facing copy should always say "rounds"
-- App Store subtitle locked: "Shot Placement. Course Maps. GPS Rounds."
-- Best copy line: "Less than the cost of one arrow. Tracks every arrow you'll ever shoot."
+- **BugCatcher is B14c — build it BEFORE the promo code redesign (B15a)**
+- Key insight: BugCatcher `core.ts` is a singleton; can't call hooks. Uses registry pattern — shoot screen registers GPS/round bridge while mounted, root layout registers premium bridge. Core merges at capture time.
+- `promoLabel` will be null in BugCatcher snapshots until B15a ships — that's OK, handle gracefully.
+- Pre-build fix: spec's premium source enum (`purchase|promo|legacy|none`) must match code (`revenuecat|promo-code|legacy-code|dev-override|none`).
 
 ## From Mobile Session
 
@@ -51,7 +47,7 @@
 
 | Project | Status | Next Action |
 |---------|--------|-------------|
-| STX Archery | 🟡 V1 planning done, building | Archive docs → B15a (promo) |
+| STX Archery | 🟡 V1 planning done, building | Archive docs → B14c (BugCatcher) |
 | NRT Core | 🟡 Prototype built | Send to Ari for testing |
 | ScatterplotCreator | 🟡 v1.0.3 built | Windows smoke test → L: drive |
 | SNF | 🔵 Design doc ready | Schedule customer call |
