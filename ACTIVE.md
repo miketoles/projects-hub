@@ -1,6 +1,6 @@
 # Active Projects
 
-*Last updated: February 14, 2026*
+*Last updated: February 17, 2026*
 
 What I'm actively working on right now.
 
@@ -73,8 +73,9 @@ What I'm actively working on right now.
 ### 6. STX Archery (3dArchery)
 - **Path:** `~/dev/3dArchery`
 - **GitHub:** https://github.com/miketoles/3darchery
-- **Status:** B11 complete (button-based precision shot placement). 45 suites / 279 tests. 11 builds done (B1-B11). Sim-tested: "feels much better." DUNS pending.
-- **Next step:** More sim-testing → weather warning color fix → DUNS → TestFlight → App Store submission
+- **Status:** B14b complete. 58 suites / 364 tests. v1.0 plan + pricing strategy locked. DUNS pending for iOS.
+- **Pricing:** $19.99 launch → $29.99 at v1.2 (Tiny Coach + market gates). Free: 5 rounds all formats.
+- **Next step:** Archive legacy docs → B15a (promo redesign) → B15b+c+d (GPS refactor) → B16 (photos) → B17 (Android)
 
 **Stack:** Expo (React Native), TypeScript, @shopify/react-native-skia, react-native-gesture-handler, expo-sqlite, react-native-purchases (RevenueCat)
 **Architecture:** Three-agent workflow (CC=planner/reviewer, Codex=builder) via HANDOFF.md

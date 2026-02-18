@@ -32,7 +32,7 @@ Central command for all my projects. Enables seamless context-switching between 
 | `ACTIVE.md` | What's actively being worked on | When priorities change |
 | `PROJECTS.md` | Master index of all projects | When adding/completing projects |
 
-**Current focus (Feb 14):** STX Archery B11 (Button-Based Precision Shot Placement) sim-tested — 45 suites / 279 tests. "Feels much better, much more natural and simpler."
+**Current focus (Feb 17):** STX Archery v1.0 planning complete — pricing locked ($19.99 launch → $29.99 at Tiny Coach), all build decisions resolved. 58 suites / 364 tests. Ready to build B15a.
 
 ## Templates
 

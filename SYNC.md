@@ -1,68 +1,63 @@
 # Sync File for Claude
 
-*Last synced: Feb 14, 2026 by Claude Code*
+*Last synced: Feb 17, 2026 by Claude Code*
 
 ---
 
 ## Current Focus
 
 **Project:** STX Archery (3dArchery)
-**Repo:** https://github.com/miketoles/3darchery
 **Path:** `~/dev/3dArchery`
+**Branch:** main
 **Run:** `cd ~/dev/3dArchery && npx expo run:ios`
-
----
 
 ## What We Did This Session
 
-- B11: Button-based precision shot placement — replaced broken gesture-mode-switching with explicit UI buttons (KISS)
-- Three modes working: Normal (tap to place), Zoom (long-press aim + quick tap), Edit (tap-select or hold-drag)
-- Added quick-tap support in Zoom mode after sim-testing feedback
-- Mike sim-tested: "This feels much better, much more natural and simpler"
-- Crossed off ring-specific tones (not needed with simplified placement)
-- Gates: 45 suites / 279 tests, tsc clean
-
----
-
-## Current State
-
-App has 11 builds complete (B1-B11). Scoring, animal targets, course templates, equipment, exports, stats, session resume, and now button-based precision shot placement all working. B11 is the biggest UX win — eliminates 5 categories of gesture bugs from B8-B10 by using buttons for mode switching instead of gesture timing. Weather warning color (red → green) is a minor pending polish item. DUNS still pending for Apple Developer enrollment.
-
----
+- Reviewed + approved B14a (GPS round tracking) and B14b (target location adjustment + GPS rounds indicator)
+- Fixed splash screen + adaptive icon (were white placeholders, now navy/gold STX)
+- Wrote full v1.0 completion plan: `docs/V1-COMPLETION-PLAN.md`
+- Wrote full pricing + product strategy: `docs/PRICING-STRATEGY.md`
+- Triangulated pricing with CC + Codex + ChatGPT — unanimous verdict: **$19.99 launch**
+- Resolved all v1.0 build decisions (GPS checkpoints, promo label migration, free tier, Android)
 
 ## What's Next
 
-- [ ] More sim-testing of B11 Zoom/Edit modes ← START HERE
-- [ ] Weather warning color: red → green (small polish)
-- [ ] DUNS → Apple Developer enrollment → TestFlight
-- [ ] Address remaining deferred UX items
-- [ ] Beta testing + App Store submission
+- [ ] Archive `docs/ADVANCED-MANAGEMENT.md` + `docs/PREMIUM-FEATURES.md` to `docs/archive/` ← START HERE (5 min, no build)
+- [ ] B15a: Promo code redesign (named codes + V5 migration for label column)
+- [ ] B15b+c+d: GPS refactor (toggle + RDP simplification + checkpoint saves + resume merge)
+- [ ] B16: Target photos (expo-image-picker + V5 migration)
+- [ ] B17: Android / Google Play setup
+- [ ] DUNS → Apple Developer enrollment → TestFlight → iOS submission
 
----
+## Open Questions
 
-## Open Questions / Mental Context
-
-- Debugger warning seen once during Zoom mode testing — could not reproduce, likely hot reload artifact
-- B11 approach: mode switching via buttons only, no gesture timing disambiguation — proven stable
-- Mike prefers VS Code plugin for Claude Code
-- TestFlight needs Apple Developer ($99 individual or org with DUNS)
-
----
+- Free tier: 5 rounds (Mike confirmed) vs 7 rounds (Codex preferred) — Mike said 5, but worth one more thought
+- Price raise trigger: Tiny Coach + 25-50 ratings + ≥3-5% paid conversion — all confirmed
 
 ## Notes for Mobile Session
 
-- B11 Zoom mode feel: long-press shows reticle at finger, micro-adjust while holding, release to place ("thwap")
-- Edit mode: tap arrow to select → tap new position, OR hold-drag
-- Deferred UX items still in HANDOFF.md — good to prioritize on mobile
-
----
+- **Pricing is locked: $19.99 launch → $29.99 when Tiny Coach ships (with market gates)**
+- Free tier = 5 rounds across all formats, full shot placement visible (not hidden behind paywall)
+- The key build insight to ponder: B15b+c+d are one combined GPS cycle — GPS toggle, path simplification (RDP), and checkpoint saves at each target transition all go together
+- "Session" in the codebase = a round of play — user-facing copy should always say "rounds"
+- App Store subtitle locked: "Shot Placement. Course Maps. GPS Rounds."
+- Best copy line: "Less than the cost of one arrow. Tracks every arrow you'll ever shoot."
 
 ## From Mobile Session
 
-*(empty - paste mobile notes here)*
+*(empty — paste mobile notes here)*
+
+## Active Projects Quick Status
+
+| Project | Status | Next Action |
+|---------|--------|-------------|
+| STX Archery | 🟡 V1 planning done, building | Archive docs → B15a (promo) |
+| NRT Core | 🟡 Prototype built | Send to Ari for testing |
+| ScatterplotCreator | 🟡 v1.0.3 built | Windows smoke test → L: drive |
+| SNF | 🔵 Design doc ready | Schedule customer call |
+| MikeText | 🟡 Multiplatform built | Runtime test on iPhone sim |
 
 ---
 
-*For all projects: see ACTIVE.md*
-https://raw.githubusercontent.com/miketoles/projects-hub/main/SYNC.md
-https://cdn.jsdelivr.net/gh/miketoles/projects-hub@main/SYNC.md
+*Fetch (cache-busting): https://cdn.jsdelivr.net/gh/miketoles/projects-hub@main/SYNC.md*
+*Fetch (fallback): https://raw.githubusercontent.com/miketoles/projects-hub/main/SYNC.md*
