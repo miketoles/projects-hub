@@ -9,35 +9,39 @@
 **Project:** STX Archery (3dArchery)
 **Path:** `~/dev/3dArchery`
 **Branch:** main
-**Run:** `cd ~/dev/3dArchery && npx expo run:ios`
+**Run:** `cd ~/dev/3dArchery && npx expo run:ios --device`
 
 ## What We Did This Session
 
-- Reviewed B14c (BugCatcher) spec — CC + Codex joint design review
-- Finalized BugCatcher architecture: registry/bridge pattern for snapshot access
-- Updated V1-COMPLETION-PLAN.md: B14c inserted before B15a, items renumbered
-- Copied BugCatcher-Spec-v3.3.md into repo docs (from iCloud Drive)
-- All planning docs committed to 3dArchery main branch
+- Fixed BugCatcher 🐛 button position (moved to upper-right, uses `useSafeAreaInsets`)
+- Fixed NSCameraUsageDescription crash via `expo prebuild` (app.json infoPlist + native rebuild)
+- Created `scripts/get-bugreport.sh` + added `bug-reports/` to .gitignore
+- Confirmed iOS 26 simulator has broken text input — not a code bug, device testing needed
+- USB-C cable ordered (Anker), arrives tomorrow — will install on iPhone 16 Pro Max
+- Planned crosshair reticle for zoom mode (saved as future feature, not built)
+- Researched + documented 5 expansion packs: NA Extended, African Safari, European Hunt, Dinosaur, Fantasy
+- Created `docs/STX-Expansion-Pack-Roadmap.md` with full animal lists + batch ChatGPT prompts
+- Updated `docs/STX-Animal-Art-Generation-Playbook.md` (17 animals complete, added fantasy/dino notes)
+- Designed + documented What's New modal feature (`docs/STX-WhatsNew-Feature-Design.md`)
 
 ## What's Next
 
-- [ ] Archive `docs/ADVANCED-MANAGEMENT.md` + `docs/PREMIUM-FEATURES.md` to `docs/archive/` ← START HERE (5 min, no build)
-- [ ] B14c: Build BugCatcher (install deps first: react-native-view-shot, jszip, expo-file-system, expo-sharing)
-- [ ] B15a: Promo code redesign (named codes + V5 migration for label column)
-- [ ] B15b+c+d: GPS refactor (toggle + RDP + checkpoint saves + resume merge)
-- [ ] B16: Target photos, B17: Android/Google Play, then final gate pass
+- [ ] USB-C cable arrives → `npx expo run:ios --device` ← START HERE
+- [ ] Test camera, text input, GPS, BugCatcher frame capture on real device
+- [ ] Review first real-device bug reports
+- [ ] Build What's New modal (pre-v1.1, feature doc ready)
+- [ ] Build NA Extended pack (art gen + data entry, ~3–4 hrs)
 
 ## Open Questions
 
-- Error boundary: add one as part of B14c (gives captureFrame site), or defer to post-v1.0?
-- Free tier: 5 rounds (Mike confirmed) — still worth 1 more thought vs 7 (Codex preferred)
+- Discord server: set one up before v1.1 so What's New CTA has a real URL
+- Free tier limit confirmed at 7 sessions
 
 ## Notes for Mobile Session
 
-- **BugCatcher is B14c — build it BEFORE the promo code redesign (B15a)**
-- Key insight: BugCatcher `core.ts` is a singleton; can't call hooks. Uses registry pattern — shoot screen registers GPS/round bridge while mounted, root layout registers premium bridge. Core merges at capture time.
-- `promoLabel` will be null in BugCatcher snapshots until B15a ships — that's OK, handle gracefully.
-- Pre-build fix: spec's premium source enum (`purchase|promo|legacy|none`) must match code (`revenuecat|promo-code|legacy-code|dev-override|none`).
+- **Device setup:** plug iPhone, run `npx expo run:ios --device`, trust Mac on iPhone, trust dev cert in Settings → VPN & Device Management
+- Expansion packs all documented — no decisions needed yet, just art generation when ready
+- What's New modal is designed and ready for Codex — impl before v1.1 ship
 
 ## From Mobile Session
 
@@ -47,7 +51,7 @@
 
 | Project | Status | Next Action |
 |---------|--------|-------------|
-| STX Archery | 🟡 V1 planning done, building | Archive docs → B14c (BugCatcher) |
+| STX Archery | 🟡 v1.0 nearly done | Real device testing (cable arrives tomorrow) |
 | NRT Core | 🟡 Prototype built | Send to Ari for testing |
 | ScatterplotCreator | 🟡 v1.0.3 built | Windows smoke test → L: drive |
 | SNF | 🔵 Design doc ready | Schedule customer call |
