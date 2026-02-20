@@ -1,6 +1,6 @@
 # Sync File for Claude
 
-*Last synced: Feb 18, 2026 by Claude Code*
+*Last synced: Feb 19, 2026 by Claude Code*
 
 ---
 
@@ -11,47 +11,41 @@
 **Branch:** main
 **Run:** `cd ~/dev/3dArchery && npx expo run:ios --device`
 
-## What We Did This Session
+## What We Did This Session (Feb 19)
 
-- Fixed BugCatcher 🐛 button position (moved to upper-right, uses `useSafeAreaInsets`)
-- Fixed NSCameraUsageDescription crash via `expo prebuild` (app.json infoPlist + native rebuild)
-- Created `scripts/get-bugreport.sh` + added `bug-reports/` to .gitignore
-- Confirmed iOS 26 simulator has broken text input — not a code bug, device testing needed
-- USB-C cable ordered (Anker), arrives tomorrow — will install on iPhone 16 Pro Max
-- Planned crosshair reticle for zoom mode (saved as future feature, not built)
-- Researched + documented 5 expansion packs: NA Extended, African Safari, European Hunt, Dinosaur, Fantasy
-- Created `docs/STX-Expansion-Pack-Roadmap.md` with full animal lists + batch ChatGPT prompts
-- Updated `docs/STX-Animal-Art-Generation-Playbook.md` (17 animals complete, added fantasy/dino notes)
-- Designed + documented What's New modal feature (`docs/STX-WhatsNew-Feature-Design.md`)
+- Completed Phase E simulator validation — all 11 scorecard formats tested and passing
+- Fixed WA Match Recurve "No match data available." — root cause was `buildMatchState` never existed; no code computed set points from arrow data
+- Built `src/logic/scoring/build-match-state.ts` — new pure function, 8 tests
+- Fixed v10 migration healing — `CREATE TABLE IF NOT EXISTS session_match_state` now runs unconditionally at startup
+- Fixed legacy v9 backfill + explicit column SELECT to avoid match_state collision
+- Pre-v1.0 cleanup sprint (Groups A–D): equipment filter exact-match bug, error handling, performance (N+1 query fix), dead code removal, doc archive/consolidation
+- Test baseline: **79 suites / 539 tests, tsc clean**
+
+## Phase E Results (all ✅)
+
+1. IBO 3D, 2. ASA 3D, 3. NFAA Animal, 4. WA Indoor, 5. NFAA 300, 6. Vegas, 7. WA 720, 8. WA 1440, 9. NFAA Field, 10. WA Match Recurve, 11. WA Match Compound
 
 ## What's Next
 
-- [ ] USB-C cable arrives → `npx expo run:ios --device` ← START HERE
-- [ ] Test camera, text input, GPS, BugCatcher frame capture on real device
-- [ ] Review first real-device bug reports
-- [ ] Build What's New modal (pre-v1.1, feature doc ready)
-- [ ] Build NA Extended pack (art gen + data entry, ~3–4 hrs)
+- [ ] **Phase F** — Export / PDF scorecard
+- [ ] **Phase G** — History / leaderboard
+- [ ] **Phase H** — Test expansion
+- [ ] **B17** — Android / Google Play setup (no DUNS required, can do now)
+- [ ] **iOS submission** — Blocked on DUNS number (requested 2/11/2026, still pending)
+- [ ] Vegas 3-spot 0-scoring bug (backlog)
+- [ ] NFAA Animal stop-on-hit not enforced (backlog)
 
-## Open Questions
+## Open Questions / Notes
 
-- Discord server: set one up before v1.1 so What's New CTA has a real URL
-- Free tier limit confirmed at 7 sessions
-
-## Notes for Mobile Session
-
-- **Device setup:** plug iPhone, run `npx expo run:ios --device`, trust Mac on iPhone, trust dev cert in Settings → VPN & Device Management
-- Expansion packs all documented — no decisions needed yet, just art generation when ready
-- What's New modal is designed and ready for Codex — impl before v1.1 ship
-
-## From Mobile Session
-
-*(empty — paste mobile notes here)*
+- Free tier limit is 7 sessions (confirmed in code)
+- DUNS pending — iOS App Store submission blocked until it arrives
+- USB-C cable for real device testing — status unknown from last session
 
 ## Active Projects Quick Status
 
 | Project | Status | Next Action |
 |---------|--------|-------------|
-| STX Archery | 🟡 v1.0 nearly done | Real device testing (cable arrives tomorrow) |
+| STX Archery | 🟡 Phase E done, v1.0 nearly ready | Phase F (export/PDF) or Android setup |
 | NRT Core | 🟡 Prototype built | Send to Ari for testing |
 | ScatterplotCreator | 🟡 v1.0.3 built | Windows smoke test → L: drive |
 | SNF | 🔵 Design doc ready | Schedule customer call |
