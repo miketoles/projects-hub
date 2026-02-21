@@ -1,6 +1,13 @@
 # Sync File for Claude
 
-*Last synced: Feb 20, 2026 by Claude Code*
+*Last synced: Feb 21, 2026 by Claude Code*
+
+---
+
+## 🧪 Test Marker (Feb 21, 2026)
+**If you can read this, the Sync Up chain is working.**
+Passphrase: `ARCHERY-SYNC-TEST-221`
+This line was written by Claude Code CLI and should be visible to Claude Desktop and Claude Mobile via shared chat.
 
 ---
 
