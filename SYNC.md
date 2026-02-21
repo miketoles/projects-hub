@@ -1,13 +1,13 @@
 # Sync File for Claude
 
-*Last synced: Feb 21, 2026 by Claude Code*
+*Last synced: 2026-02-21 by Claude Code*
 
 ---
 
 ## Active Build
 
 <!-- ACTIVE_BUILD_START -->
-No active build cycle.
+**STX Archery** — Phase H (Test Expansion) complete. Moving to Device Hardening.
 <!-- ACTIVE_BUILD_END -->
 
 ---
@@ -15,45 +15,47 @@ No active build cycle.
 ## Decision Queue
 
 <!-- DECISION_QUEUE_START -->
-(none)
+- Android setup (B17) — no DUNS needed, can run in parallel with device hardening. Do it?
+- DUNS still pending — requested 2026-02-11, no Apple response yet
 <!-- DECISION_QUEUE_END -->
 
 ---
 
 ## Current Focus
 
-**Project:** Spirit Logic — Multi-Agent Process Redesign
-**Path:** `~/dev/` (cross-project process work)
-**Docs:** `~/dev/THREE-AGENT-PROCESS.md`, `~/dev/projects-hub/`
+**Project:** STX Archery (3dArchery)
+**Path:** `~/dev/3dArchery`
+**Run:** `cd ~/dev/3dArchery && npx expo run:ios`
 
 ---
 
-## What We Did This Session (Feb 21)
+## What We Did This Session
 
-- Redesigned the three-agent process: two-tier model (Build Engine vs. Ruminators)
-- Configured Claude Desktop MCP filesystem server → reads SYNC.md directly from disk
-- Verified full Sync Up chain: CC-CLI writes → Desktop reads via MCP → Mobile sees via shared chat
-- Updated `/sync` skill to include Active Build + Decision Queue sections
-- Updated `handoff.sh` to auto-push build state after every send/review cycle
-- Confirmed Claude Desktop custom instruction saved: "Sync Up" now works in any new chat
+- Reviewed and approved H-Batch-1 (VP/EQ/FT tests), H-Batch-2 (RSM/CUM), H-Batch-3 (SCO/MIG + IX display)
+- Phase H fully complete: 85 suites / 578 tests, tsc clean (+5 suites, +30 tests vs baseline)
+- Committed all accumulated phase work — Phases F, W, H-Batch-1+2+3 (97 files + 10 files)
+- Reviewed full roadmap — Device Hardening is the next gate before iOS submission
+- Using Claude Code CLI (VS Code plugin had memory/crash issues)
 
 ---
 
 ## What's Next
 
-- [ ] **Test ChatGPT+ URL fetch** ← START HERE (verify passphrase with raw GitHub URL)
-- [ ] **Update THREE-AGENT-PROCESS.md** — document two-tier model, Sync Up architecture, adversarial review mandate
-- [ ] **STX Archery Phase F** — Export / PDF scorecard (scaffolding exists, needs wiring)
-- [ ] **B17** — Android / Google Play setup (no DUNS required, can start now)
+- [ ] **Device Hardening** ← START HERE (see `docs/DEVICE-SMOKE-TEST-CHECKLIST.md`)
+  - Cold start + kill+resume mid-round (schema v10 migration is a risk)
+  - RevenueCat purchase + restore (HIGH RISK — never tested on real device)
+  - Camera + GPS permissions, PDF share sheet on real iOS device
+- [ ] **B17 Android setup** (can run in parallel — no DUNS required)
+  - Google Play Console ($25), Maps API key, RevenueCat Android entitlement, EAS build
+- [ ] **iOS Submission** — blocked on DUNS + hardening complete
 
 ---
 
 ## Open Questions / Notes
 
-- ChatGPT+ Sync Up: URL fetch likely works with browsing enabled — untested
-- Claude Desktop "Sync Up" is now permanent via custom instructions + MCP filesystem
-- handoff.sh auto-push: updates Active Build section after every Codex send/review cycle
-- THREE-AGENT-PROCESS.md still needs updating to reflect today's architecture decisions
+- DUNS requested 2026-02-11 — still waiting. Check Apple Developer enrollment status.
+- Dual-agent workflow: Claude Code CLI + Codex (`handoff` command in PATH)
+- Uncommitted artifacts still in repo root: CHATGPT-*.md, "claude died/", PDFs — intentionally left out
 
 ---
 
@@ -61,10 +63,10 @@ No active build cycle.
 
 | Project | Status | Next Action |
 |---------|--------|-------------|
-| STX Archery | 🟡 Pre-v1.0, Phase F next | Export / PDF scorecard |
-| NRT Core | 🟡 Prototype built | Send to Ari for testing |
-| ScatterplotCreator | 🟡 v1.0.3 built | Windows smoke test → L: drive |
-| SNF | 🔵 Design doc ready | Schedule customer call |
+| STX Archery | 🟢 Phase H done, 85/578 tests | Device Hardening |
+| NRT Core | 🟡 Prototype working | Send zip to Ari |
+| ScatterplotCreator | 🟡 v1.0.3 built | Windows smoke test |
+| SNF | 🔵 Design phase | Schedule customer call |
 | MikeText | 🟡 Multiplatform built | Runtime test on iPhone sim |
 
 ---

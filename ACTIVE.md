@@ -73,9 +73,9 @@ What I'm actively working on right now.
 ### 6. STX Archery (3dArchery)
 - **Path:** `~/dev/3dArchery`
 - **GitHub:** https://github.com/miketoles/3darchery
-- **Status:** Phase E complete + simulator validated. BFX-01 (Vegas 3-spot rendering) + BFX-02 (NFAA Animal stop-on-hit) fixed. 79 suites / 544 tests. tsc clean. DUNS pending for iOS.
-- **Pricing:** $19.99 launch → $29.99 at v1.2 (Tiny Coach + market gates). Free: 5 rounds all formats.
-- **Next step:** Phase F — Export/PDF (scorecard-html.ts → expo-print, wired to summary screen Export button)
+- **Status:** Phases F/W/H complete. 85 suites / 578 tests, tsc clean. DUNS pending for iOS.
+- **Pricing:** $19.99 launch → $29.99 at v1.2 (Tiny Coach + market gates). Free: 7 rounds all formats.
+- **Next step:** Device Hardening (real-device testing gate) + B17 Android setup in parallel
 
 **Stack:** Expo (React Native), TypeScript, @shopify/react-native-skia, react-native-gesture-handler, expo-sqlite, react-native-purchases (RevenueCat)
 **Architecture:** Three-agent workflow (CC=planner/reviewer, Codex=builder) via HANDOFF.md
@@ -90,9 +90,9 @@ What I'm actively working on right now.
 
 ## This Week's Goals
 
-- [ ] STX Archery: Phase F — Export/PDF ← TOP PRIORITY
-- [ ] DUNS → Apple Developer enrollment → TestFlight
-- [ ] STX Archery: NFAA Animal HIT feedback polish (advance delay / overlay)
+- [ ] STX Archery: Device Hardening (real-device testing) ← TOP PRIORITY
+- [ ] STX Archery: B17 Android setup (parallel, no DUNS needed)
+- [ ] DUNS → Apple Developer enrollment → TestFlight (waiting on Apple)
 - [ ] Send NRT prototype zip to Ari for extended testing
 - [ ] SNF: Schedule customer call, review discovery template
 
@@ -112,7 +112,8 @@ What I'm actively working on right now.
 
 | Project | Completed | Notes |
 |---------|-----------|-------|
-| STX Archery BFX-01 + BFX-02 | Feb 20, 2026 | Vegas 3-spot rendering fixed, NFAA Animal stop-on-hit enforced, 79 suites / 544 tests |
+| STX Archery Phases F/W/H | Feb 21, 2026 | Export fixes, What's New modal, variant picker, 30 new tests — 85 suites / 578 tests |
+| STX Archery BFX-01 + BFX-02 | Feb 20, 2026 | Vegas 3-spot rendering fixed, NFAA Animal stop-on-hit enforced |
 | STX Archery Phase E complete | Feb 19, 2026 | All 11 scorecard formats sim-validated, ScorecardGrid + summary screen, 76 suites / 504 tests |
 | STX Archery B11 sim-tested | Feb 14, 2026 | Button-based precision shot placement (Zoom/Edit modes), KISS approach, 45 suites / 279 tests |
 | STX Archery B5-B10 | Feb 13-14, 2026 | Craft polish, feedback intensity, session resume, precision gestures (rebuilt as B11) |
