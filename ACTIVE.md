@@ -73,9 +73,9 @@ What I'm actively working on right now.
 ### 6. STX Archery (3dArchery)
 - **Path:** `~/dev/3dArchery`
 - **GitHub:** https://github.com/miketoles/3darchery
-- **Status:** Phases F/W/H complete. 85 suites / 578 tests, tsc clean. DUNS pending for iOS.
+- **Status:** Device Hardening in progress. DH-B1 + DH-B2 complete (86 suites / 583 tests). DUNS pending.
 - **Pricing:** $19.99 launch → $29.99 at v1.2 (Tiny Coach + market gates). Free: 7 rounds all formats.
-- **Next step:** Device Hardening (real-device testing gate) + B17 Android setup in parallel
+- **Next step:** Verify DH-B2 on device, continue hardening checklist, then B17 Android setup
 
 **Stack:** Expo (React Native), TypeScript, @shopify/react-native-skia, react-native-gesture-handler, expo-sqlite, react-native-purchases (RevenueCat)
 **Architecture:** Three-agent workflow (CC=planner/reviewer, Codex=builder) via HANDOFF.md
@@ -90,7 +90,8 @@ What I'm actively working on right now.
 
 ## This Week's Goals
 
-- [ ] STX Archery: Device Hardening (real-device testing) ← TOP PRIORITY
+- [ ] STX Archery: Verify DH-B2 fixes on device ← TOP PRIORITY
+- [ ] STX Archery: Continue device hardening checklist (DH-B3 if needed)
 - [ ] STX Archery: B17 Android setup (parallel, no DUNS needed)
 - [ ] DUNS → Apple Developer enrollment → TestFlight (waiting on Apple)
 - [ ] Send NRT prototype zip to Ari for extended testing

@@ -32,7 +32,7 @@ Central command for all my projects. Enables seamless context-switching between 
 | `ACTIVE.md` | What's actively being worked on | When priorities change |
 | `PROJECTS.md` | Master index of all projects | When adding/completing projects |
 
-**Current focus (Feb 21):** STX Archery — Phases F/W/H complete. 85 suites / 578 tests. Device Hardening next (real-device gate before iOS submission).
+**Current focus (Feb 21):** STX Archery — Device Hardening in progress. DH-B1 + DH-B2 complete (86 suites / 583 tests). Verifying B2 fixes on device.
 
 ## Templates
 
