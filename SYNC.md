@@ -67,8 +67,8 @@ All agents (Claude Code CLI, Claude Desktop, Claude Mobile, Claude VS Code plugi
 ### Sync Up — Start of Every Session
 
 Every agent should fetch this file at session start:
-- **Primary:** `https://cdn.jsdelivr.net/gh/miketoles/projects-hub@main/SYNC.md`
-- **Fallback:** `https://raw.githubusercontent.com/miketoles/projects-hub/main/SYNC.md`
+- **Primary:** `https://raw.githubusercontent.com/miketoles/projects-hub/main/SYNC.md` ← always fresh
+- **Fallback:** `https://cdn.jsdelivr.net/gh/miketoles/projects-hub@main/SYNC.md` ← may be cached up to 12h
 
 **Verified working on:** Claude VS Code plugin ✅, Claude Desktop ✅, Claude Mobile ✅, ChatGPT ✅, Claude Code CLI ✅
 
@@ -103,5 +103,5 @@ Every agent should fetch this file at session start:
 
 ---
 
-*Primary: https://cdn.jsdelivr.net/gh/miketoles/projects-hub@main/SYNC.md*
-*Fallback: https://raw.githubusercontent.com/miketoles/projects-hub/main/SYNC.md*
+*Primary: https://raw.githubusercontent.com/miketoles/projects-hub/main/SYNC.md*
+*Fallback: https://cdn.jsdelivr.net/gh/miketoles/projects-hub@main/SYNC.md*
