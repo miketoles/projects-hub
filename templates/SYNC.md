@@ -2,12 +2,21 @@
 
 *Last synced: [DATE] by Claude Code*
 
-<!--
-TEMPLATE INSTRUCTIONS:
-- Replace ALL bracketed placeholders with real content
-- Keep under 60 lines when filled in
-- This is the ONLY file Mobile Claude fetches - make it self-contained
--->
+---
+
+## Active Build
+
+<!-- ACTIVE_BUILD_START -->
+No active build cycle.
+<!-- ACTIVE_BUILD_END -->
+
+---
+
+## Decision Queue
+
+<!-- DECISION_QUEUE_START -->
+(none)
+<!-- DECISION_QUEUE_END -->
 
 ---
 
@@ -15,9 +24,8 @@ TEMPLATE INSTRUCTIONS:
 
 <!-- REQUIRED: Fill in the current project details -->
 **Project:** [Project Name]
-**Repo:** [GitHub URL or "local only"]
 **Path:** `~/dev/[project-folder]`
-**Run:** [command to run] → [URL if web app]
+**Run:** [command to run]
 
 ---
 
@@ -30,13 +38,6 @@ TEMPLATE INSTRUCTIONS:
 
 ---
 
-## Current State
-
-<!-- REQUIRED: 2-3 sentences describing what exists and what works -->
-[Describe the current state of the project. What's built? What's working?]
-
----
-
 ## What's Next
 
 <!-- REQUIRED: Immediate next steps, prioritized -->
@@ -46,26 +47,22 @@ TEMPLATE INSTRUCTIONS:
 
 ---
 
-## Open Questions / Mental Context
+## Open Questions / Notes
 
-<!-- OPTIONAL but valuable: What is Mike thinking about? -->
+<!-- OPTIONAL but valuable -->
 - [Any design decisions being considered]
 - [Questions that need answers]
-- [Context that helps understand the work]
 
 ---
 
-## Notes for Mobile Session
+## Active Projects Quick Status
 
-<!-- OPTIONAL: Specific things to discuss or brainstorm on mobile -->
-[What would be helpful to think about away from the computer?]
-
----
-
-## From Mobile Session
-
-*(empty - paste mobile notes here)*
+| Project | Status | Next Action |
+|---------|--------|-------------|
+| [Project 1] | 🟡 [status] | [action] |
+| [Project 2] | 🔵 [status] | [action] |
 
 ---
 
-*For all projects: see ACTIVE.md | Fetch: raw.githubusercontent.com/miketoles/projects-hub/main/SYNC.md*
+*Primary: https://cdn.jsdelivr.net/gh/miketoles/projects-hub@main/SYNC.md*
+*Fallback: https://raw.githubusercontent.com/miketoles/projects-hub/main/SYNC.md*

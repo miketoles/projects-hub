@@ -4,46 +4,64 @@
 
 ---
 
-## 🧪 Test Marker (Feb 21, 2026)
-**If you can read this, the Sync Up chain is working.**
-Passphrase: `ARCHERY-SYNC-TEST-221`
-This line was written by Claude Code CLI and should be visible to Claude Desktop and Claude Mobile via shared chat.
+## Active Build
+
+<!-- ACTIVE_BUILD_START -->
+No active build cycle.
+<!-- ACTIVE_BUILD_END -->
+
+---
+
+## Decision Queue
+
+<!-- DECISION_QUEUE_START -->
+(none)
+<!-- DECISION_QUEUE_END -->
 
 ---
 
 ## Current Focus
 
-**Project:** STX Archery (3dArchery)
-**Path:** `~/dev/3dArchery`
-**Branch:** main
-**Run:** `cd ~/dev/3dArchery && npx expo run:ios --device`
+**Project:** Spirit Logic — Multi-Agent Process Redesign
+**Path:** `~/dev/` (cross-project process work)
+**Docs:** `~/dev/THREE-AGENT-PROCESS.md`, `~/dev/projects-hub/`
 
-## What We Did This Session (Feb 20)
+---
 
-- Fixed **BFX-01: Vegas 3-spot 0-scoring** — `RingTarget` now renders rings at all 3 spot centers. Simulator verified ✅
-- Fixed **BFX-02: NFAA Animal stop-on-hit** — auto-advances on first hit after 400ms. Simulator verified ✅
-- Test baseline: **79 suites / 544 tests, tsc clean**
+## What We Did This Session (Feb 21)
+
+- Redesigned the three-agent process: two-tier model (Build Engine vs. Ruminators)
+- Configured Claude Desktop MCP filesystem server → reads SYNC.md directly from disk
+- Verified full Sync Up chain: CC-CLI writes → Desktop reads via MCP → Mobile sees via shared chat
+- Updated `/sync` skill to include Active Build + Decision Queue sections
+- Updated `handoff.sh` to auto-push build state after every send/review cycle
+- Confirmed Claude Desktop custom instruction saved: "Sync Up" now works in any new chat
+
+---
 
 ## What's Next
 
-- [ ] **Phase F** — Export / PDF scorecard ← START HERE (PDF must match summary screen scorecard data — same `buildScorecardData()` source, confirmed)
-- [ ] **NFAA Animal HIT feedback** — polish: bump delay to 700ms or add brief "HIT" overlay (deferred)
-- [ ] **Phase G** — History / leaderboard
-- [ ] **Phase H** — Test expansion
-- [ ] **B17** — Android / Google Play setup (no DUNS required, can do now)
-- [ ] **iOS submission** — Blocked on DUNS number (requested 2/11/2026, still pending)
+- [ ] **Test ChatGPT+ URL fetch** ← START HERE (verify passphrase with raw GitHub URL)
+- [ ] **Update THREE-AGENT-PROCESS.md** — document two-tier model, Sync Up architecture, adversarial review mandate
+- [ ] **STX Archery Phase F** — Export / PDF scorecard (scaffolding exists, needs wiring)
+- [ ] **B17** — Android / Google Play setup (no DUNS required, can start now)
+
+---
 
 ## Open Questions / Notes
 
-- Free tier limit is 7 sessions (confirmed in code)
-- DUNS pending — iOS App Store submission blocked until it arrives
-- Phase F: export PDF must match summary screen — `buildScorecardData()` and `scorecard-html.ts` scaffolding already exists, needs wiring to Export button
+- ChatGPT+ Sync Up: URL fetch likely works with browsing enabled — untested
+- Claude Desktop "Sync Up" is now permanent via custom instructions + MCP filesystem
+- handoff.sh auto-push: updates Active Build section after every Codex send/review cycle
+- THREE-AGENT-PROCESS.md still needs updating to reflect today's architecture decisions
+
+---
 
 ## Active Projects Quick Status
 
 | Project | Status | Next Action |
 |---------|--------|-------------|
-| STX Archery | 🟡 Pre-v1.0 bugs fixed, Phase F next | Phase F (export/PDF) |
+| STX Archery | 🟡 Pre-v1.0, Phase F next | Export / PDF scorecard |
 | NRT Core | 🟡 Prototype built | Send to Ari for testing |
 | ScatterplotCreator | 🟡 v1.0.3 built | Windows smoke test → L: drive |
 | SNF | 🔵 Design doc ready | Schedule customer call |
@@ -51,5 +69,5 @@ This line was written by Claude Code CLI and should be visible to Claude Desktop
 
 ---
 
-*Fetch (cache-busting): https://cdn.jsdelivr.net/gh/miketoles/projects-hub@main/SYNC.md*
-*Fetch (fallback): https://raw.githubusercontent.com/miketoles/projects-hub/main/SYNC.md*
+*Primary: https://cdn.jsdelivr.net/gh/miketoles/projects-hub@main/SYNC.md*
+*Fallback: https://raw.githubusercontent.com/miketoles/projects-hub/main/SYNC.md*
