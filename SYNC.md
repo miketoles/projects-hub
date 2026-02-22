@@ -7,7 +7,10 @@
 ## Active Build
 
 <!-- ACTIVE_BUILD_START -->
-**STX Archery** — Device Hardening in progress. DH-B1 + DH-B2 complete, awaiting device verification of B2 fixes.
+**Project:** STX Archery | **Cycle:** DH-B4 | **Status:** built — awaiting device test (GPS trail)
+**Next agent:** mike (device test) → then commit pass
+**Building:** GPS walk trail fix + Map Course hidden + settings fixes (redeem reset, mode label)
+**Gates:** 86 suites / 583 tests, tsc clean ✅
 <!-- ACTIVE_BUILD_END -->
 
 ---
@@ -15,10 +18,9 @@
 ## Decision Queue
 
 <!-- DECISION_QUEUE_START -->
-- DH-05 Haptics still not firing on device — iOS 26 / debug build issue, needs dedicated debug session
-- DH-06 Target transition animation — deferred to dedicated canvas pass
-- Android B17 setup — can run in parallel with hardening, no DUNS needed. Start now?
-- DUNS still pending — requested 2026-02-11, no Apple response yet
+- 10 bugs/items from today's testing session — discuss tomorrow: v1 vs v1.1 priority
+- GPS walk trail device test pending (need outdoor space, daytime)
+- DUNS still pending — no Apple response yet
 <!-- DECISION_QUEUE_END -->
 
 ---
@@ -33,52 +35,36 @@
 
 ## What We Did This Session
 
-- First real-device testing session on iPhone 16 Pro Max (iOS 26.2.1)
-- Found and logged 23 bugs across critical, high, and medium priority
-- DH-B1: Fixed 15 of 16 bugs (free tier data loss, camera crash, scorecard, export naming, DNS for unshot targets, share card redesign, etc.)
-- DH-B2: Fixed 8 more bugs (share card crash regression, promo code keyboard fix, airplane mode blank canvas, crosshair on share card target)
-- Fixed handoff process bug: `handoff review` was reading stale `.codex-result.md` — now reads fresh `.codex-summary.md`
-- Three-agent sync process fully verified across all agents
-- Gates: 86 suites / 583 tests, tsc clean
+- Full device testing sprint on iPhone 16 Pro (DH-B2 + B3 + B4)
+- DH-B3: Fixed tap-7 scroll blocking developer options unlock at tap 10
+- DH-B4: Fixed GPS walk trail (two root causes), hid Map Course feature, settings mode label + redeem reset
+- Clarified GPS architecture: v1 = walk trail polyline only, target pins deferred to v1.1
+- Logged 10 new items from device testing for tomorrow's triage
 
 ---
 
 ## What's Next
 
-- [ ] **Rebuild on device + verify DH-B2 fixes** ← START HERE (Mike testing)
-  - Share card no longer crashes
-  - Promo code accepts hyphens without smart punctuation
-  - Airplane mode renders target correctly
-  - Share card crosshair looks good
-- [ ] **Continue device hardening checklist** — remaining untested sections
-- [ ] **DH-B3** — collect any new bugs from B2 device verification, send to Codex
-- [ ] **B17 Android setup** — Google Play Console, Maps API key, RevenueCat Android entitlement, EAS build
+- [ ] **GPS walk trail device test** — unplug phone, walk a round, check gold polyline on summary ← START HERE
+- [ ] **Triage 10 new items** — v1 vs v1.1 (PDF URL, archer names, JSON premium flag, target transition jank, etc.)
+- [ ] **Commit pass** — large backlog: Phase H, F, W, DH-B1/B2/B3/B4 all uncommitted
+- [ ] **DUNS follow-up** — Apple Developer enrollment blocked
 
 ---
 
-## Three-Agent Process
+## Open Questions / Notes
 
-All agents use this file to stay in sync.
-
-### Roles
-
-| Agent | Role |
-|-------|------|
-| **Claude Code CLI** | Planner + reviewer. Writes specs, reviews builds, updates SYNC.md. |
-| **Codex CLI / VS Code** | Builder. Fetches SYNC.md → reads HANDOFF.md → builds → reports back. |
-| **Claude Mobile / Desktop / ChatGPT** | Brainstorming, planning, mobile continuity. |
-
-### Sync Up — Start of Every Session
-
-- **Primary:** `https://raw.githubusercontent.com/miketoles/projects-hub/main/SYNC.md` ← always fresh
-- **Fallback:** `https://cdn.jsdelivr.net/gh/miketoles/projects-hub@main/SYNC.md` ← may be cached up to 12h
-
-### Handoff Loop (Claude Code ↔ Codex)
-
-1. Claude Code writes plan to `.codex-prompt.md`, runs `handoff send`
-2. Codex fetches SYNC.md → reads HANDOFF.md → builds → runs gates
-3. Codex updates HANDOFF.md with results + PROMPT FOR CLAUDE block
-4. Claude Code reviews → approves or requests revision → syncs on session end
+- 10 items from today's testing (full list in session):
+  1. PDF footer URL: `spiritlogic.app` → `stx-archery.com`
+  2. Archer names missing in regular rounds (works in quick practice)
+  3. Exported JSON shows `free-tier-start-approved` even for premium
+  4. Target transition jank (circle redraws before animal appears)
+  5. Animal slide transition jarring
+  6. Practice shoot back-nav lands on quick shoot screen — correct?
+  7. Custom round — confirm categories/format/target type match design
+  8. Share card colors don't match app navy/gold (v1.1)
+  9. Edit arrow hidden under thumb — needs elegant precision solution (v1.1)
+  10. Animal backgrounds inconsistent color — needs image regen (v1.1, white tail deer = reference)
 
 ---
 
@@ -86,13 +72,11 @@ All agents use this file to stay in sync.
 
 | Project | Status | Next Action |
 |---------|--------|-------------|
-| STX Archery | 🟡 Device Hardening, DH-B2 built | Verify B2 on device |
+| STX Archery | 🟡 DH-B4 built, device test pending | GPS trail walk test + triage 10 items |
 | NRT Core | 🟡 Prototype working | Send zip to Ari |
 | ScatterplotCreator | 🟡 v1.0.3 built | Windows smoke test |
-| SNF | 🔵 Design phase | Schedule customer call |
-| MikeText | 🟡 Multiplatform built | Runtime test on iPhone sim |
 
 ---
 
-*Primary: https://raw.githubusercontent.com/miketoles/projects-hub/main/SYNC.md*
-*Fallback: https://cdn.jsdelivr.net/gh/miketoles/projects-hub@main/SYNC.md*
+*Primary: https://cdn.jsdelivr.net/gh/miketoles/projects-hub@main/SYNC.md*
+*Fallback: https://raw.githubusercontent.com/miketoles/projects-hub/main/SYNC.md*
