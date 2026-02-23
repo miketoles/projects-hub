@@ -1,13 +1,13 @@
 # Sync File for Claude
 
-*Last synced: 2026-02-23 by Codex (Goldmine sync)*
+*Last synced: 2026-02-22 by Claude Code*
 
 ---
 
 ## Active Build
 
 <!-- ACTIVE_BUILD_START -->
-No active build cycle for Goldmine (spec hardening / calibration branch).
+No active build cycle.
 <!-- ACTIVE_BUILD_END -->
 
 ---
@@ -15,50 +15,45 @@ No active build cycle for Goldmine (spec hardening / calibration branch).
 ## Decision Queue
 
 <!-- DECISION_QUEUE_START -->
-- Goldmine: merge `spec/phase1-first-packet-calibration` into `main` now vs after one more `packet-r2` Claude critique pass
-- Goldmine: require direct buyer voice + operator evidence before any `implementation_first` packet handoff
-- Goldmine: decide whether to add `approved_with_conditions` packet status to template/spec
+- NRT Scatterplot V2: D1 — confirm exact shift boundary time with committee (7AM/7PM assumed; spec is parameterized via Appendix C)
+- NRT Scatterplot V2: D6 — NP overwrite UX (overwrite-to-B vs block); backend defined, need committee UX confirmation
+- NRT Scatterplot V2: D4 — rollout scope (all patients immediately vs new patients only)
 <!-- DECISION_QUEUE_END -->
 
 ---
 
 ## Current Focus
 
-**Project:** Goldmine
-**Path:** `~/dev/goldmine`
-**Branch:** `spec/phase1-first-packet-calibration`
-**Run:** `cd ~/dev/goldmine` (docs/spec project; no app runtime yet)
+**Project:** NRT Core — Scatterplot Template V2 Design Spec
+**Path:** `~/dev/NRT/docs/SCATTERPLOT_TEMPLATE_V2_DESIGN_SPEC.md`
+**Run:** design/spec only — no code yet
 
 ---
 
 ## What We Did This Session
 
-- Initialized and pushed `goldmine` to GitHub (`main`) and added lightweight Git workflow conventions (`main`, `spec/*`, `build/*`)
-- Built the first real `Build Handoff Packet` calibration artifact for `healthcare-prior-authorization-automation-01`
-- Ran Codex `design_first` calibration and captured a scored review (`accept_with_edits`)
-- Ran Claude adversarial `critique_packet` review and captured scored reviews (including blocked-run handling + successful `r1` critique)
-- Upgraded handoff spec/template with `critique_packet` support, stage-classified issues (`discovery blocker` / `design constraint` / `implementation/deployment hurdle`), and explicit constraint staging (HIPAA/BAA hosting is not a discovery blocker)
-- Produced packet revisions `r1` and `r2`; `r2` now reflects stronger honesty and scoping (`ready_for_review`, not premature export approval)
+- Completed 4-round adversarial review cycle with Codex — spec is now v0.4, Phase 1 GO, Phase 2 GO
+- Resolved all 6 must-resolve items from Review #3: backfill detection query, UNIQUE constraint, GET SQLITE_BUSY handling, deactivation policy, §5.1 `all` contradiction, notes content-fit
+- Corrected D8: behavior definitions on BOTH pages (Day and Night identical), not Day-only
+- Added Appendix C: `getV2TimeLabel` canonical algorithm + 13 golden test vectors
+- Built HTML mock-up of v2 scatterplot (`docs/scatterplot-v2-mockup.html`) matching reference image with spec changes applied
 
 ---
 
 ## What's Next
 
-- [ ] **Claude adversarial pass on `packet-r2`** — verify discovery blockers are reduced and stage classification still holds ← START HERE
-- [ ] **Add direct operator evidence + buyer voice** — strengthen workaround/buyer claims before next `design_first` handoff
-- [ ] **Rerun `design_first` (Codex + Claude)** on revised packet and compare output quality against the first calibration
-- [ ] **Merge spec branch to `main`** if calibration loop looks stable enough for Phase 1 baseline
+- [ ] Get committee confirmation on D1 (shift boundary) and D6 (NP overwrite UX) ← START HERE
+- [ ] Begin Phase 1 implementation: ScatterplotCreator v2 PDF template
+- [ ] Phase 0: run DB migrations (ALTER TABLE statements from §2.2) in NRT Core
+- [ ] Send prototype zip to Ari (still pending from prior session)
 
 ---
 
 ## Open Questions / Notes
 
-- Goldmine process rule now explicit: deployment/compliance hurdles (for example HIPAA/BAA hosting) should not invalidate discovery-stage opportunity quality by default.
-- Current best packet is `packet-r2`, but it still needs:
-  - direct operator workflow evidence
-  - one buyer voice / procurement signal
-  - validated competitor/displacement evidence
-- Claude `critique_packet` was high-value for packet quality; continue using it before `implementation_first`.
+- Spec v0.4 is at `~/dev/NRT/docs/SCATTERPLOT_TEMPLATE_V2_DESIGN_SPEC.md` — all Codex reviews in same `docs/` folder
+- Mock-up at `~/dev/NRT/docs/scatterplot-v2-mockup.html` — open in browser, 2-page portrait layout
+- D1 is the only remaining pre-Phase-1 risk; Appendix C parameterizes it cleanly if boundary changes
 
 ---
 
@@ -66,10 +61,11 @@ No active build cycle for Goldmine (spec hardening / calibration branch).
 
 | Project | Status | Next Action |
 |---------|--------|-------------|
-| Goldmine | 🟡 Phase 1 spec hardening + packet calibration active | Claude critique on `packet-r2`, then buyer/operator evidence pass |
-| STX Archery | 🟡 DH-B4 built, device test pending | GPS trail walk test + triage 10 items |
+| NRT Scatterplot V2 | 🟢 Spec complete, Phase 1 GO | Committee decisions on D1/D6, then build |
 | NRT Core | 🟡 Prototype working | Send zip to Ari |
-| ScatterplotCreator | 🟡 v1.0.3 built | Windows smoke test |
+| ScatterplotCreator | 🟡 v1.0.4 built | Windows smoke test + deploy |
+| STX Archery | 🟡 Testing phase | GPS trail walk test, DUNS pending |
+| Goldmine | 🟡 Packet calibration | Claude critique on packet-r2 |
 
 ---
 
