@@ -1,16 +1,13 @@
 # Sync File for Claude
 
-*Last synced: 2026-02-21 by Claude Code*
+*Last synced: 2026-02-23 by Codex (Goldmine sync)*
 
 ---
 
 ## Active Build
 
 <!-- ACTIVE_BUILD_START -->
-**Project:** STX Archery | **Cycle:** DH-B4 | **Status:** built — awaiting device test (GPS trail)
-**Next agent:** mike (device test) → then commit pass
-**Building:** GPS walk trail fix + Map Course hidden + settings fixes (redeem reset, mode label)
-**Gates:** 86 suites / 583 tests, tsc clean ✅
+No active build cycle for Goldmine (spec hardening / calibration branch).
 <!-- ACTIVE_BUILD_END -->
 
 ---
@@ -18,53 +15,50 @@
 ## Decision Queue
 
 <!-- DECISION_QUEUE_START -->
-- 10 bugs/items from today's testing session — discuss tomorrow: v1 vs v1.1 priority
-- GPS walk trail device test pending (need outdoor space, daytime)
-- DUNS still pending — no Apple response yet
+- Goldmine: merge `spec/phase1-first-packet-calibration` into `main` now vs after one more `packet-r2` Claude critique pass
+- Goldmine: require direct buyer voice + operator evidence before any `implementation_first` packet handoff
+- Goldmine: decide whether to add `approved_with_conditions` packet status to template/spec
 <!-- DECISION_QUEUE_END -->
 
 ---
 
 ## Current Focus
 
-**Project:** STX Archery (3dArchery)
-**Path:** `~/dev/3dArchery`
-**Run:** `cd ~/dev/3dArchery && npx expo run:ios --device`
+**Project:** Goldmine
+**Path:** `~/dev/goldmine`
+**Branch:** `spec/phase1-first-packet-calibration`
+**Run:** `cd ~/dev/goldmine` (docs/spec project; no app runtime yet)
 
 ---
 
 ## What We Did This Session
 
-- Full device testing sprint on iPhone 16 Pro (DH-B2 + B3 + B4)
-- DH-B3: Fixed tap-7 scroll blocking developer options unlock at tap 10
-- DH-B4: Fixed GPS walk trail (two root causes), hid Map Course feature, settings mode label + redeem reset
-- Clarified GPS architecture: v1 = walk trail polyline only, target pins deferred to v1.1
-- Logged 10 new items from device testing for tomorrow's triage
+- Initialized and pushed `goldmine` to GitHub (`main`) and added lightweight Git workflow conventions (`main`, `spec/*`, `build/*`)
+- Built the first real `Build Handoff Packet` calibration artifact for `healthcare-prior-authorization-automation-01`
+- Ran Codex `design_first` calibration and captured a scored review (`accept_with_edits`)
+- Ran Claude adversarial `critique_packet` review and captured scored reviews (including blocked-run handling + successful `r1` critique)
+- Upgraded handoff spec/template with `critique_packet` support, stage-classified issues (`discovery blocker` / `design constraint` / `implementation/deployment hurdle`), and explicit constraint staging (HIPAA/BAA hosting is not a discovery blocker)
+- Produced packet revisions `r1` and `r2`; `r2` now reflects stronger honesty and scoping (`ready_for_review`, not premature export approval)
 
 ---
 
 ## What's Next
 
-- [ ] **GPS walk trail device test** — unplug phone, walk a round, check gold polyline on summary ← START HERE
-- [ ] **Triage 10 new items** — v1 vs v1.1 (PDF URL, archer names, JSON premium flag, target transition jank, etc.)
-- [ ] **Commit pass** — large backlog: Phase H, F, W, DH-B1/B2/B3/B4 all uncommitted
-- [ ] **DUNS follow-up** — Apple Developer enrollment blocked
+- [ ] **Claude adversarial pass on `packet-r2`** — verify discovery blockers are reduced and stage classification still holds ← START HERE
+- [ ] **Add direct operator evidence + buyer voice** — strengthen workaround/buyer claims before next `design_first` handoff
+- [ ] **Rerun `design_first` (Codex + Claude)** on revised packet and compare output quality against the first calibration
+- [ ] **Merge spec branch to `main`** if calibration loop looks stable enough for Phase 1 baseline
 
 ---
 
 ## Open Questions / Notes
 
-- 10 items from today's testing (full list in session):
-  1. PDF footer URL: `spiritlogic.app` → `stx-archery.com`
-  2. Archer names missing in regular rounds (works in quick practice)
-  3. Exported JSON shows `free-tier-start-approved` even for premium
-  4. Target transition jank (circle redraws before animal appears)
-  5. Animal slide transition jarring
-  6. Practice shoot back-nav lands on quick shoot screen — correct?
-  7. Custom round — confirm categories/format/target type match design
-  8. Share card colors don't match app navy/gold (v1.1)
-  9. Edit arrow hidden under thumb — needs elegant precision solution (v1.1)
-  10. Animal backgrounds inconsistent color — needs image regen (v1.1, white tail deer = reference)
+- Goldmine process rule now explicit: deployment/compliance hurdles (for example HIPAA/BAA hosting) should not invalidate discovery-stage opportunity quality by default.
+- Current best packet is `packet-r2`, but it still needs:
+  - direct operator workflow evidence
+  - one buyer voice / procurement signal
+  - validated competitor/displacement evidence
+- Claude `critique_packet` was high-value for packet quality; continue using it before `implementation_first`.
 
 ---
 
@@ -72,6 +66,7 @@
 
 | Project | Status | Next Action |
 |---------|--------|-------------|
+| Goldmine | 🟡 Phase 1 spec hardening + packet calibration active | Claude critique on `packet-r2`, then buyer/operator evidence pass |
 | STX Archery | 🟡 DH-B4 built, device test pending | GPS trail walk test + triage 10 items |
 | NRT Core | 🟡 Prototype working | Send zip to Ari |
 | ScatterplotCreator | 🟡 v1.0.3 built | Windows smoke test |
