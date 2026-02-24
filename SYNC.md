@@ -1,6 +1,6 @@
 # Spirit Logic — Multi-Agent Sync File
 
-*File last updated: 2026-02-22*
+*File last updated: 2026-02-23*
 
 > **For agents:** See `SYNC-INSTRUCTIONS.md` in this repo for sync up protocol.
 
@@ -12,7 +12,7 @@
 |---------|--------|-------------|------------|
 | NRT Scatterplot V2 | 🟢 Spec complete, Phase 1 GO | Committee decisions on D1/D6, then build | Claude Code |
 | NRT Core | 🟡 Prototype working | Send zip to Ari | Claude Code |
-| ScatterplotCreator | 🟡 v1.0.4 built | Windows smoke test + deploy | Claude Code |
+| ScatterplotCreator | 🟢 v1.0.4 shipped | Re-test BUG-005 edge case tomorrow | Claude Code |
 | STX Archery | 🟡 Testing phase | GPS trail walk test, DUNS pending | Claude Code |
 | Goldmine | 🟡 Packet calibration | Claude critique on packet-r2 | Codex |
 
@@ -33,9 +33,7 @@
 **What We Did:**
 - Completed 4-round adversarial review cycle with Codex — spec is now v0.4, Phase 1 GO, Phase 2 GO
 - Resolved all 6 must-resolve items from Review #3: backfill detection query, UNIQUE constraint, SQLITE_BUSY handling, deactivation policy, §5.1 contradiction, notes content-fit
-- Corrected D8: behavior definitions on BOTH pages (Day and Night identical), not Day-only
-- Added Appendix C: `getV2TimeLabel` canonical algorithm + 13 golden test vectors
-- Built HTML mock-up of v2 scatterplot (`docs/scatterplot-v2-mockup.html`)
+- Built HTML mock-up of v2 scatterplot (`docs/scatterplot-v2-mockup.html`) — PDF generated, committee-ready
 
 **What's Next:**
 - [ ] Get committee confirmation on D1 and D6 ← START HERE
@@ -44,9 +42,35 @@
 - [ ] Send prototype zip to Ari (still pending)
 
 **Notes:**
-- Mock-up at `~/dev/NRT/docs/scatterplot-v2-mockup.html` — 2-page portrait layout
-- D1 is the only remaining pre-Phase-1 risk
+- Mock-up at `~/dev/NRT/docs/scatterplot-v2-mockup.html` — 2-page portrait layout, PDF at same path
+- Rationale box shadow mismatch in PDF — noted, non-blocker, revisit before committee submission
 <!-- /AGENT: Claude Code | PROJECT: NRT Scatterplot V2 -->
+
+---
+
+<!-- AGENT: Claude Code | PROJECT: ScatterplotCreator -->
+## Claude Code — ScatterplotCreator
+*Last synced: 2026-02-23*
+
+**Active Build:** No active build cycle — v1.0.4 shipped to production today.
+**Path:** `~/dev/ScatterplotCreator`
+
+**Decision Queue:** (none)
+
+**What We Did:**
+- Full adversarial review of entire codebase — discovered 25 bugs (4 CRITICAL, 9 HIGH, 6 MEDIUM, 5 LOW)
+- Built v1.0.4 with Codex: BUG-002 through BUG-007 all fixed, 65 tests passing
+- Rebuilt installer, manual QA passed, shipped to production users
+
+**What's Next:**
+- [ ] Re-test BUG-005 (Print All incomplete patients) on Windows — remove a doctor from staff list, confirm orphaned patients show ⚠ ← TOMORROW
+- [ ] Plan v1.0.5: conflict merge UI, SMB race condition, settings path reload, behavior deletion rollback
+- [ ] Code signing certificate decision (~$300/yr EV cert eliminates SmartScreen warnings)
+
+**Notes:**
+- v1.0.4 roadmap documented in `plans/v1.0.4-plan.md`; v1.0.5 deferred bugs listed in §3
+- BUG-005 dropdown edge case: can't produce blank via UI, only via orphaned staff reference — valid protection
+<!-- /AGENT: Claude Code | PROJECT: ScatterplotCreator -->
 
 ---
 
