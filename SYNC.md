@@ -1,6 +1,6 @@
 # Spirit Logic — Multi-Agent Sync File
 
-*File last updated: 2026-02-25 (STX Archery UX-P1 approved)*
+*File last updated: 2026-02-25 (STX Archery PROMO-V2 planned)*
 
 > **For agents:** See `SYNC-INSTRUCTIONS.md` in this repo for sync up protocol.
 
@@ -10,10 +10,10 @@
 
 | Project | Status | Next Action | Last Agent |
 |---------|--------|-------------|------------|
+| STX Archery | 🟡 PROMO-V2 planning | Mike: Supabase setup, then Codex builds | Claude Code |
 | NRT Scatterplot V2 | 🟢 Spec complete, Phase 1 GO | Committee decisions on D1/D6, then build | Claude Code |
 | NRT Core | 🟡 Prototype working | Send zip to Ari | Claude Code |
 | ScatterplotCreator | 🟢 v1.0.9 built, docs current | Deploy installer to production users | Claude Code |
-| STX Archery | 🟢 UX-P1 approved, ready to test | Device test UX-P1, then commit | Claude Code |
 | Goldmine | 🟡 Packet calibration | Claude critique on packet-r2 | Codex |
 
 ---
@@ -23,30 +23,36 @@
 *Last synced: 2026-02-25*
 
 <!-- ACTIVE_BUILD_START -->
-**Project:** STX Archery | **Cycle:** UX-P1 | **Status:** approved ✅
-**Next agent:** mike (ready to test on device)
-**Building:** V1 UX Polish Sprint — Settings cleanup, Score→Shoot rename, Gear keyboard fixes, Stats polish
-**Gates:** tsc PASS, 86/583 tests PASS — approved by CC architecture review
+**Project:** STX Archery | **Cycle:** PROMO-V2 | **Status:** planning 📋
+**Next agent:** mike (Supabase setup required before Codex build)
+**Building:** Supabase-backed promo code system — server-side one-time-use enforcement, redemption tracking
 <!-- ACTIVE_BUILD_END -->
 
 **Path:** `~/dev/3dArchery`
 
 <!-- DECISION_QUEUE_START -->
-UX-P1 is approved and ready for device testing. Manual checklist in HANDOFF.md (11 items). After testing, commit and move to next cycle or App Store prep.
+Mike must set up Supabase before Codex can build. Steps in HANDOFF.md:
+1. Create `promo_codes` + `promo_redemptions` tables (SQL in HANDOFF.md)
+2. Add existing codes to `promo_codes` table
+3. Deploy `redeem-promo` Edge Function (code in HANDOFF.md)
+4. Add `.env.local` with `EXPO_PUBLIC_SUPABASE_URL` + `EXPO_PUBLIC_SUPABASE_ANON_KEY`
+Then: send HANDOFF.md to Codex to build the app-side changes.
 <!-- DECISION_QUEUE_END -->
 
-**What We Did:**
-- Sent UX-P1 plan to Codex (adversarial review → amendments → build phase)
-- Codex built all 5 phases: settings cleanup, Score→Shoot, keyboard avoidance, gear card enrichment, stats polish
-- CC architecture review: all phases approved, tsc clean, 86/583 tests pass
-- Found pre-existing issue: settings.test.tsx not in Jest discovery path (app/ excluded)
-- Updated global AGENTS.md + project AGENTS.md with full multi-agent process docs
+**What We Did This Session:**
+- UX-P1 build (Codex) + CC architecture review → approved ✅
+- Moved settings.test.tsx to src/__tests__/ — now discovered by Jest (87 suites / 587 tests)
+- Investigated all Group A bugs: ME1, ME2, ME3 already fixed; ME5 already fixed (json_each in place)
+- Fixed MD2: app store copy "drag to reposition" → "tap to reposition" (accurate)
+- Fixed ME4 line 1210: added __DEV__ console.error to saveActiveSession silent catch
+- Designed and wrote full PROMO-V2 plan in HANDOFF.md (Supabase schema, Edge Function, app changes)
 
 **What's Next:**
-- [ ] Device test UX-P1 — run through manual checklist in HANDOFF.md ← START HERE
-- [ ] Commit UX-P1 changes after device test passes
+- [ ] Mike: Supabase setup (tables + edge function + env vars) ← START HERE
+- [ ] Mike: Device test UX-P1 (manual checklist in HANDOFF.md, 11 items)
+- [ ] After Supabase ready: send HANDOFF.md to Codex for PROMO-V2 build
+- [ ] After PROMO-V2: commit everything, then App Store prep
 - [ ] Await Apple Developer enrollment approval (DUNS obtained, submitted)
-- [ ] Follow-up ticket: add app/ to Jest testMatch so settings.test.tsx is discovered
 <!-- /AGENT: Claude Code | PROJECT: STX Archery -->
 
 ---
