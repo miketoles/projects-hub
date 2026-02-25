@@ -1,6 +1,6 @@
 # Spirit Logic — Multi-Agent Sync File
 
-*File last updated: 2026-02-25 (ScatterplotCreator v1.0.7)*
+*File last updated: 2026-02-25 (ScatterplotCreator v1.0.8)*
 
 > **For agents:** See `SYNC-INSTRUCTIONS.md` in this repo for sync up protocol.
 
@@ -12,7 +12,7 @@
 |---------|--------|-------------|------------|
 | NRT Scatterplot V2 | 🟢 Spec complete, Phase 1 GO | Committee decisions on D1/D6, then build | Claude Code |
 | NRT Core | 🟡 Prototype working | Send zip to Ari | Claude Code |
-| ScatterplotCreator | 🟢 v1.0.7 built, ready to deploy | Deploy installer to production users | Claude Code |
+| ScatterplotCreator | 🟢 v1.0.8 built, ready to deploy | Deploy installer to production users | Claude Code |
 | STX Archery | 🟢 DH complete, commit done | GPS trail walk test, await Apple enrollment | Claude Code |
 | Goldmine | 🟡 Packet calibration | Claude critique on packet-r2 | Codex |
 
@@ -63,12 +63,14 @@ No active build cycle.
 <!-- DECISION_QUEUE_END -->
 
 **What We Did:**
-- Implemented v1.0.7: Print All checkbox selections now persist across modal reopens (`state.printAllSelections` Map)
-- Committed all prior v1.0.4–v1.0.6 work (bug fixes, hardening, test infrastructure, lock.js, dead code removal)
-- 82/82 tests passing; `npm run build:installer` → `NRT Scatterplot Creator Setup 1.0.7.exe`; pushed to GitHub
+- Shipped v1.0.8 via dual-agent (Claude plan → Codex adversarial review → revised plan → Codex build → CC review)
+- Settings reload fix: read-only path now calls `loadData()` to refresh patient list after data path change
+- Cache age warning: 5+ day cached data shows a one-per-session status message with days remaining
+- Broadcast guard + 4 CSS parity tests (`tests/parity.test.js`) + `getCacheInfo` IPC; 87/87 passing
+- `NRT Scatterplot Creator Setup 1.0.8.exe` built and pushed to GitHub
 
 **What's Next:**
-- [ ] Deploy v1.0.7 installer to production users ← START HERE
+- [ ] Deploy v1.0.8 installer to production users ← START HERE
 - [ ] v2 template design — gate: Mike approval + committee D1/D6 decisions
 <!-- /AGENT: Claude Code | PROJECT: ScatterplotCreator -->
 
