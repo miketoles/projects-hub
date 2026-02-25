@@ -1,6 +1,6 @@
 # Spirit Logic — Multi-Agent Sync File
 
-*File last updated: 2026-02-25 (Process hardening — lessons.md system)*
+*File last updated: 2026-02-25 (Website polish — spiritlogic.dev + stx-archery.com)*
 
 > **For agents:** See `SYNC-INSTRUCTIONS.md` in this repo for sync up protocol.
 
@@ -13,7 +13,7 @@
 | NRT Scatterplot V2 | 🟢 Spec complete, Phase 1 GO | Committee decisions on D1/D6, then build | Claude Code |
 | NRT Core | 🟡 Prototype working | Send zip to Ari | Claude Code |
 | ScatterplotCreator | 🟢 v1.0.9 built, docs current | Deploy installer to production users | Claude Code |
-| STX Archery | 🟢 DH complete, process hardened | GPS trail walk test, await Apple enrollment | Claude Code |
+| STX Archery | 🟢 Sites polished, awaiting enrollment | GPS trail walk test, await Apple enrollment | Claude Code |
 | Goldmine | 🟡 Packet calibration | Claude critique on packet-r2 | Codex |
 
 ---
@@ -36,14 +36,16 @@
 <!-- DECISION_QUEUE_END -->
 
 **What We Did:**
-- Process hardening: created `tasks/lessons.md` (was missing for this project)
-- Added Lesson 1: B13a Codex out-of-scope regression (5 files changed outside spec)
-- Committed `tasks/lessons.md` to 3dArchery repo
+- spiritlogic.dev: stripped to minimal logo landing page (no products, no nav)
+- Added tagline "Human Intuition. Technical Precision." to spiritlogic.dev
+- Fixed logo: transparent background + neon green marks (was solid color box)
+- stx-archery.com: "Spirit Logic LLC" in footer now links to spiritlogic.dev
+- Gate 0 of submit framework bootstrapped (9/9 tools verified, asc binary built)
 
 **What's Next:**
 - [ ] GPS trail walk test — outdoor walk on device to verify trail records end-to-end ← START HERE
 - [ ] Await Apple Developer enrollment approval (DUNS obtained, submitted)
-- [ ] Push + App Store submission once enrolled
+- [ ] Gate 1: dev@spiritlogic.dev email live → Apple org verification → enroll
 <!-- /AGENT: Claude Code | PROJECT: STX Archery -->
 
 ---
@@ -59,14 +61,6 @@ No active build cycle.
 <!-- DECISION_QUEUE_START -->
 (none)
 <!-- DECISION_QUEUE_END -->
-
-**What We Did:**
-- Audited lessons.md system — found gaps: no STX lessons file, no write triggers, Gate 9 never added
-- Created `3dArchery/tasks/lessons.md` with Lesson 1
-- Added lessons check box to `handoff review` output (yellow box, unmissable, fires every cycle)
-- Added Gate 9 to `GATES.md`: scope check — `git diff --stat HEAD` vs spec's Files-to-Touch
-- Init'd `~/dev/` as git repo (`spirit-logic-process`), deny-all `.gitignore` isolates process files
-- Pushed to GitHub: https://github.com/miketoles/spirit-logic-process (private)
 
 **What's Next:**
 - [ ] No immediate action — process improvements are live
@@ -87,10 +81,6 @@ No active build cycle.
 <!-- DECISION_QUEUE_START -->
 (none)
 <!-- DECISION_QUEUE_END -->
-
-**What We Did:**
-- Shipped v1.0.9: cache expiry startup message; 89/89 tests
-- ROADMAP pruned, DESIGN.md brought current
 
 **What's Next:**
 - [ ] Deploy v1.0.9 installer to production users ← START HERE
