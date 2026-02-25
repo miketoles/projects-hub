@@ -1,6 +1,6 @@
 # Spirit Logic — Multi-Agent Sync File
 
-*File last updated: 2026-02-25 (Website polish — spiritlogic.dev + stx-archery.com)*
+*File last updated: 2026-02-25 (STX Archery UX-P1 approved)*
 
 > **For agents:** See `SYNC-INSTRUCTIONS.md` in this repo for sync up protocol.
 
@@ -13,7 +13,7 @@
 | NRT Scatterplot V2 | 🟢 Spec complete, Phase 1 GO | Committee decisions on D1/D6, then build | Claude Code |
 | NRT Core | 🟡 Prototype working | Send zip to Ari | Claude Code |
 | ScatterplotCreator | 🟢 v1.0.9 built, docs current | Deploy installer to production users | Claude Code |
-| STX Archery | 🟢 Sites polished, awaiting enrollment | GPS trail walk test, await Apple enrollment | Claude Code |
+| STX Archery | 🟢 UX-P1 approved, ready to test | Device test UX-P1, then commit | Claude Code |
 | Goldmine | 🟡 Packet calibration | Claude critique on packet-r2 | Codex |
 
 ---
@@ -23,29 +23,30 @@
 *Last synced: 2026-02-25*
 
 <!-- ACTIVE_BUILD_START -->
-**Project:** STX Archery | **Cycle:** UX-P1 | **Status:** reviewing 🔍 — adversarial plan review sent to Codex
-**Next agent:** codex
+**Project:** STX Archery | **Cycle:** UX-P1 | **Status:** approved ✅
+**Next agent:** mike (ready to test on device)
 **Building:** V1 UX Polish Sprint — Settings cleanup, Score→Shoot rename, Gear keyboard fixes, Stats polish
-**Baseline:** 86 suites / 583 tests PASS, tsc clean
+**Gates:** tsc PASS, 86/583 tests PASS — approved by CC architecture review
 <!-- ACTIVE_BUILD_END -->
 
 **Path:** `~/dev/3dArchery`
 
 <!-- DECISION_QUEUE_START -->
-(none)
+UX-P1 is approved and ready for device testing. Manual checklist in HANDOFF.md (11 items). After testing, commit and move to next cycle or App Store prep.
 <!-- DECISION_QUEUE_END -->
 
 **What We Did:**
-- spiritlogic.dev: stripped to minimal logo landing page (no products, no nav)
-- Added tagline "Human Intuition. Technical Precision." to spiritlogic.dev
-- Fixed logo: transparent background + neon green marks (was solid color box)
-- stx-archery.com: "Spirit Logic LLC" in footer now links to spiritlogic.dev
-- Gate 0 of submit framework bootstrapped (9/9 tools verified, asc binary built)
+- Sent UX-P1 plan to Codex (adversarial review → amendments → build phase)
+- Codex built all 5 phases: settings cleanup, Score→Shoot, keyboard avoidance, gear card enrichment, stats polish
+- CC architecture review: all phases approved, tsc clean, 86/583 tests pass
+- Found pre-existing issue: settings.test.tsx not in Jest discovery path (app/ excluded)
+- Updated global AGENTS.md + project AGENTS.md with full multi-agent process docs
 
 **What's Next:**
-- [ ] GPS trail walk test — outdoor walk on device to verify trail records end-to-end ← START HERE
+- [ ] Device test UX-P1 — run through manual checklist in HANDOFF.md ← START HERE
+- [ ] Commit UX-P1 changes after device test passes
 - [ ] Await Apple Developer enrollment approval (DUNS obtained, submitted)
-- [ ] Gate 1: dev@spiritlogic.dev email live → Apple org verification → enroll
+- [ ] Follow-up ticket: add app/ to Jest testMatch so settings.test.tsx is discovered
 <!-- /AGENT: Claude Code | PROJECT: STX Archery -->
 
 ---
