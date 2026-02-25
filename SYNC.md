@@ -23,10 +23,10 @@
 *Last synced: 2026-02-25*
 
 <!-- ACTIVE_BUILD_START -->
-**Project:** STX Archery | **Cycle:** DH-B4 | **Status:** approved ✅ — commit done
-**Next agent:** mike (GPS trail walk test, await Apple enrollment)
-**Building:** Device hardening complete — GPS trail fix, Map Course hidden for v1, settings fixes
-**Gates:** 86 suites / 583 tests PASS, tsc clean
+**Project:** STX Archery | **Cycle:** UX-P1 | **Status:** reviewing 🔍 — adversarial plan review sent to Codex
+**Next agent:** codex
+**Building:** V1 UX Polish Sprint — Settings cleanup, Score→Shoot rename, Gear keyboard fixes, Stats polish
+**Baseline:** 86 suites / 583 tests PASS, tsc clean
 <!-- ACTIVE_BUILD_END -->
 
 **Path:** `~/dev/3dArchery`
