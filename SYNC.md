@@ -1,6 +1,6 @@
 # Spirit Logic — Multi-Agent Sync File
 
-*File last updated: 2026-02-24*
+*File last updated: 2026-02-25*
 
 > **For agents:** See `SYNC-INSTRUCTIONS.md` in this repo for sync up protocol.
 
@@ -13,8 +13,38 @@
 | NRT Scatterplot V2 | 🟢 Spec complete, Phase 1 GO | Committee decisions on D1/D6, then build | Claude Code |
 | NRT Core | 🟡 Prototype working | Send zip to Ari | Claude Code |
 | ScatterplotCreator | 🟢 v1.0.5 built, ready to ship | Windows QA item 4 (offline dialog), then deploy | Claude Code |
-| STX Archery | 🟡 Testing phase | GPS trail walk test, DUNS pending | Claude Code |
+| STX Archery | 🟢 DH complete, commit done | GPS trail walk test, await Apple enrollment | Claude Code |
 | Goldmine | 🟡 Packet calibration | Claude critique on packet-r2 | Codex |
+
+---
+
+<!-- AGENT: Claude Code | PROJECT: STX Archery -->
+## Claude Code — STX Archery
+*Last synced: 2026-02-25*
+
+<!-- ACTIVE_BUILD_START -->
+**Project:** STX Archery | **Cycle:** DH-B4 | **Status:** approved ✅ — commit done
+**Next agent:** mike (GPS trail walk test, await Apple enrollment)
+**Building:** Device hardening complete — GPS trail fix, Map Course hidden for v1, settings fixes
+**Gates:** 86 suites / 583 tests PASS, tsc clean
+<!-- ACTIVE_BUILD_END -->
+
+**Path:** `~/dev/3dArchery`
+
+<!-- DECISION_QUEUE_START -->
+(none)
+<!-- DECISION_QUEUE_END -->
+
+**What We Did:**
+- DH-B4 CC review — all 15 points PASS (GPS trail, Map Course, settings)
+- Commit pass complete — DH-B3 + DH-B4 committed (37 commits ahead of origin)
+- HANDOFF.md updated: cycle DH-B4 approved, next agent: mike
+
+**What's Next:**
+- [ ] GPS trail walk test — outdoor walk on device to verify trail records end-to-end ← START HERE
+- [ ] Await Apple Developer enrollment approval (DUNS obtained, submitted)
+- [ ] Push + App Store submission once enrolled
+<!-- /AGENT: Claude Code | PROJECT: STX Archery -->
 
 ---
 
@@ -35,15 +65,8 @@
 (none)
 <!-- DECISION_QUEUE_END -->
 
-**What We Did:**
-- Ran full dual adversarial review — found 4 Critical + 8 High findings; built ROADMAP.md + IMPLEMENTATION_PLAN.md
-- Phases 1–4 all built by Codex and CC-signed-off: 4 data-loss fixes, CSS unification, close-guard hardening, multi-template scaffold
-- P4-3 DESIGN.md reconciliation complete — 7 sections updated (core contracts, save paths, close guard, data durability, etc.)
-- v1.0.5 built: desktop shortcut always created, icon restored, doctor/BCBA orphan value fix added
-- New Critical bug found (doctor renamed → edit form silently corrupted patient) — fixed in v1.0.5
-
 **What's Next:**
-- [ ] Test item 4: offline/L: drive → edit → close → verify new read-only dialog wording ← WHEN CONVENIENT
+- [ ] Test item 4: offline/L: drive → edit → close → verify read-only dialog wording ← WHEN CONVENIENT
 - [ ] Deploy v1.0.5 to production users
 - [ ] v2 template design — gate: Mike approval required before starting
 <!-- /AGENT: Claude Code | PROJECT: ScatterplotCreator -->
