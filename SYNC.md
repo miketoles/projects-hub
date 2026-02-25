@@ -1,6 +1,6 @@
 # Spirit Logic — Multi-Agent Sync File
 
-*File last updated: 2026-02-25 (ScatterplotCreator v1.0.8)*
+*File last updated: 2026-02-25 (ScatterplotCreator v1.0.9)*
 
 > **For agents:** See `SYNC-INSTRUCTIONS.md` in this repo for sync up protocol.
 
@@ -12,7 +12,7 @@
 |---------|--------|-------------|------------|
 | NRT Scatterplot V2 | 🟢 Spec complete, Phase 1 GO | Committee decisions on D1/D6, then build | Claude Code |
 | NRT Core | 🟡 Prototype working | Send zip to Ari | Claude Code |
-| ScatterplotCreator | 🟢 v1.0.8 built, ready to deploy | Deploy installer to production users | Claude Code |
+| ScatterplotCreator | 🟢 v1.0.9 built, docs current | Deploy installer to production users | Claude Code |
 | STX Archery | 🟢 DH complete, commit done | GPS trail walk test, await Apple enrollment | Claude Code |
 | Goldmine | 🟡 Packet calibration | Claude critique on packet-r2 | Codex |
 
@@ -63,15 +63,15 @@ No active build cycle.
 <!-- DECISION_QUEUE_END -->
 
 **What We Did:**
-- Shipped v1.0.8 via dual-agent (Claude plan → Codex adversarial review → revised plan → Codex build → CC review)
-- Settings reload fix: read-only path now calls `loadData()` to refresh patient list after data path change
-- Cache age warning: 5+ day cached data shows a one-per-session status message with days remaining
-- Broadcast guard + 4 CSS parity tests (`tests/parity.test.js`) + `getCacheInfo` IPC; 87/87 passing
-- `NRT Scatterplot Creator Setup 1.0.8.exe` built and pushed to GitHub
+- Shipped v1.0.9: cache expiry startup message (specific offline notice when 7-day cache was deleted); 89/89 tests
+- Corrected stale ROADMAP entries — conflict dialog and SMB lock were already fixed in v1.0.6; H-04, H-07 resolved
+- ROADMAP todo pruned from 7 items to 2 real ones; Phase 6 design doc reconciliation completed
+- DESIGN.md: Core Contracts expanded to 3, concurrency/lock/IPC sections brought current, ~80 lines of stale pre-v1.0.4 artifacts removed
+- `NRT Scatterplot Creator Setup 1.0.9.exe` built and pushed to GitHub
 
 **What's Next:**
-- [ ] Deploy v1.0.8 installer to production users ← START HERE
-- [ ] v2 template design — gate: Mike approval + committee D1/D6 decisions
+- [ ] Deploy v1.0.9 installer to production users ← START HERE
+- [ ] v2 template design — gate: committee D1/D6/D4 decisions
 <!-- /AGENT: Claude Code | PROJECT: ScatterplotCreator -->
 
 ---
