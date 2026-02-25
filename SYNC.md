@@ -1,6 +1,6 @@
 # Spirit Logic — Multi-Agent Sync File
 
-*File last updated: 2026-02-25 (ScatterplotCreator v1.0.9)*
+*File last updated: 2026-02-25 (Process hardening — lessons.md system)*
 
 > **For agents:** See `SYNC-INSTRUCTIONS.md` in this repo for sync up protocol.
 
@@ -13,7 +13,7 @@
 | NRT Scatterplot V2 | 🟢 Spec complete, Phase 1 GO | Committee decisions on D1/D6, then build | Claude Code |
 | NRT Core | 🟡 Prototype working | Send zip to Ari | Claude Code |
 | ScatterplotCreator | 🟢 v1.0.9 built, docs current | Deploy installer to production users | Claude Code |
-| STX Archery | 🟢 DH complete, commit done | GPS trail walk test, await Apple enrollment | Claude Code |
+| STX Archery | 🟢 DH complete, process hardened | GPS trail walk test, await Apple enrollment | Claude Code |
 | Goldmine | 🟡 Packet calibration | Claude critique on packet-r2 | Codex |
 
 ---
@@ -36,15 +36,41 @@
 <!-- DECISION_QUEUE_END -->
 
 **What We Did:**
-- DH-B4 CC review — all 15 points PASS (GPS trail, Map Course, settings)
-- Commit pass complete — DH-B3 + DH-B4 committed (37 commits ahead of origin)
-- HANDOFF.md updated: cycle DH-B4 approved, next agent: mike
+- Process hardening: created `tasks/lessons.md` (was missing for this project)
+- Added Lesson 1: B13a Codex out-of-scope regression (5 files changed outside spec)
+- Committed `tasks/lessons.md` to 3dArchery repo
 
 **What's Next:**
 - [ ] GPS trail walk test — outdoor walk on device to verify trail records end-to-end ← START HERE
 - [ ] Await Apple Developer enrollment approval (DUNS obtained, submitted)
 - [ ] Push + App Store submission once enrolled
 <!-- /AGENT: Claude Code | PROJECT: STX Archery -->
+
+---
+
+<!-- AGENT: Claude Code | PROJECT: Process -->
+## Claude Code — Global Process
+*Last synced: 2026-02-25*
+
+<!-- ACTIVE_BUILD_START -->
+No active build cycle.
+<!-- ACTIVE_BUILD_END -->
+
+<!-- DECISION_QUEUE_START -->
+(none)
+<!-- DECISION_QUEUE_END -->
+
+**What We Did:**
+- Audited lessons.md system — found gaps: no STX lessons file, no write triggers, Gate 9 never added
+- Created `3dArchery/tasks/lessons.md` with Lesson 1
+- Added lessons check box to `handoff review` output (yellow box, unmissable, fires every cycle)
+- Added Gate 9 to `GATES.md`: scope check — `git diff --stat HEAD` vs spec's Files-to-Touch
+- Init'd `~/dev/` as git repo (`spirit-logic-process`), deny-all `.gitignore` isolates process files
+- Pushed to GitHub: https://github.com/miketoles/spirit-logic-process (private)
+
+**What's Next:**
+- [ ] No immediate action — process improvements are live
+<!-- /AGENT: Claude Code | PROJECT: Process -->
 
 ---
 
@@ -63,11 +89,8 @@ No active build cycle.
 <!-- DECISION_QUEUE_END -->
 
 **What We Did:**
-- Shipped v1.0.9: cache expiry startup message (specific offline notice when 7-day cache was deleted); 89/89 tests
-- Corrected stale ROADMAP entries — conflict dialog and SMB lock were already fixed in v1.0.6; H-04, H-07 resolved
-- ROADMAP todo pruned from 7 items to 2 real ones; Phase 6 design doc reconciliation completed
-- DESIGN.md: Core Contracts expanded to 3, concurrency/lock/IPC sections brought current, ~80 lines of stale pre-v1.0.4 artifacts removed
-- `NRT Scatterplot Creator Setup 1.0.9.exe` built and pushed to GitHub
+- Shipped v1.0.9: cache expiry startup message; 89/89 tests
+- ROADMAP pruned, DESIGN.md brought current
 
 **What's Next:**
 - [ ] Deploy v1.0.9 installer to production users ← START HERE
