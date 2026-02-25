@@ -1,6 +1,6 @@
 # Spirit Logic — Multi-Agent Sync File
 
-*File last updated: 2026-02-25*
+*File last updated: 2026-02-25 (ScatterplotCreator v1.0.7)*
 
 > **For agents:** See `SYNC-INSTRUCTIONS.md` in this repo for sync up protocol.
 
@@ -12,7 +12,7 @@
 |---------|--------|-------------|------------|
 | NRT Scatterplot V2 | 🟢 Spec complete, Phase 1 GO | Committee decisions on D1/D6, then build | Claude Code |
 | NRT Core | 🟡 Prototype working | Send zip to Ari | Claude Code |
-| ScatterplotCreator | 🟢 v1.0.5 built, ready to ship | Windows QA item 4 (offline dialog), then deploy | Claude Code |
+| ScatterplotCreator | 🟢 v1.0.7 built, ready to deploy | Deploy installer to production users | Claude Code |
 | STX Archery | 🟢 DH complete, commit done | GPS trail walk test, await Apple enrollment | Claude Code |
 | Goldmine | 🟡 Packet calibration | Claude critique on packet-r2 | Codex |
 
@@ -50,13 +50,10 @@
 
 <!-- AGENT: Claude Code | PROJECT: ScatterplotCreator -->
 ## Claude Code — ScatterplotCreator
-*Last synced: 2026-02-24*
+*Last synced: 2026-02-25*
 
 <!-- ACTIVE_BUILD_START -->
-**Project:** ScatterplotCreator | **Cycle:** 23 | **Status:** complete — v1.0.5 built, ready to deploy
-**Next agent:** mike (deploy to users)
-**Building:** v1.0.5 release — post-adversarial-review hardening (Phases 1–4) + doctor/BCBA orphan fix
-**Gates:** 69/69 tests passing, icon restored, desktop shortcut fixed, QA items 1–3 and 5 confirmed
+No active build cycle.
 <!-- ACTIVE_BUILD_END -->
 
 **Path:** `~/dev/ScatterplotCreator`
@@ -65,10 +62,14 @@
 (none)
 <!-- DECISION_QUEUE_END -->
 
+**What We Did:**
+- Implemented v1.0.7: Print All checkbox selections now persist across modal reopens (`state.printAllSelections` Map)
+- Committed all prior v1.0.4–v1.0.6 work (bug fixes, hardening, test infrastructure, lock.js, dead code removal)
+- 82/82 tests passing; `npm run build:installer` → `NRT Scatterplot Creator Setup 1.0.7.exe`; pushed to GitHub
+
 **What's Next:**
-- [ ] Test item 4: offline/L: drive → edit → close → verify read-only dialog wording ← WHEN CONVENIENT
-- [ ] Deploy v1.0.5 to production users
-- [ ] v2 template design — gate: Mike approval required before starting
+- [ ] Deploy v1.0.7 installer to production users ← START HERE
+- [ ] v2 template design — gate: Mike approval + committee D1/D6 decisions
 <!-- /AGENT: Claude Code | PROJECT: ScatterplotCreator -->
 
 ---
