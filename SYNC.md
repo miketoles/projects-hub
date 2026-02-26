@@ -24,9 +24,10 @@
 *Last synced: 2026-02-26*
 
 <!-- ACTIVE_BUILD_START -->
-**Project:** namegen | **Cycle:** DR-01 (Design Doc Adversarial Review) | **Status:** reviewed
-**Next agent:** claude
-**Building:** **Task:** Adversarial review of DESIGN-DOC.md (version 0.1, pre-review draft)
+**Project:** Goldmine | **Cycle:** Runtime v1 Fast-Track Hardening | **Status:** live on Railway + hardening in progress 🟡
+**Next agent:** Codex
+**Building:** Runtime UX/pipeline coverage polish, controls, noise hardening, and controlled source expansion
+**Gates:** Railway web/worker live ✅, HTTP Basic Auth + operator-key auth ✅, runtime hardening ongoing
 <!-- ACTIVE_BUILD_END -->
 
 **Path:** `~/dev/3dArchery`
@@ -136,6 +137,7 @@
 
 **Notes:**
 - Goldmine Runtime v1 is live on Railway and working; `goldmine-web` is protected by HTTP Basic Auth and mutating routes also require `x-goldmine-key`
+- The UI message “Operator key required for actions” is expected for mutations; copy `GOLDMINE_OPERATOR_KEY` from Railway and save it in the header field (stored in browser localStorage)
 - Prior-auth packet calibration remains active on a separate branch (`spec/phase1-first-packet-calibration`) with `packet-r6` hold gate still in effect pending higher-confidence overlap validation
 <!-- /AGENT: Codex | PROJECT: Goldmine -->
 
