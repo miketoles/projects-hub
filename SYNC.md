@@ -24,10 +24,9 @@
 *Last synced: 2026-02-26*
 
 <!-- ACTIVE_BUILD_START -->
-**Project:** STX Archery | **Cycle:** GEA-B | **Status:** committed ✅
-**Next agent:** mike (device test)
-**Building:** Gear enhancements — bow notes, arrow-bow M2M, free round countdown, dead-code cleanup
-**Gates:** tsc PASS, 87/587 tests PASS — CC architecture review clean
+**Project:** namegen | **Cycle:** DR-01 (Design Doc Adversarial Review) | **Status:** reviewed
+**Next agent:** claude
+**Building:** **Task:** Adversarial review of DESIGN-DOC.md (version 0.1, pre-review draft)
 <!-- ACTIVE_BUILD_END -->
 
 **Path:** `~/dev/3dArchery`
@@ -57,7 +56,9 @@
 *Last synced: 2026-02-25*
 
 <!-- ACTIVE_BUILD_START -->
-No active build cycle.
+**Project:** namegen | **Cycle:** DR-01 (Design Doc Adversarial Review) | **Status:** reviewed
+**Next agent:** claude
+**Building:** **Task:** Adversarial review of DESIGN-DOC.md (version 0.1, pre-review draft)
 <!-- ACTIVE_BUILD_END -->
 
 **Path:** `~/dev/ScatterplotCreator`
@@ -78,7 +79,9 @@ No active build cycle.
 *Last synced: 2026-02-22*
 
 <!-- ACTIVE_BUILD_START -->
-No active build cycle.
+**Project:** namegen | **Cycle:** DR-01 (Design Doc Adversarial Review) | **Status:** reviewed
+**Next agent:** claude
+**Building:** **Task:** Adversarial review of DESIGN-DOC.md (version 0.1, pre-review draft)
 <!-- ACTIVE_BUILD_END -->
 
 <!-- DECISION_QUEUE_START -->
@@ -97,10 +100,9 @@ No active build cycle.
 *Last synced: 2026-02-26*
 
 <!-- ACTIVE_BUILD_START -->
-**Project:** Goldmine | **Cycle:** Runtime v1 Fast-Track Hardening | **Status:** live on Railway + hardening in progress 🟡
-**Next agent:** Codex
-**Building:** Runtime UX/pipeline coverage polish, controls, noise hardening, controlled source expansion
-**Gates:** Railway web/worker live ✅, Basic Auth + operator-key auth ✅, runtime hardening ongoing
+**Project:** namegen | **Cycle:** DR-01 (Design Doc Adversarial Review) | **Status:** reviewed
+**Next agent:** claude
+**Building:** **Task:** Adversarial review of DESIGN-DOC.md (version 0.1, pre-review draft)
 <!-- ACTIVE_BUILD_END -->
 
 **Path:** `~/dev/goldmine`
