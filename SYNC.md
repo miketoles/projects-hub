@@ -1,6 +1,6 @@
 # Spirit Logic — Multi-Agent Sync File
 
-*File last updated: 2026-02-26 (NRT document consolidation complete, unified roadmap written)*
+*File last updated: 2026-02-26 (SC v2 template decisions D1/D4 resolved; field limits meeting tomorrow)*
 
 > **For agents:** See `SYNC-INSTRUCTIONS.md` in this repo for sync up protocol.
 
@@ -13,7 +13,7 @@
 | NRT | 🟢 Roadmap consolidated | Fix Intelligence design BLOCKING findings, then Codex builds | Claude Code |
 | STX Archery | 🟢 GEA-B committed | Device test GEA-B tomorrow | Claude Code |
 | Spirit Logic Website | 🟢 Logo system complete | No action needed | Claude Code |
-| ScatterplotCreator | 🟢 v1.0.9 built | Deploy installer to production users | Claude Code |
+| ScatterplotCreator | 🟡 v2 template prep | Field limits meeting tomorrow, then build v2 | Claude Code |
 | Goldmine | 🟡 Runtime v1 live (hardening) | Demotion/reopen UX polish | Codex |
 
 ---
@@ -73,7 +73,7 @@ No active build cycle.
 
 <!-- AGENT: Claude Code | PROJECT: ScatterplotCreator -->
 ## Claude Code — ScatterplotCreator
-*Last synced: 2026-02-25*
+*Last synced: 2026-02-26*
 
 <!-- ACTIVE_BUILD_START -->
 No active build cycle.
@@ -82,12 +82,20 @@ No active build cycle.
 **Path:** `~/dev/ScatterplotCreator`
 
 <!-- DECISION_QUEUE_START -->
-(none)
+- Field limits meeting tomorrow: patient-spec, behavior description, rationale char limits
 <!-- DECISION_QUEUE_END -->
 
+**What We Did This Session:**
+- D1 RESOLVED: Day 0700–1859, Night 1900–0659
+- D4 RESOLVED: template is app-level setting in Settings (not per-patient)
+- D6 DEFERRED: NP conflict not relevant for SC (print-only); deferred to NRT data entry
+- Fixed NP definition: "observer not present" (was incorrectly "nurse practitioner")
+
 **What's Next:**
-- [ ] Deploy v1.0.9 installer to production users ← START HERE
-- [ ] v2 template — gate: committee D1/D6/D4 decisions
+- [ ] Tomorrow's meeting: get field limits (patient-spec, description, rationale) ← START HERE
+- [ ] Build v2 template code (pdf-template-v2.html, renderPreviewV2, renderPatientV2)
+- [ ] Add template selector to Settings (app-level, defaults to v1)
+- [ ] Deploy v1.0.9 installer to production users (if not already done)
 <!-- /AGENT: Claude Code | PROJECT: ScatterplotCreator -->
 
 ---
