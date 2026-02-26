@@ -1,6 +1,6 @@
 # Spirit Logic — Multi-Agent Sync File
 
-*File last updated: 2026-02-26 (STX Archery GEA-B committed, pivoting to Spirit Logic website)*
+*File last updated: 2026-02-26 (Spirit Logic website logo + STX Archery GEA-B awaiting device test)*
 
 > **For agents:** See `SYNC-INSTRUCTIONS.md` in this repo for sync up protocol.
 
@@ -10,8 +10,8 @@
 
 | Project | Status | Next Action | Last Agent |
 |---------|--------|-------------|------------|
-| STX Archery | 🟢 GEA-B committed | Device test GEA-B | Claude Code |
-| Spirit Logic Website | 🟡 Logo work | Add white-bird/green-text variation | Claude Code |
+| STX Archery | 🟢 GEA-B committed | Device test GEA-B tomorrow | Claude Code |
+| Spirit Logic Website | 🟢 White-bird logo live | No action needed | Claude Code |
 | NRT Scatterplot V2 | 🟢 Spec complete | Committee D1/D6 decisions, then build | Claude Code |
 | NRT Core | 🟡 Prototype working | Send zip to Ari | Claude Code |
 | ScatterplotCreator | 🟢 v1.0.9 built | Deploy installer to production users | Claude Code |
@@ -37,11 +37,12 @@
 <!-- DECISION_QUEUE_END -->
 
 **What We Did This Session:**
-- Confirmed GEA-B plan fully implemented (all 5 UX issues resolved by Codex build)
-- Pivoting to Spirit Logic website logo work
+- Confirmed GEA-B fully implemented (all 5 UX issues resolved)
+- Swapped Spirit Logic live logo to white-bird/green-text variation
+- Added green/green and white-bird/green-text logo PNG variants to spiritlogic repo
 
 **What's Next:**
-- [ ] Device test GEA-B (multi-bow select, bow notes, free rounds countdown, dev options no 10-tap) ← START HERE
+- [ ] Device test GEA-B tomorrow (multi-bow select, bow notes, free rounds countdown, no 10-tap) ← START HERE
 - [ ] GPS trail testing (walk a real round — still pending)
 - [ ] Await Apple Developer enrollment (DUNS submitted, pending)
 - [ ] When enrolled: Copy Device ID → EAS Build → TestFlight → submission
@@ -85,7 +86,6 @@ No active build cycle.
 
 **What's Next:**
 - [ ] Get committee confirmation on D1 and D6 ← START HERE
-- [ ] Begin Phase 1: ScatterplotCreator v2 PDF template
 <!-- /AGENT: Claude Code | PROJECT: NRT Scatterplot V2 -->
 
 ---
