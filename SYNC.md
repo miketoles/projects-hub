@@ -1,6 +1,6 @@
 # Spirit Logic — Multi-Agent Sync File
 
-*File last updated: 2026-02-27 (NRT: RBT Session spec v0.2 — adversarial review complete)*
+*File last updated: 2026-02-27 (NRT: RBT Session spec v0.3 — all decisions resolved, ready for impl planning)*
 
 > **For agents:** See `SYNC-INSTRUCTIONS.md` in this repo for sync up protocol.
 
@@ -10,7 +10,7 @@
 
 | Project | Status | Next Action | Last Agent |
 |---------|--------|-------------|------------|
-| NRT | 🟢 RBT Session spec v0.2 reviewed | Auth role decision (D-RBT-1), then implementation planning | Claude Code |
+| NRT | 🟢 RBT Session spec v0.3 ready | Implementation planning sprint (tomorrow or Sunday) | Claude Code |
 | STX Archery | 🟢 GPS+photos verified on device | Await Apple Developer enrollment (DUNS pending) | Claude Code |
 | Spirit Logic Website | 🟢 Logo system complete | No action needed | Claude Code |
 | ScatterplotCreator | 🟡 v2 template prep | Field limits meeting, then build v2 | Claude Code |
@@ -29,19 +29,19 @@ No active build cycle.
 **Path:** `~/dev/NRT`
 
 <!-- DECISION_QUEUE_START -->
-- D-RBT-1: Auth role extension (RBT/BCBA/Admin) — prerequisite for RBT Session module
+(none — all decisions resolved)
 <!-- DECISION_QUEUE_END -->
 
 **What We Did This Session:**
-- RBT Session spec v0.2: fixed all 4 BLOCKING + 9 SHOULD FIX from adversarial review
-- Behavior taxonomy: CHSA categories vs scatterplot behaviors vs session behaviors
-- Decisions logged: auth roles (D-RBT-1 open), Intelligence reconciliation (D-RBT-2), platform target (D-RBT-3: web first)
-- Merged session_type/activity_type, added retraction model, template versioning, group API
+- RBT Session spec v0.3: adversarial review fixes + auth role extension design
+- D-RBT-1 resolved: `nrt_user` table, primary_role + is_admin flag, full permission matrices
+- Session model: team-wide visibility, informal reassignment, unplanned pivot sessions
+- Nurse role for CHSA-only access (Nurse Manager use case)
+- All 5 RBT Session decisions now closed (D-RBT-1/2/3, DG-3, behavior taxonomy)
 
 **What's Next:**
-- [ ] Resolve D-RBT-1 (auth role extension design) ← START HERE
+- [ ] RBT Session implementation planning sprint ← START HERE (tomorrow or Sunday)
 - [ ] Fix 6 BLOCKING issues in NRT-INTELLIGENCE-DESIGN.md
-- [ ] Write Codex implementation plan for Intelligence Phases 1–11
 - [ ] Phase D deploys when Craig IT responds
 <!-- /AGENT: Claude Code | PROJECT: NRT -->
 
