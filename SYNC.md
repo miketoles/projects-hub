@@ -1,6 +1,6 @@
 # Spirit Logic — Multi-Agent Sync File
 
-*File last updated: 2026-02-26 (STX GPS+photos fully working; map type toggle added)*
+*File last updated: 2026-02-26 (NRT: RBT Session spec + behavior taxonomy)*
 
 > **For agents:** See `SYNC-INSTRUCTIONS.md` in this repo for sync up protocol.
 
@@ -10,7 +10,7 @@
 
 | Project | Status | Next Action | Last Agent |
 |---------|--------|-------------|------------|
-| NRT | 🟢 Roadmap consolidated | Fix Intelligence design BLOCKING findings, then Codex builds | Claude Code |
+| NRT | 🟢 RBT Session spec complete | Adversarial review of Intelligence design + RBT Session spec | Claude Code |
 | STX Archery | 🟢 GPS+photos verified on device | Await Apple Developer enrollment (DUNS pending) | Claude Code |
 | Spirit Logic Website | 🟢 Logo system complete | No action needed | Claude Code |
 | ScatterplotCreator | 🟡 v2 template prep | Field limits meeting, then build v2 | Claude Code |
@@ -29,13 +29,19 @@ No active build cycle.
 **Path:** `~/dev/NRT`
 
 <!-- DECISION_QUEUE_START -->
-(none — roadmap approved, Intelligence design fixes queued for Codex)
+(none)
 <!-- DECISION_QUEUE_END -->
 
+**What We Did This Session:**
+- Created RBT Session Data Collection module spec (`core/docs/modules/RBT-Session.md`)
+- Defined behavior taxonomy: CHSA categories vs scatterplot behaviors vs session behaviors
+- Added BCBA Behavior Manager screen spec and session behavior API endpoints
+- Updated roadmap F3B with spec reference
+
 **What's Next:**
-- [ ] Fix 6 BLOCKING issues in NRT-INTELLIGENCE-DESIGN.md ← START HERE
+- [ ] Adversarial review: Intelligence design + RBT Session spec ← START HERE
+- [ ] Fix 6 BLOCKING issues in NRT-INTELLIGENCE-DESIGN.md
 - [ ] Write Codex implementation plan for Intelligence Phases 1–11
-- [ ] Codex builds Intelligence Phases 1–11
 - [ ] Phase D deploys when Craig IT responds
 <!-- /AGENT: Claude Code | PROJECT: NRT -->
 
