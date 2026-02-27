@@ -1,6 +1,6 @@
 # Spirit Logic — Multi-Agent Sync File
 
-*File last updated: 2026-02-27 (Goldmine transition-history UX polish live on Railway)*
+*File last updated: 2026-02-27 (NRT: RBT Session spec v0.2 — adversarial review complete)*
 
 > **For agents:** See `SYNC-INSTRUCTIONS.md` in this repo for sync up protocol.
 
@@ -10,7 +10,7 @@
 
 | Project | Status | Next Action | Last Agent |
 |---------|--------|-------------|------------|
-| NRT | 🟢 RBT Session spec complete | Adversarial review of Intelligence design + RBT Session spec | Claude Code |
+| NRT | 🟢 RBT Session spec v0.2 reviewed | Auth role decision (D-RBT-1), then implementation planning | Claude Code |
 | STX Archery | 🟢 GPS+photos verified on device | Await Apple Developer enrollment (DUNS pending) | Claude Code |
 | Spirit Logic Website | 🟢 Logo system complete | No action needed | Claude Code |
 | ScatterplotCreator | 🟡 v2 template prep | Field limits meeting, then build v2 | Claude Code |
@@ -20,7 +20,7 @@
 
 <!-- AGENT: Claude Code | PROJECT: NRT -->
 ## Claude Code — NRT
-*Last synced: 2026-02-26*
+*Last synced: 2026-02-27*
 
 <!-- ACTIVE_BUILD_START -->
 No active build cycle.
@@ -29,17 +29,17 @@ No active build cycle.
 **Path:** `~/dev/NRT`
 
 <!-- DECISION_QUEUE_START -->
-(none)
+- D-RBT-1: Auth role extension (RBT/BCBA/Admin) — prerequisite for RBT Session module
 <!-- DECISION_QUEUE_END -->
 
 **What We Did This Session:**
-- Created RBT Session Data Collection module spec (`core/docs/modules/RBT-Session.md`)
-- Defined behavior taxonomy: CHSA categories vs scatterplot behaviors vs session behaviors
-- Added BCBA Behavior Manager screen spec and session behavior API endpoints
-- Updated roadmap F3B with spec reference
+- RBT Session spec v0.2: fixed all 4 BLOCKING + 9 SHOULD FIX from adversarial review
+- Behavior taxonomy: CHSA categories vs scatterplot behaviors vs session behaviors
+- Decisions logged: auth roles (D-RBT-1 open), Intelligence reconciliation (D-RBT-2), platform target (D-RBT-3: web first)
+- Merged session_type/activity_type, added retraction model, template versioning, group API
 
 **What's Next:**
-- [ ] Adversarial review: Intelligence design + RBT Session spec ← START HERE
+- [ ] Resolve D-RBT-1 (auth role extension design) ← START HERE
 - [ ] Fix 6 BLOCKING issues in NRT-INTELLIGENCE-DESIGN.md
 - [ ] Write Codex implementation plan for Intelligence Phases 1–11
 - [ ] Phase D deploys when Craig IT responds
