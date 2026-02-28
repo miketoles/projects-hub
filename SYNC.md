@@ -1,6 +1,6 @@
 # Spirit Logic — Multi-Agent Sync File
 
-*File last updated: 2026-02-27 (Goldmine: Strata v3 approved, App Store design doc drafted)*
+*File last updated: 2026-02-27 (STX Archery: adversarial review complete, pre-production ready)*
 
 > **For agents:** See `SYNC-INSTRUCTIONS.md` in this repo for sync up protocol.
 
@@ -12,7 +12,7 @@
 |---------|--------|-------------|------------|
 | Goldmine | 🟢 Strata v3 approved + App Store design drafted | Mike reviews design docs before build | Claude Code |
 | NRT | 🟡 RBT Session spec v0.3 ready | RBT impl planning (Sunday) | Claude Code |
-| STX Archery | 🟡 ADV-2 built | Claude review of Codex build | Claude Code |
+| STX Archery | 🟢 Adversarial review complete, 90 suites/604 tests | Mike: credentials + device test | Claude Code |
 | ScatterplotCreator | 🟡 v2 committee decisions captured | Build v1 Bx limit + v2 template (Sunday) | Claude Code |
 | Spirit Logic Website | 🟢 Logo system complete | No action needed | Claude Code |
 
@@ -79,21 +79,35 @@ No active build cycle.
 *Last synced: 2026-02-27*
 
 <!-- ACTIVE_BUILD_START -->
-**Project:** STX Archery | **Cycle:** ADV-2 | **Status:** built
-**Next agent:** claude
-**Building:** Export consistency tests + multi-archer gating
+**Project:** STX Archery | **Cycle:** ADV-2 | **Status:** approved ✅
+**Next agent:** mike
+**Building:** Pre-production adversarial review complete — waiting on credentials + device test
 <!-- ACTIVE_BUILD_END -->
 
 **Path:** `~/dev/3dArchery`
 
 <!-- DECISION_QUEUE_START -->
-(none)
+- Mike: Create RevenueCat products + set EAS secrets (iOS + Android API keys)
+- Mike: Create Google Maps API key in Google Cloud Console
+- Mike: Get Apple Team ID + create App Store Connect API key
 <!-- DECISION_QUEUE_END -->
 
+**What We Did This Session:**
+- Committed 7 pending export fixes (multi-archer PDF, share card crash, branding URL)
+- ADV-1: Custom rounds + Quick Shoot test coverage (Codex handoff, 10 new tests)
+- ADV-2: Export consistency tests + multi-archer gating (Codex handoff, 7 new tests)
+- App config: ITSAppUsesNonExemptEncryption, EAS production profile
+- Store metadata: iOS + Android en-US files written to spirit-logic-submit
+- Smoke test checklist: added Quick Shoot + Custom Round sections
+- Baseline: 90 suites / 604 tests, tsc clean
+
 **What's Next:**
-- [ ] Review ADV-2 Codex build ← START HERE
-- [ ] Await Apple Developer enrollment (DUNS pending) ← BLOCKER
-- [ ] When enrolled: EAS Build → TestFlight → submission
+- [ ] RevenueCat products + API keys → EAS secrets ← START HERE
+- [ ] Google Maps API key → EAS secrets
+- [ ] Apple Team ID + ASC API key
+- [ ] Dev build + device smoke test (23 sections)
+- [ ] Screenshots from TestFlight build
+- [ ] Submission pipeline gates 1-11
 <!-- /AGENT: Claude Code | PROJECT: STX Archery -->
 
 ---
