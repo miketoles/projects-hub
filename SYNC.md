@@ -1,6 +1,6 @@
 # Spirit Logic — Multi-Agent Sync File
 
-*Last synced: 2026-03-01 by Claude Code (ScatterplotCreator — v1.1 features shipped, v2 PDF working on Windows)*
+*Last synced: 2026-03-01 by Claude Code (STX Archery — Build 6 verified, all BFX committed + pushed)*
 
 > **For agents:** See `SYNC-INSTRUCTIONS.md` in this repo for sync up protocol.
 
@@ -10,7 +10,7 @@
 
 | Project | Status | Next Action | Last Agent |
 |---------|--------|-------------|------------|
-| STX Archery | 🟡 Build 6 in TestFlight, John testing | Wait for John's feedback, then IAP setup | Claude Code |
+| STX Archery | 🟡 Build 6 in TestFlight, PHO-01+BFX-03 confirmed on device | Wait for John's feedback, then IAP setup | Claude Code |
 | Goldmine | 🟢 Strata v3 approved + App Store design drafted | Mike reviews design docs before build | Claude Code |
 | NRT | 🟡 RBT Session spec v0.3 ready | RBT impl planning | Claude Code |
 | ScatterplotCreator | 🟢 v1.0.9 shipped — all v1.1 features working on Windows | Await committee v2 approval to flip default | Claude Code |
@@ -22,31 +22,32 @@
 *Last synced: 2026-03-01*
 
 <!-- ACTIVE_BUILD_START -->
-**Project:** STX Archery | **Cycle:** BFX-05 | **Status:** built ⏳
-**Next agent:** claude
-**Building:** Device testing bug batch #2 — awaiting CC review
-**Gates:** 91 suites / 626 tests, tsc clean
+**Project:** STX Archery | **Cycle:** BFX-05 | **Status:** approved ✅
+**Next agent:** mike
+**Building:** Device testing bug batch #2 — approved, committed, pushed (76c89c7)
+**Gates:** 90 suites / 614 tests, tsc clean
 <!-- ACTIVE_BUILD_END -->
 
 **Path:** `~/dev/3dArchery`
 **Run:** `npx expo run:ios`
 
 <!-- DECISION_QUEUE_START -->
-- Mike: Gather John's feedback from Build 6 testing (Format Rules + archer colors)
-- Mike: IAP product setup in App Store Connect required before App Store submission
+- Mike: Collect John's feedback on Build 6 (Format Rules + archer colors)
+- Mike: IAP product setup in App Store Connect ($14.99 non-consumable) — required before submission
 <!-- DECISION_QUEUE_END -->
 
 **What We Did This Session:**
-- Built Format Rules feature — bottom sheet from create screen + shoot screen header tap (all 22 formats)
-- Fixed archer 6 color: teal → hot pink (#E91E8C) — no longer clashes with archer 3 green
-- Built + submitted Build 6 to TestFlight (build number auto-incremented to 6)
-- Updated Gate 5 ✅ in submission pipeline
+- Verified Build 6 = BFX-05 build (EAS packages working tree, not just git HEAD)
+- PHO-01 (Camera Roll backup) confirmed working on device ✅
+- BFX-03 (share sheet nav guard) confirmed working on device ✅
+- Committed all uncommitted work — BFX-03/04/05, Format Rules, ADV-1/2 (134 files → 76c89c7)
+- Pushed to main
 
 **What's Next:**
-- [ ] Collect John's testing feedback on Build 6 ← WAITING
-- [ ] IAP product setup in App Store Connect ($14.99 non-consumable)
-- [ ] B15a: named promo codes (required before external TestFlight invites)
-- [ ] App Store submission when testing complete
+- [ ] Collect John's Build 6 feedback ← WAITING
+- [ ] IAP product setup in App Store Connect
+- [ ] B15a: named promo codes (before external TestFlight invites)
+- [ ] App Store submission when testing + IAP complete
 <!-- /AGENT: Claude Code | PROJECT: STX Archery -->
 
 ---
