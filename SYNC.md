@@ -1,6 +1,6 @@
 # Spirit Logic — Multi-Agent Sync File
 
-*Last synced: 2026-02-28 by Claude Code (STX Archery — device testing, Vegas bug investigation)*
+*Last synced: 2026-03-01 by Claude Code (STX Archery — Format Rules shipped, Build 6 in TestFlight)*
 
 > **For agents:** See `SYNC-INSTRUCTIONS.md` in this repo for sync up protocol.
 
@@ -10,7 +10,7 @@
 
 | Project | Status | Next Action | Last Agent |
 |---------|--------|-------------|------------|
-| STX Archery | 🟡 TestFlight active, John testing, 1 build pending | Build: custom rounds removal + format count fix | Claude Code |
+| STX Archery | 🟡 Build 6 in TestFlight, John testing | Wait for John's feedback, then IAP setup | Claude Code |
 | Goldmine | 🟢 Strata v3 approved + App Store design drafted | Mike reviews design docs before build | Claude Code |
 | NRT | 🟡 RBT Session spec v0.3 ready | RBT impl planning | Claude Code |
 | ScatterplotCreator | 🟡 v2 committee decisions captured | Build v1 Bx limit + v2 template | Claude Code |
@@ -19,38 +19,33 @@
 
 <!-- AGENT: Claude Code | PROJECT: STX Archery -->
 ## Claude Code — STX Archery
-*Last synced: 2026-02-28*
+*Last synced: 2026-03-01*
 
 <!-- ACTIVE_BUILD_START -->
-**Project:** STX Archery | **Cycle:** BFX-05 | **Status:** pending-build
-**Next agent:** codex (after Mike approves build)
-**Building:** Custom rounds removal + format count fixes + Vegas regression tests — ready to build
-**Gates:** 90 suites / 619 tests (8 new Vegas regression), tsc clean
+**Project:** STX Archery | **Cycle:** BFX-05 | **Status:** built ⏳
+**Next agent:** claude
+**Building:** Device testing bug batch #2 — awaiting CC review
+**Gates:** 91 suites / 626 tests, tsc clean
 <!-- ACTIVE_BUILD_END -->
 
 **Path:** `~/dev/3dArchery`
 **Run:** `npx expo run:ios`
 
 <!-- DECISION_QUEUE_START -->
-- Mike: Kick off Build 5 (custom rounds removal + "21 formats" everywhere + Vegas tests)
-- Mike: John continues testing tomorrow — gather any new bugs before submission
-- Mike: Format Rules feature — needs design approval before Codex build (show rules from create + shoot screens)
+- Mike: Gather John's feedback from Build 6 testing (Format Rules + archer colors)
 - Mike: IAP product setup in App Store Connect required before App Store submission
 <!-- DECISION_QUEUE_END -->
 
 **What We Did This Session:**
-- TestFlight fully set up: 2 internal testers (Mike + John), 4 builds submitted
-- Fixed AnimalPill flicker bug (tap-to-change text layout shift) → Build 3
-- Fixed zoom button disappearing when all arrows placed → Build 4
-- Removed Custom Rounds from v1 entirely (app, docs, marketing, website)
-- Updated all format counts from "22+" to exact "21" across all metadata/store files
-- Investigated Vegas 300 "7-ring scoring as 8" report — scoring is correct, visual overlap issue; added 8 regression tests; documented as VEGAS-VISUAL-01
+- Built Format Rules feature — bottom sheet from create screen + shoot screen header tap (all 22 formats)
+- Fixed archer 6 color: teal → hot pink (#E91E8C) — no longer clashes with archer 3 green
+- Built + submitted Build 6 to TestFlight (build number auto-incremented to 6)
+- Updated Gate 5 ✅ in submission pipeline
 
 **What's Next:**
-- [ ] Build 5: custom rounds removal + 21-format count + Vegas regression tests ← START HERE (tomorrow)
-- [ ] John's continued testing feedback (tomorrow)
-- [ ] Format Rules feature build (Codex, after Mike approves design)
-- [ ] IAP product setup in App Store Connect
+- [ ] Collect John's testing feedback on Build 6 ← WAITING
+- [ ] IAP product setup in App Store Connect ($14.99 non-consumable)
+- [ ] B15a: named promo codes (required before external TestFlight invites)
 - [ ] App Store submission when testing complete
 <!-- /AGENT: Claude Code | PROJECT: STX Archery -->
 
