@@ -1,6 +1,6 @@
 # Spirit Logic — Multi-Agent Sync File
 
-*Last synced: 2026-03-01 by Claude Code (STX Archery — Format Rules shipped, Build 6 in TestFlight)*
+*Last synced: 2026-03-01 by Claude Code (ScatterplotCreator — v1.1 features shipped, v2 PDF working on Windows)*
 
 > **For agents:** See `SYNC-INSTRUCTIONS.md` in this repo for sync up protocol.
 
@@ -13,7 +13,7 @@
 | STX Archery | 🟡 Build 6 in TestFlight, John testing | Wait for John's feedback, then IAP setup | Claude Code |
 | Goldmine | 🟢 Strata v3 approved + App Store design drafted | Mike reviews design docs before build | Claude Code |
 | NRT | 🟡 RBT Session spec v0.3 ready | RBT impl planning | Claude Code |
-| ScatterplotCreator | 🟡 v2 committee decisions captured | Build v1 Bx limit + v2 template | Claude Code |
+| ScatterplotCreator | 🟢 v1.0.9 shipped — all v1.1 features working on Windows | Await committee v2 approval to flip default | Claude Code |
 
 ---
 
@@ -101,22 +101,30 @@ No active build cycle.
 
 <!-- AGENT: Claude Code | PROJECT: ScatterplotCreator -->
 ## Claude Code — ScatterplotCreator
-*Last synced: 2026-02-27*
+*Last synced: 2026-03-01*
 
 <!-- ACTIVE_BUILD_START -->
 No active build cycle.
 <!-- ACTIVE_BUILD_END -->
 
 **Path:** `~/dev/ScatterplotCreator`
+**Run:** `npm start`
 
 <!-- DECISION_QUEUE_START -->
-(none — field limits resolved, CNA field test blocking v2 final approval)
+- Committee approval needed to flip v2 as default (1-line change in main.js: `|| 'v1'` → `|| 'v2'`)
 <!-- DECISION_QUEUE_END -->
 
+**What We Did This Session:**
+- Shipped Settings UI template version selector (v1/v2 toggle, persists)
+- v1 description limit 300→400 chars (Sally confirmed at 2026-02-27 meeting)
+- L-drive Phase 2: stale-data banner shows cache timestamp; Connection Status shows Last Cached
+- v2 PDF via puppeteer-core (temp-file ASAR extraction) — pixel-perfect, confirmed working on Windows
+- v2 instructions block: actual checked boxes NP☑ Y☑ N☑ matching data grid style, same font/weight/size
+
 **What's Next:**
-- [ ] Build v1 Bx description 400-char limit
-- [ ] Build v2 template into ScatterplotCreator
-- [ ] Await CNA field test results before v2 final approval
+- [ ] Await committee v2 approval ← BLOCKED
+- [ ] Flip default to v2 when approved (main.js `getTemplateVersion` fallback)
+- [ ] Distribute v1.0.9 installer to users
 <!-- /AGENT: Claude Code | PROJECT: ScatterplotCreator -->
 
 ---
