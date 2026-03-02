@@ -1,6 +1,6 @@
 # Spirit Logic — Multi-Agent Sync File
 
-*Last synced: 2026-03-01 by Claude Code (STX Archery — Build 6 verified, all BFX committed + pushed)*
+*Last synced: 2026-03-01 by Claude Code (STX Archery — Build 10 submitted, BFX-06d)*
 
 > **For agents:** See `SYNC-INSTRUCTIONS.md` in this repo for sync up protocol.
 
@@ -10,10 +10,10 @@
 
 | Project | Status | Next Action | Last Agent |
 |---------|--------|-------------|------------|
-| STX Archery | 🟡 Build 6 in TestFlight, PHO-01+BFX-03 confirmed on device | Wait for John's feedback, then IAP setup | Claude Code |
+| STX Archery | 🟡 Build 10 in TestFlight, awaiting John's review | Review archer colors + centering on device | Claude Code |
 | Goldmine | 🟢 Strata v3 approved + App Store design drafted | Mike reviews design docs before build | Claude Code |
 | NRT | 🟡 RBT Session spec v0.3 ready | RBT impl planning | Claude Code |
-| ScatterplotCreator | 🟢 v1.0.9 shipped — all v1.1 features working on Windows | Await committee v2 approval to flip default | Claude Code |
+| ScatterplotCreator | 🔴 Description limit 300→400 not reflected in PDF template | Fix pdf-template.html truncation | Claude Code |
 
 ---
 
@@ -22,81 +22,31 @@
 *Last synced: 2026-03-01*
 
 <!-- ACTIVE_BUILD_START -->
-**Project:** STX Archery | **Cycle:** BFX-05 | **Status:** approved ✅
+**Project:** STX Archery | **Cycle:** BFX-06d | **Status:** submitted ✅
 **Next agent:** mike
-**Building:** Device testing bug batch #2 — approved, committed, pushed (76c89c7)
-**Gates:** 90 suites / 614 tests, tsc clean
+**Building:** John feedback fixes — archer color + two-digit score centering
+**Gates:** 91 suites / 626 tests, tsc clean
 <!-- ACTIVE_BUILD_END -->
 
 **Path:** `~/dev/3dArchery`
 **Run:** `npx expo run:ios`
 
 <!-- DECISION_QUEUE_START -->
-- Mike: Collect John's feedback on Build 6 (Format Rules + archer colors)
+- Mike: Review Build 10 on device — cyan archer + dark rings + centered two-digit scores
 - Mike: IAP product setup in App Store Connect ($14.99 non-consumable) — required before submission
 <!-- DECISION_QUEUE_END -->
 
 **What We Did This Session:**
-- Verified Build 6 = BFX-05 build (EAS packages working tree, not just git HEAD)
-- PHO-01 (Camera Roll backup) confirmed working on device ✅
-- BFX-03 (share sheet nav guard) confirmed working on device ✅
-- Committed all uncommitted work — BFX-03/04/05, Format Rules, ADV-1/2 (134 files → 76c89c7)
-- Pushed to main
+- BFX-06: Fixed two-digit score centering (measureText-based), archer color #4 iterated through amber→pumpkin→cyan→yellow→cyan+dark rings
+- Added `archerRingColors` — permanent ~50% darker ring on every archer marker for readability against any target zone
+- Committed all changes, built/submitted Builds 7–10 to TestFlight
 
 **What's Next:**
-- [ ] Collect John's Build 6 feedback ← WAITING
+- [ ] John reviews Build 10 (cyan + dark rings + centering) ← WAITING
 - [ ] IAP product setup in App Store Connect
 - [ ] B15a: named promo codes (before external TestFlight invites)
 - [ ] App Store submission when testing + IAP complete
 <!-- /AGENT: Claude Code | PROJECT: STX Archery -->
-
----
-
-<!-- AGENT: Claude Code | PROJECT: Goldmine -->
-## Claude Code — Goldmine
-*Last synced: 2026-02-27*
-
-<!-- ACTIVE_BUILD_START -->
-**Project:** Goldmine | **Cycle:** 3 | **Status:** review-complete
-**Next agent:** mike
-**Building:** Infrastructure Signal Strata — adversarial review passed, implementation plan produced
-<!-- ACTIVE_BUILD_END -->
-
-**Path:** `~/dev/goldmine`
-
-<!-- DECISION_QUEUE_START -->
-- Mike to review finished API Signal Strata design doc (v3) + implementation plan before build starts
-- Mike to review App Store Opportunity Research design doc (v1)
-- 4 open architectural decisions in Strata implementation plan
-<!-- DECISION_QUEUE_END -->
-
-**What's Next:**
-- [ ] Mike reviews both design docs ← START HERE
-- [ ] Send App Store design to Codex for adversarial review
-- [ ] Resolve 4 open decisions in Strata implementation plan
-<!-- /AGENT: Claude Code | PROJECT: Goldmine -->
-
----
-
-<!-- AGENT: Claude Code | PROJECT: NRT -->
-## Claude Code — NRT
-*Last synced: 2026-02-27*
-
-<!-- ACTIVE_BUILD_START -->
-No active build cycle.
-<!-- ACTIVE_BUILD_END -->
-
-**Path:** `~/dev/NRT`
-
-<!-- DECISION_QUEUE_START -->
-(none — all decisions resolved)
-<!-- DECISION_QUEUE_END -->
-
-**What's Next:**
-- [ ] RBT Session implementation planning sprint
-- [ ] Fix 6 BLOCKING issues in NRT-INTELLIGENCE-DESIGN.md
-- [ ] Phase D deploys when Craig IT responds
-<!-- /AGENT: Claude Code | PROJECT: NRT -->
 
 ---
 
@@ -112,19 +62,12 @@ No active build cycle.
 **Run:** `npm start`
 
 <!-- DECISION_QUEUE_START -->
-- Committee approval needed to flip v2 as default (1-line change in main.js: `|| 'v1'` → `|| 'v2'`)
+- Committee approval needed to flip v2 as default (1-line change in main.js)
 <!-- DECISION_QUEUE_END -->
 
-**What We Did This Session:**
-- Shipped Settings UI template version selector (v1/v2 toggle, persists)
-- v1 description limit 300→400 chars (Sally confirmed at 2026-02-27 meeting)
-- L-drive Phase 2: stale-data banner shows cache timestamp; Connection Status shows Last Cached
-- v2 PDF via puppeteer-core (temp-file ASAR extraction) — pixel-perfect, confirmed working on Windows
-- v2 instructions block: actual checked boxes NP☑ Y☑ N☑ matching data grid style, same font/weight/size
-
 **What's Next:**
+- [ ] Fix pdf-template.html description truncation — raised to 400 chars in UI but PDF still truncates at 300 ← ACTIVE
 - [ ] Await committee v2 approval ← BLOCKED
-- [ ] Flip default to v2 when approved (main.js `getTemplateVersion` fallback)
 - [ ] Distribute v1.0.9 installer to users
 <!-- /AGENT: Claude Code | PROJECT: ScatterplotCreator -->
 
