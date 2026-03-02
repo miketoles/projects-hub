@@ -1,6 +1,6 @@
 # Spirit Logic — Multi-Agent Sync File
 
-*Last synced: 2026-03-02 by Claude Code (STX Build 21 — MAX_ZOOM fix)*
+*Last synced: 2026-03-02 by Claude Code (ScatterplotCreator v1.0.10 — archive feature + BUG-008)*
 
 > **For agents:** See `SYNC-INSTRUCTIONS.md` in this repo for sync up protocol.
 
@@ -13,7 +13,7 @@
 | STX Archery | 🟡 Build 21 in TestFlight | Await John feedback on pinch zoom | Claude Code |
 | Goldmine | 🟢 Strata v3 approved + App Store design drafted | Mike reviews design docs before build | Claude Code |
 | NRT | 🟡 RBT Session spec v0.3 ready | RBT impl planning | Claude Code |
-| ScatterplotCreator | 🟢 v1.0.10 built — word-break fix in both PDF templates | Await committee v2 approval | Claude Code |
+| ScatterplotCreator | 🟢 v1.0.10 — archive feature + BUG-008 fix, active testing | Await committee v2 approval | Claude Code |
 
 ---
 
@@ -66,10 +66,17 @@ No active build cycle.
 - Committee approval needed to flip v2 as default (1-line change in main.js)
 <!-- DECISION_QUEUE_END -->
 
+**What We Did This Session:**
+- Fixed v2 template column widths (BUG-008) — time/NP col now pinned to 12% of page, beh cols 9.5% each; readable at N=1
+- Replaced Delete with Archive on patient list — patients move to archived.json, not lost
+- Added Archived Patients screen with Restore + permanent Delete
+- Fixed restore bug — patient list now re-renders on Back from archived screen
+- All 100 tests passing throughout
+
 **What's Next:**
-- [ ] Distribute v1.0.10 installer to users
+- [ ] Mike testing v1.0.10 in active use ← IN PROGRESS
 - [ ] Await committee v2 approval ← BLOCKED
-- [ ] Flip default to v2 when approved
+- [ ] Flip default to v2 when approved (1-line change in main.js)
 <!-- /AGENT: Claude Code | PROJECT: ScatterplotCreator -->
 
 ---
