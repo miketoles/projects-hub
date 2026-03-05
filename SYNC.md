@@ -1,6 +1,6 @@
 # Spirit Logic — Multi-Agent Sync File
 
-*Last synced: 2026-03-05 by Claude Code (Lean v3 process validation + hardening)*
+*Last synced: 2026-03-05 by Claude Code (STX Archery Android pipeline complete)*
 
 > **For agents:** See `SYNC-INSTRUCTIONS.md` in this repo for sync up protocol.
 
@@ -10,8 +10,8 @@
 
 | Project | Status | Next Action | Last Agent |
 |---------|--------|-------------|------------|
-| Lean v3 Process | 🟡 claude-pr validated; codex-pr has 5 known gaps | Write Codex hardening prompt + smoke test | Claude Code |
-| STX Archery | ✅ iOS submitted — Waiting for Review | Android: RC key + rebuild + Play Console | Claude Code |
+| Lean v3 Process | 🟡 claude-pr validated; codex-pr hardening + smoke test pending | Run codex-pr hardening prompt, then smoke cycle | Codex |
+| STX Archery | ✅ iOS in review; Android internal testing live | Await Apple review + bank micro-deposit verification | Claude Code |
 | OneDoc | 🟢 M10.1 UX polish live; DOCX+Excel printing stable | Install EXE on work laptop | Codex |
 | ScatterplotCreator | 🟢 v1.0.10 — archive + BUG-008 fix | Await committee v2 approval | Claude Code |
 | NRT | 🟡 RBT Session spec v0.3 ready | RBT impl planning | Claude Code |
@@ -33,15 +33,8 @@ No active build cycle.
 - Review 5 gaps listed in session before approving codex-pr profile as production-ready
 <!-- DECISION_QUEUE_END -->
 
-**What We Did This Session:**
-- Scaffolded lean_v3_full_test and ran full end-to-end claude-pr cycle (CC Planner+Reviewer, Codex Builder)
-- Discovered and hardened: Codex cannot run `handoff send` from sandbox — rule now in process.md + lessons
-- Codex built lane.sh + lane-broker.sh: full runner/broker transport system with two profiles
-- Both agents got sandbox-constraint preambles (.codex-preamble.md, .claude-preamble.md)
-- Identified 5 gaps blocking codex-pr readiness (preamble role-hardcoding, untested paths, entry trigger)
-
 **What's Next:**
-- [ ] Write Codex prompt: fix .codex-preamble.md (role-neutral), add codex-first entry trigger, reset HANDOFF.md on lane start ← START HERE
+- [ ] Write Codex prompt: fix .codex-preamble.md (role-neutral), add codex-first entry trigger, reset HANDOFF.md on lane start <- START HERE
 - [ ] Run codex-pr smoke test (validates Codex-as-Planner + Claude-as-Builder in one shot)
 - [ ] If smoke passes: declare both profiles production-ready, update LEAN_V3_RUNTIME_STATE.md
 
@@ -67,18 +60,29 @@ No active build cycle.
 **Run:** `npx expo run:ios`
 
 <!-- DECISION_QUEUE_START -->
-(none — waiting on Apple review)
+(none — waiting on Apple review + bank micro-deposit)
 <!-- DECISION_QUEUE_END -->
 
+**What We Did This Session:**
+- Set up RC Android app + stored `EXPO_PUBLIC_REVENUECAT_ANDROID_API_KEY` as EAS secret
+- Created `premium_lifetime` IAP product in Google Play Console ($14.99), wired into RC `premium` entitlement
+- Set up Google Play payments profile (Spirit Logic LLC org) + bank account (verification pending)
+- Built Android .aab via EAS + manually uploaded to Play Console internal testing (release 2, 1.0.0 — live Mar 4)
+- Enrolled in 15% service fee via Spirit Logic LLC account group
+
 **What's Next:**
-- [ ] Await Apple review (1-3 business days) ← WAITING
-- [ ] Android: create Premium Lifetime product in Google Play Console ← START HERE (after Apple review)
-- [ ] Android: add RC Android app, store `EXPO_PUBLIC_REVENUECAT_ANDROID_API_KEY` as EAS secret
-- [ ] Android: rebuild .aab with RC key, manual first upload to Play Console
+- [ ] Await Apple review (1-3 business days) <- WAITING
+- [ ] Verify Google bank micro-deposit (up to 3 business days — go to payment methods, enter exact amount)
+- [ ] Service account JSON for RC (deferred — blocked by org policy; revisit with new Google account or Workspace trial)
+- [ ] Set spiritlogic.app redirect to spiritlogic.dev
+- [ ] Post-launch: codex-pr smoke test (Lean v3)
 - [ ] Post-launch: UX-DELETE-01 (arrow deletion discoverability — v1.1)
 
 **Notes:**
 - iOS 1.0 Submission ID: fa548694-7165-4a25-ad64-7af5ae30dd63
+- Google Play internal testing: release 2 (1.0.0), live, 4 testers already set up
+- Service account JSON blocked by `iam.disableServiceAccountKeyCreation` org policy on personal Gmail
+- RC wiring complete: iOS `app.spiritlogic.stxarchery.premium_lifetime` + Android `premium_lifetime` both in `premium` entitlement
 <!-- /AGENT: Claude Code | PROJECT: STX Archery -->
 
 ---
@@ -88,7 +92,7 @@ No active build cycle.
 *Last synced: 2026-03-02*
 
 <!-- ACTIVE_BUILD_START -->
-**Project:** OneDoc Print Manager | **Cycle:** M5 | **Status:** feature-complete ✅
+**Project:** OneDoc Print Manager | **Cycle:** M5 | **Status:** feature-complete
 **Next agent:** mike
 **Building:** Windows integration testing — install EXE, verify UI loads
 **Gates:** 8 suites / 37 tests, tsc clean, installer built (84MB NSIS)
@@ -102,7 +106,7 @@ No active build cycle.
 <!-- DECISION_QUEUE_END -->
 
 **What's Next:**
-- [ ] Install new EXE on work laptop ← START HERE
+- [ ] Install new EXE on work laptop <- START HERE
 - [ ] Verify UI renders (full dark UI, no blank screen)
 - [ ] Test with real Word + L-drive if UI works
 <!-- /AGENT: Claude Code | PROJECT: OneDoc -->
@@ -125,10 +129,36 @@ No active build cycle.
 <!-- DECISION_QUEUE_END -->
 
 **What's Next:**
-- [ ] Mike testing v1.0.10 in active use ← IN PROGRESS
-- [ ] Await committee v2 approval ← BLOCKED
+- [ ] Mike testing v1.0.10 in active use <- IN PROGRESS
+- [ ] Await committee v2 approval <- BLOCKED
 - [ ] Flip default to v2 when approved (1-line change in main.js)
 <!-- /AGENT: Claude Code | PROJECT: ScatterplotCreator -->
+
+---
+
+<!-- AGENT: Codex | PROJECT: Lean v3 Process -->
+## Codex — Lean v3 Process
+*Last synced: 2026-03-05*
+
+<!-- ACTIVE_BUILD_START -->
+No active build cycle.
+<!-- ACTIVE_BUILD_END -->
+
+**Path:** `~/dev/lean_v3_full_test`
+**Run:** `./lane.sh start --profile <claude-pr|codex-pr> --request "..."`
+
+<!-- DECISION_QUEUE_START -->
+- Approve tomorrow order: codex-pr hardening prompt -> codex-pr smoke test -> STX Android follow-through
+<!-- DECISION_QUEUE_END -->
+
+**What's Next:**
+- [ ] Write/run Codex hardening prompt (role-neutral preamble, Codex-first trigger, HANDOFF reset) <- START HERE
+- [ ] Run codex-pr smoke cycle to validate Codex Planner/Reviewer + Claude Builder path
+- [ ] If smoke passes, mark both profiles production-ready and update runtime docs
+
+**Notes:**
+- Known codex-pr gaps: hardcoded Builder preamble, untested Codex Planner output quality, untested `claude -p` Builder path, missing Codex-first trigger, and no enforced HANDOFF reset per cycle.
+<!-- /AGENT: Codex | PROJECT: Lean v3 Process -->
 
 ---
 
