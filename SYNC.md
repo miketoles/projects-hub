@@ -11,7 +11,7 @@
 | Project | Status | Next Action | Last Agent |
 |---------|--------|-------------|------------|
 | Lean v3 Process | 🟢 broker live; both profiles validated | Use for new tasks via lane runner | Codex |
-| STX Archery | ✅ iOS in review; Android submitted to production review | Await both reviews | Claude Code |
+| STX Archery | 🟡 iOS rejected (5.1.1ii), fix built & resubmitting; Android in review | Resubmit build 23 to App Review | Claude Code |
 | OneDoc | 🟢 M10.1 live | Install EXE on work laptop | Codex |
 | ScatterplotCreator | 🟢 v1.0.10 stable | Await committee v2 approval | Claude Code |
 | NRT | 🟡 plan review complete | Mike decides go/no-go on Phase A build | Claude Code |
@@ -21,7 +21,7 @@
 
 <!-- AGENT: Claude Code | PROJECT: STX Archery -->
 ## Claude Code — STX Archery
-*Last synced: 2026-03-06*
+*Last synced: 2026-03-07*
 
 <!-- ACTIVE_BUILD_START -->
 No active build cycle.
@@ -31,27 +31,26 @@ No active build cycle.
 **Run:** `npx expo run:ios`
 
 <!-- DECISION_QUEUE_START -->
-(none — both platforms in review)
+Mike: Once Apple finishes processing build 23, go to ASC -> App Review -> Edit -> swap build 22 to 23 -> Resubmit to App Review
 <!-- DECISION_QUEUE_END -->
 
 **What We Did This Session:**
-- Completed Google Play store listing (icon, feature graphic, screenshots, tablet screenshots, descriptions)
-- Completed all 11 app content declarations + fixed blocking issues (photo/video permissions, advertising ID)
-- Verified bank micro-deposit complete (Checking 817 verified)
-- Submitted STX Archery to Google Play production review — 2026-03-06 ~9:46 AM
-- Updated NEXT-APP-PLAYBOOK.md with full Google Play production submission lessons
+- iOS v1.0 rejected by Apple — Guideline 5.1.1(ii): vague permission purpose strings
+- Fixed all permission strings in app.json (photo library, camera, location) with specific explanations
+- Added expo-location to plugins array with explicit locationWhenInUsePermission (was missing)
+- Built and submitted build 23 to ASC via EAS (auto-submit, processing now)
+- Updated lessons: 3dArchery/tasks/lessons.md, SUBMISSION-NOTES.md, NEXT-APP-PLAYBOOK.md
 
 **What's Next:**
-- [ ] Await Apple App Store review (submitted 2026-03-04) <- WAITING
+- [ ] Swap build 22 -> 23 in ASC and resubmit to App Review <- WAITING FOR PROCESSING
 - [ ] Await Google Play review (submitted 2026-03-06) <- WAITING
 - [ ] Set spiritlogic.app redirect to spiritlogic.dev
 - [ ] Post-launch: UX-DELETE-01 (arrow deletion discoverability — v1.1)
 
 **Notes:**
-- iOS Submission ID: fa548694-7165-4a25-ad64-7af5ae30dd63
-- Android: version 2 (1.0.0), full rollout, 177 countries, "Changes in review"
-- Feature graphic: `assets/field-plates/feature-graphic-1024x500.png`
-- Privacy policy URL: `https://stx-archery.com/privacy`
+- iOS build 23 submitted to ASC, processing (5-10 min from 7:05 AM)
+- Rejection was only purpose strings — no code/feature changes needed
+- Android: version 2 (1.0.0), full rollout, 177 countries, still in review
 <!-- /AGENT: Claude Code | PROJECT: STX Archery -->
 
 ---
