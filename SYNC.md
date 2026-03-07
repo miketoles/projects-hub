@@ -1,6 +1,6 @@
 # Spirit Logic — Multi-Agent Sync File
 
-*Last synced: 2026-03-06 by Codex (Field Photo Report v1 checkpoint + tomorrow-start capture)*
+*Last synced: 2026-03-07 by Codex (Lean v3 broker launchd + token rotation verified)*
 
 > **For agents:** See `SYNC-INSTRUCTIONS.md` in this repo for sync up protocol.
 
@@ -10,7 +10,7 @@
 
 | Project | Status | Next Action | Last Agent |
 |---------|--------|-------------|------------|
-| Lean v3 Process | 🟢 both profiles validated | Use for new tasks | Codex |
+| Lean v3 Process | 🟢 broker live; both profiles validated | Use for new tasks via lane runner | Codex |
 | STX Archery | ✅ iOS in review; Android submitted to production review | Await both reviews | Claude Code |
 | OneDoc | 🟢 M10.1 live | Install EXE on work laptop | Codex |
 | ScatterplotCreator | 🟢 v1.0.10 stable | Await committee v2 approval | Claude Code |
@@ -117,6 +117,40 @@ No active build cycle.
 - [ ] Await committee v2 approval <- BLOCKED
 - [ ] Flip default to v2 when approved
 <!-- /AGENT: Claude Code | PROJECT: ScatterplotCreator -->
+
+---
+
+<!-- AGENT: Codex | PROJECT: Lean v3 Process -->
+## Codex — Lean v3 Process
+*Last synced: 2026-03-07*
+
+<!-- ACTIVE_BUILD_START -->
+No active build cycle.
+<!-- ACTIVE_BUILD_END -->
+
+**Path:** `~/dev/lean_v3_full_test`
+**Run:** `./lane.sh start --profile <claude-pr|codex-pr> --request "..."`
+
+<!-- DECISION_QUEUE_START -->
+(none)
+<!-- DECISION_QUEUE_END -->
+
+**What We Did This Session:**
+- Hardened the v2 design doctrine and closed the adversarial Claude review loop against the new single-file doctrine
+- Fixed the Codex -> Claude broker transport path and documented the real noninteractive Claude requirements
+- Created and pushed the standalone Lean v3 repo: `https://github.com/miketoles/lean-v3.git`
+- Installed the launchd broker with a private token env file, rotated the Claude token, restarted the agent, and re-verified the passive smoke path
+
+**What's Next:**
+- [ ] Use Lean v3 for new tasks through `./lane.sh` with the launchd broker active ← START HERE
+- [ ] If Claude broker auth fails: refresh `~/.config/lean-v3/claude-broker.env`, kickstart the launchd agent, rerun smoke
+
+**Notes:**
+- LaunchAgent label: `com.spiritlogic.lean-v3-broker`
+- Broker token lives outside repos in `~/.config/lean-v3/claude-broker.env`
+- Latest Lean v3 commits pushed: `239fc09` and `189b58b`
+- Passive broker smoke after token rotation returned `REVIEW_RESULT: APPROVE` and `TRANSPORT_STATUS: OK`
+<!-- /AGENT: Codex | PROJECT: Lean v3 Process -->
 
 ---
 

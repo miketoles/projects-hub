@@ -125,6 +125,9 @@ Treat live broker smoke results as the primary truth. If broker Claude jobs fail
    - `launchctl kickstart -k gui/$(id -u)/com.spiritlogic.lean-v3-broker`
 3. Recheck with Claude smoke job
 
+Token rotation was re-verified on `2026-03-07` after replacing the broker env token,
+restarting the launchd agent, and getting a clean passive Claude smoke result.
+
 ---
 
 ## Recovery Order (If Context Is Lost)
