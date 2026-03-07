@@ -1,6 +1,6 @@
 # Spirit Logic — Multi-Agent Sync File
 
-*Last synced: 2026-03-06 by Claude Code (STX Archery Google Play production submitted)*
+*Last synced: 2026-03-06 by Codex (Field Photo Report v1 checkpoint + tomorrow-start capture)*
 
 > **For agents:** See `SYNC-INSTRUCTIONS.md` in this repo for sync up protocol.
 
@@ -15,6 +15,7 @@
 | OneDoc | 🟢 M10.1 live | Install EXE on work laptop | Codex |
 | ScatterplotCreator | 🟢 v1.0.10 stable | Await committee v2 approval | Claude Code |
 | NRT | 🟡 plan review complete | Mike decides go/no-go on Phase A build | Claude Code |
+| Field Photo Report | 🟡 v1 running on iPhone; polish in progress | Fix camera dual-save + simplify PDF UX | Codex |
 
 ---
 
@@ -116,6 +117,41 @@ No active build cycle.
 - [ ] Await committee v2 approval <- BLOCKED
 - [ ] Flip default to v2 when approved
 <!-- /AGENT: Claude Code | PROJECT: ScatterplotCreator -->
+
+---
+
+<!-- AGENT: Codex | PROJECT: Field Photo Report -->
+## Codex — Field Photo Report
+*Last synced: 2026-03-06*
+
+<!-- ACTIVE_BUILD_START -->
+No active build cycle.
+<!-- ACTIVE_BUILD_END -->
+
+**Path:** `~/dev/Field-Photo-Report`
+**Run:** `npx expo run:ios --device`
+
+<!-- DECISION_QUEUE_START -->
+(none)
+<!-- DECISION_QUEUE_END -->
+
+**What We Did This Session:**
+- Built the v1 Expo app end-to-end: jobs, photos, report preview, PDF generation/share, settings, offline local storage
+- Ran the app on Mike's iPhone and iterated directly against real-device UX and report bugs
+- Fixed routing, date handling, phone formatting, report field mapping, preview generation, and completed-job navigation
+- Updated the design doc with an implementation checkpoint and explicit v1 camera dual-save requirement
+- Added new Expo dev-build / Metro troubleshooting lessons to `spirit-logic-submit`
+
+**What's Next:**
+- [ ] Fix camera capture so every in-app photo saves to both app storage and iPhone Photos silently ← START HERE
+- [ ] Simplify PDF UX to one obvious top-level PDF action
+- [ ] Finalize exact preview/PDF parity and remaining on-device report polish
+
+**Notes:**
+- Latest Field Photo Report commits pushed: `b6e988e` and `b0a7887`
+- Latest submission framework commit pushed: `04e2c89`
+- Native iPhone dev build with `expo-media-library` was rebuilt and installed; dual-save behavior still needs verification/fix
+<!-- /AGENT: Codex | PROJECT: Field Photo Report -->
 
 ---
 
