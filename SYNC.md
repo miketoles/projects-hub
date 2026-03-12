@@ -1,6 +1,6 @@
 # Spirit Logic — Multi-Agent Sync File
 
-*Last synced: 2026-03-11 by Claude Code (FPR submission — RevenueCat + store setup)*
+*Last synced: 2026-03-12 by Claude Code (FPR — both builds done, ready for device testing)*
 
 > **For agents:** See `SYNC-INSTRUCTIONS.md` in this repo for sync up protocol.
 
@@ -15,7 +15,7 @@
 | OneDoc | 🟢 M10.1 live | Install EXE on work laptop | Codex |
 | ScatterplotCreator | 🟢 v1.0.10 stable | Await committee v2 approval | Claude Code |
 | NRT | 🟡 local shell concept iteration active; hosted sandbox stable | Resolve 15-minute team-block display, then continue Today shell refinement | Codex |
-| Field Photo Report | 🟡 submission in progress — RC done, need EAS builds | EAS Android build → Play IAP → submit | Claude Code |
+| Field Photo Report | 🟡 builds done, awaiting device testing + submission | Device test → screenshots → submit both stores | Claude Code |
 
 ---
 
@@ -155,7 +155,7 @@ No active build cycle.
 
 <!-- AGENT: Claude Code | PROJECT: Field Photo Report -->
 ## Claude Code — Field Photo Report
-*Last synced: 2026-03-11*
+*Last synced: 2026-03-12*
 
 <!-- ACTIVE_BUILD_START -->
 No active build cycle. Task contract at `/Users/miketoles/dev/Field-Photo-Report/TASK_CONTRACT.md`.
@@ -168,26 +168,28 @@ No active build cycle. Task contract at `/Users/miketoles/dev/Field-Photo-Report
 (none)
 <!-- DECISION_QUEUE_END -->
 
-**What We Did This Session (Mar 11):**
-- Completed RevenueCat setup: iOS app saved (IAP key + ASC API key + Issuer ID), Play Store app created (no JSON key — org policy blocker, tracked in spirit-logic-submit#1)
-- Set EAS secrets for both RC API keys (iOS + Android)
-- Created App Store product in RC (`app.spiritlogic.fieldphotoreport.unlimited`, non-consumable), attached to `unlimited` entitlement and `default` offering Lifetime package
-- Google Play IAP blocked — needs first APK upload before product creation allowed
-- Filed Lesson 32 (org policy skip) and Lesson 33 (Play Console nav terminology)
+**What We Did This Session (Mar 12):**
+- EAS Android build completed, uploaded to Play Console internal testing track (build 5, v1.0.0)
+- Created Google Play one-time product (`unlimited`, $9.99, 173 countries, Active)
+- Added Play Store product to RC, linked to `unlimited` entitlement + default offering
+- EAS iOS build completed, submitted to ASC/TestFlight (build 2, v1.0.0, processing)
+- Fixed stale package-lock.json (missing @expo/metro-runtime@55.0.6)
+- Added ITSAppUsesNonExemptEncryption to app.json
+- Filed Lessons 33 (Play Console nav), 34 (first EAS build must be interactive)
 
 **What's Next:**
-- [ ] EAS Android build (`eas build --platform android --profile production --non-interactive`) ← START HERE
-- [ ] Upload Android build to Play Console internal testing track
-- [ ] Create Google Play one-time product (`unlimited`, $9.99) in Play Console
-- [ ] Add Play Store product to RC and link in offering
-- [ ] EAS iOS build and TestFlight
-- [ ] Device testing (Phase 4), screenshots (Phase 5), submit both stores
+- [ ] Device testing: install iOS via TestFlight, Android via internal testing ← START HERE
+- [ ] Manual E2E test on each platform (see TASK_CONTRACT.md Phase 4.2 checklist)
+- [ ] Screenshots for both stores (Phase 5.1)
+- [ ] Store metadata finalization (Phase 5.2)
+- [ ] Submit both stores for review (Phase 5.3)
 
 **Notes:**
-- Phase 1 (subdomain), Phase 2 (app config), Phase 3.1 (ASC), Phase 3.3 (Apple IAP) all COMPLETE
-- Phase 3.2 (Google Play record) mostly done — 9/11 setup tasks, store listing drafted, graphics deferred
-- Google Cloud org policy (`iam.disableServiceAccountKeyCreation`) blocks service account JSON key — tracked in miketoles/spirit-logic-submit#1, skipped for now (works without it for one-time IAP)
-- Automation of submission process is a high-priority future improvement
+- Phases 1-3 COMPLETE (subdomain, app config, store records, IAP, RevenueCat)
+- Phase 4 builds done — device testing remains
+- iOS credentials: reused STX Archery dist cert (G7SQLLU662), ASC submit key U6BLYHFZBH shared
+- Google Cloud org policy blocker tracked in spirit-logic-submit#1, skipped (works without it)
+- First EAS build per platform MUST be interactive (Lesson 34)
 <!-- /AGENT: Claude Code | PROJECT: Field Photo Report -->
 
 ---
