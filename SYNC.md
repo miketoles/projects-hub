@@ -1,6 +1,6 @@
 # Spirit Logic — Multi-Agent Sync File
 
-*Last synced: 2026-03-07 by Codex (Lean v3 broker launchd + token rotation verified)*
+*Last synced: 2026-03-11 by Claude Code (FPR submission — RevenueCat + store setup)*
 
 > **For agents:** See `SYNC-INSTRUCTIONS.md` in this repo for sync up protocol.
 
@@ -11,11 +11,11 @@
 | Project | Status | Next Action | Last Agent |
 |---------|--------|-------------|------------|
 | Lean v3 Process | 🟢 broker live; both profiles validated | Use for new tasks via lane runner | Codex |
-| STX Archery | 🟡 iOS rejected (5.1.1ii), fix built & resubmitting; Android in review | Resubmit build 23 to App Review | Claude Code |
+| STX Archery | 🟢 iOS RELEASED, Android LIVE on Google Play | Post-launch monitoring | Claude Code |
 | OneDoc | 🟢 M10.1 live | Install EXE on work laptop | Codex |
 | ScatterplotCreator | 🟢 v1.0.10 stable | Await committee v2 approval | Claude Code |
-| NRT | 🟡 plan review complete | Mike decides go/no-go on Phase A build | Claude Code |
-| Field Photo Report | 🟡 v1 running on iPhone; polish in progress | Fix camera dual-save + simplify PDF UX | Codex |
+| NRT | 🟡 local shell concept iteration active; hosted sandbox stable | Resolve 15-minute team-block display, then continue Today shell refinement | Codex |
+| Field Photo Report | 🟡 submission in progress — RC done, need EAS builds | EAS Android build → Play IAP → submit | Claude Code |
 
 ---
 
@@ -31,7 +31,7 @@ No active build cycle.
 **Run:** `npx expo run:ios`
 
 <!-- DECISION_QUEUE_START -->
-Mike: Once Apple finishes processing build 23, go to ASC -> App Review -> Edit -> swap build 22 to 23 -> Resubmit to App Review
+(none) — iOS RELEASED Mar 10, Android LIVE on Google Play Mar 11
 <!-- DECISION_QUEUE_END -->
 
 **What We Did This Session:**
@@ -153,38 +153,80 @@ No active build cycle.
 
 ---
 
-<!-- AGENT: Codex | PROJECT: Field Photo Report -->
-## Codex — Field Photo Report
-*Last synced: 2026-03-06*
+<!-- AGENT: Claude Code | PROJECT: Field Photo Report -->
+## Claude Code — Field Photo Report
+*Last synced: 2026-03-11*
 
 <!-- ACTIVE_BUILD_START -->
-No active build cycle.
+No active build cycle. Task contract at `/Users/miketoles/dev/Field-Photo-Report/TASK_CONTRACT.md`.
 <!-- ACTIVE_BUILD_END -->
 
 **Path:** `~/dev/Field-Photo-Report`
-**Run:** `npx expo run:ios --device`
+**Run:** `npx expo run:ios`
+
+<!-- DECISION_QUEUE_START -->
+(none)
+<!-- DECISION_QUEUE_END -->
+
+**What We Did This Session (Mar 11):**
+- Completed RevenueCat setup: iOS app saved (IAP key + ASC API key + Issuer ID), Play Store app created (no JSON key — org policy blocker, tracked in spirit-logic-submit#1)
+- Set EAS secrets for both RC API keys (iOS + Android)
+- Created App Store product in RC (`app.spiritlogic.fieldphotoreport.unlimited`, non-consumable), attached to `unlimited` entitlement and `default` offering Lifetime package
+- Google Play IAP blocked — needs first APK upload before product creation allowed
+- Filed Lesson 32 (org policy skip) and Lesson 33 (Play Console nav terminology)
+
+**What's Next:**
+- [ ] EAS Android build (`eas build --platform android --profile production --non-interactive`) ← START HERE
+- [ ] Upload Android build to Play Console internal testing track
+- [ ] Create Google Play one-time product (`unlimited`, $9.99) in Play Console
+- [ ] Add Play Store product to RC and link in offering
+- [ ] EAS iOS build and TestFlight
+- [ ] Device testing (Phase 4), screenshots (Phase 5), submit both stores
+
+**Notes:**
+- Phase 1 (subdomain), Phase 2 (app config), Phase 3.1 (ASC), Phase 3.3 (Apple IAP) all COMPLETE
+- Phase 3.2 (Google Play record) mostly done — 9/11 setup tasks, store listing drafted, graphics deferred
+- Google Cloud org policy (`iam.disableServiceAccountKeyCreation`) blocks service account JSON key — tracked in miketoles/spirit-logic-submit#1, skipped for now (works without it for one-time IAP)
+- Automation of submission process is a high-priority future improvement
+<!-- /AGENT: Claude Code | PROJECT: Field Photo Report -->
+
+---
+
+<!-- AGENT: Codex | PROJECT: NRT -->
+## Codex — NRT
+*Last synced: 2026-03-11*
+
+<!-- ACTIVE_BUILD_START -->
+**Current build:** Local Today-shell concept iteration only; real route migration paused until the shell/schedule design is settled.
+<!-- ACTIVE_BUILD_END -->
+
+**Path:** `~/dev/NRT`
+**Run:** local frontend concept route: `http://127.0.0.1:5175/concept-lab/site-shell/left-rail-v1`
 
 <!-- DECISION_QUEUE_START -->
 (none)
 <!-- DECISION_QUEUE_END -->
 
 **What We Did This Session:**
-- Built the v1 Expo app end-to-end: jobs, photos, report preview, PDF generation/share, settings, offline local storage
-- Ran the app on Mike's iPhone and iterated directly against real-device UX and report bugs
-- Fixed routing, date handling, phone formatting, report field mapping, preview generation, and completed-job navigation
-- Updated the design doc with an implementation checkpoint and explicit v1 camera dual-save requirement
-- Added new Expo dev-build / Metro troubleshooting lessons to `spirit-logic-submit`
+- Kept the real routed app stable and iterated only in the standalone local concept page for the new NRT shell
+- Refined the left-rail Today concept with a collapsible radar, collapsible schedule, date navigation, military time, role-based team views, sticky time column, and a centered schedule-detail popup
+- Added realistic mock coverage for RBT/BCBA staffing across a week, with daily team-size variation and grouped team matrix views (`RBTs`, `BCBAs`, `Everyone`)
+- Tightened the schedule interaction model around what staff actually care about first: patient, then time, then deeper details on inspect
+- Confirmed the current concept still has one open UX issue: 15-minute schedule blocks remain too dense to read cleanly and need one more concept pass before we migrate this shell into the real app
+- Noted a follow-up process requirement: once the shell/schedule concept stabilizes, the NRT design docs should be updated to reflect the new approved direction
 
 **What's Next:**
-- [ ] Fix camera capture so every in-app photo saves to both app storage and iPhone Photos silently ← START HERE
-- [ ] Simplify PDF UX to one obvious top-level PDF action
-- [ ] Finalize exact preview/PDF parity and remaining on-device report polish
+- [ ] Resolve the 15-minute team-block display in the local Today concept ← START HERE
+- [ ] Continue refining the local left-rail shell/schedule concept until the Today screen is stable enough to migrate
+- [ ] After the concept is approved, update the NRT design docs and migration plan to reflect the final shell direction
+- [ ] Only then apply the new shell primitives to the real `Today` route and continue module migration
 
 **Notes:**
-- Latest Field Photo Report commits pushed: `b6e988e` and `b0a7887`
-- Latest submission framework commit pushed: `04e2c89`
-- Native iPhone dev build with `expo-media-library` was rebuilt and installed; dual-save behavior still needs verification/fix
-<!-- /AGENT: Codex | PROJECT: Field Photo Report -->
+- Current concept source of truth remains local: `/concept-lab/site-shell/left-rail-v1`
+- Hosted sandbox and Phase A/B infra remain stable; this session intentionally avoided changing the deployed routes while concept work is still fluid
+- Current NRT repo has uncommitted local concept edits plus unrelated noise left intentionally untouched: `.DS_Store`, `supabase/.temp/`, and `core/docs/mockups/nrt-logo/`
+- The next migration step should not start until the Today concept solves the quarter-hour scheduling readability problem
+<!-- /AGENT: Codex | PROJECT: NRT -->
 
 ---
 
