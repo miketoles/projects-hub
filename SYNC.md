@@ -1,6 +1,6 @@
 # Spirit Logic — Multi-Agent Sync File
 
-*Last synced: 2026-03-13 6:15 PM by Claude Code (STX sync merge — Android purchase fix, v1.0.1 in review)*
+*Last synced: 2026-03-13 7:15 PM by Claude Code (FPR — process diagnosis, builds submitted, autoSubmit enforced)*
 
 > **For agents:** See `SYNC-INSTRUCTIONS.md` in this repo for sync up protocol.
 
@@ -9,7 +9,7 @@
 ## Active Build
 
 <!-- ACTIVE_BUILD_START -->
-No active build cycle. FPR iOS build 11 + Android vc 13 submitted to EAS (auto-submit to TestFlight, manual upload for Play Console).
+No active build cycle. FPR builds submitted: iOS build 11 (TestFlight, processing) + Android vc 13 (Play Console internal testing, live).
 <!-- ACTIVE_BUILD_END -->
 
 ---
@@ -17,7 +17,7 @@ No active build cycle. FPR iOS build 11 + Android vc 13 submitted to EAS (auto-s
 ## Decision Queue
 
 <!-- DECISION_QUEUE_START -->
-**Mike:** Device testing with John on new FPR build (iOS 11 on TestFlight). Process audit needed — rules not being enforced structurally.
+**Mike:** Device testing with John on new FPR builds. Upload Android AAB reminder pending.
 <!-- DECISION_QUEUE_END -->
 
 ---
@@ -30,33 +30,31 @@ No active build cycle. FPR iOS build 11 + Android vc 13 submitted to EAS (auto-s
 
 ---
 
-## What We Did This Session (Mar 13 PM)
+## What We Did This Session (Mar 13 PM continued)
 
-- Refactored paywall to RevenueCat listener pattern (issue #13) — PurchaseContext + usePurchaseStatus hook, eliminated all manual setUnlocked/stale closure bugs
-- Fixed saveGeneratedReport timestamp drift (DB now preserves prepared report timestamp)
-- Bundled 4 PDF/UI fixes: removed per-photo timestamp (#9), vendor contact separate lines (#10), blank service date (#11), SaveIndicator layout jump (#8)
-- Removed "Generated at" timestamp from PDF entirely (John's suggestion — service date is what matters)
-- Closed 9 issues total (#2, #4, #6, #8, #9, #10, #11, #12, #13), added lessons 42-47
-- Identified process gap: rules exist but aren't enforced structurally — process audit queued
+- Diagnosed why Lean v3 process is failing — agreed on 4-step core process (talk → Codex builds → Claude reviews → ship)
+- Identified lessons file is broken (47 items, wrong abstraction) — split strategy: submission runbook, project CLAUDE.md, behavioral rules
+- Found existing NEXT-APP-PLAYBOOK.md wasn't being read — added to global session start contract
+- Added `autoSubmit: true` to eas.json for both FPR and STX Archery (structural fix, not a lesson)
+- Fixed MEMORY.md truncation bug — screenshot convention was past line 200 cutoff, moved to top
+- Submitted iOS build 11 to TestFlight + Android vc 13 uploaded to Play Console internal testing
 
 ---
 
 ## What's Next
 
-- [ ] Device testing with John (TestFlight build 11) ← START HERE
+- [ ] Device testing with John (TestFlight build 11 + Play internal vc 13) ← START HERE
 - [ ] Upload screenshots to ASC + Google Play from device testing
-- [ ] Process audit: convert violated rules into enforced gates/hooks
 - [ ] Submit for App Store + Play Store review
-- [ ] Pixel 7a arrives Mar 18-19 — Android testing
+- [ ] Pixel 7a arrives Mar 18-19 — Android device testing
 
 ---
 
 ## Notes
 
-- **STX (Mar 13 AM):** Fixed broken Android purchases — RC offering had "No product" for Play Store. Added Lesson 9 (RC verification gate). Created issues #10 (intl formats), #11 (custom session names, v1.1). Pixel 7a ordered ($370, arrives Mar 18-19).
-- **FPR:** Android auto-submit blocked by Google Service Account Key org policy (manual upload needed)
-- **FPR:** 4 issues remain open: #1 (dark palette), #3 (preview zoom), #5 (vendor fields), #7 (settings nav)
-- Sandbox purchases persist across reinstalls (tied to Apple ID) — use new sandbox tester to test locked state
+- 4 FPR issues remain open: #1 (dark palette), #3 (preview zoom), #5 (vendor fields), #7 (settings nav)
+- Codex → Claude handoff communication is #1 process blocker (Mike pastes manually)
+- Screen-sharing product idea noted — solve "agent can't see the screen" problem
 
 ---
 
@@ -64,9 +62,9 @@ No active build cycle. FPR iOS build 11 + Android vc 13 submitted to EAS (auto-s
 
 | Project | Status | Next Action |
 |---------|--------|-------------|
-| Field Photo Report | 🟡 RC refactor done, build 11 submitting | Device testing → screenshots → submit |
+| Field Photo Report | 🟡 Builds submitted, awaiting testing | Device testing → screenshots → submit |
 | STX Archery | 🟡 v1.0.1 in review (both platforms) | Await approval, plan v1.1 |
-| Lean v3 Process | 🟡 rules not enforced | Process audit after FPR testing |
+| Lean v3 Process | 🟡 Simplified to 4-step core | Stop adding infra, use what works |
 | OneDoc | 🟢 M10.1 live | Install EXE on work laptop |
 | ScatterplotCreator | 🟢 v1.0.10 stable | Await committee v2 approval |
 | NRT | 🟡 local shell iteration | Resolve 15-min team-block display |
