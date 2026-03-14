@@ -1,6 +1,6 @@
 # Spirit Logic — Multi-Agent Sync File
 
-*Last synced: 2026-03-13 6:00 PM by Claude Code (FPR — RC listener refactor + bundled fixes, builds submitting)*
+*Last synced: 2026-03-13 6:15 PM by Claude Code (STX sync merge — Android purchase fix, v1.0.1 in review)*
 
 > **For agents:** See `SYNC-INSTRUCTIONS.md` in this repo for sync up protocol.
 
@@ -53,8 +53,9 @@ No active build cycle. FPR iOS build 11 + Android vc 13 submitted to EAS (auto-s
 
 ## Notes
 
-- Android auto-submit blocked by Google Service Account Key org policy (manual upload needed)
-- 4 issues remain open: #1 (dark palette), #3 (preview zoom), #5 (vendor fields), #7 (settings nav)
+- **STX (Mar 13 AM):** Fixed broken Android purchases — RC offering had "No product" for Play Store. Added Lesson 9 (RC verification gate). Created issues #10 (intl formats), #11 (custom session names, v1.1). Pixel 7a ordered ($370, arrives Mar 18-19).
+- **FPR:** Android auto-submit blocked by Google Service Account Key org policy (manual upload needed)
+- **FPR:** 4 issues remain open: #1 (dark palette), #3 (preview zoom), #5 (vendor fields), #7 (settings nav)
 - Sandbox purchases persist across reinstalls (tied to Apple ID) — use new sandbox tester to test locked state
 
 ---
