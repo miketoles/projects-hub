@@ -1,6 +1,6 @@
 # Spirit Logic — Multi-Agent Sync File
 
-*Last synced: 2026-03-13 7:15 PM by Claude Code (FPR — process diagnosis, builds submitted, autoSubmit enforced)*
+*Last synced: 2026-03-15 2:20 PM by Claude Code (FPR — iOS submitted to App Review)*
 
 > **For agents:** See `SYNC-INSTRUCTIONS.md` in this repo for sync up protocol.
 
@@ -9,7 +9,7 @@
 ## Active Build
 
 <!-- ACTIVE_BUILD_START -->
-No active build cycle. FPR builds submitted: iOS build 11 (TestFlight, processing) + Android vc 13 (Play Console internal testing, live).
+No active build cycle. FPR iOS v1.0.0 (build 20) submitted to App Store Review. Waiting for approval.
 <!-- ACTIVE_BUILD_END -->
 
 ---
@@ -17,7 +17,7 @@ No active build cycle. FPR builds submitted: iOS build 11 (TestFlight, processin
 ## Decision Queue
 
 <!-- DECISION_QUEUE_START -->
-**Mike:** Device testing with John on new FPR builds. Upload Android AAB reminder pending.
+**Mike:** Watch for Apple review email. Android submission when test device arrives (~Mar 19-20).
 <!-- DECISION_QUEUE_END -->
 
 ---
@@ -30,31 +30,31 @@ No active build cycle. FPR builds submitted: iOS build 11 (TestFlight, processin
 
 ---
 
-## What We Did This Session (Mar 13 PM continued)
+## What We Did This Session (Mar 15)
 
-- Diagnosed why Lean v3 process is failing — agreed on 4-step core process (talk → Codex builds → Claude reviews → ship)
-- Identified lessons file is broken (47 items, wrong abstraction) — split strategy: submission runbook, project CLAUDE.md, behavioral rules
-- Found existing NEXT-APP-PLAYBOOK.md wasn't being read — added to global session start contract
-- Added `autoSubmit: true` to eas.json for both FPR and STX Archery (structural fix, not a lesson)
-- Fixed MEMORY.md truncation bug — screenshot convention was past line 200 cutoff, moved to top
-- Submitted iOS build 11 to TestFlight + Android vc 13 uploaded to Play Console internal testing
+- Fixed "Preparing images for preview..." bug (status persisted after tapping preview)
+- Updated iOS permission strings to avoid Apple 5.1.1 rejection (learned from STX Archery)
+- Built locally (build 20), uploaded via Transporter to TestFlight
+- Completed full ASC submission: screenshots, store copy, age rating, privacy, copyright
+- Submitted FPR iOS v1.0.0 to App Store Review
+- Logged STX Archery edge-to-edge deprecation issue (#13)
 
 ---
 
 ## What's Next
 
-- [ ] Device testing with John (TestFlight build 11 + Play internal vc 13) ← START HERE
-- [ ] Upload screenshots to ASC + Google Play from device testing
-- [ ] Submit for App Store + Play Store review
-- [ ] Pixel 7a arrives Mar 18-19 — Android device testing
+- [ ] Wait for Apple review (1-3 business days) ← WAITING
+- [ ] Android build + device testing when Pixel arrives (~Mar 19-20)
+- [ ] Google Play Store submission (screenshots, content declarations, production release)
+- [ ] STX Archery v2 design doc when Mike has bandwidth
 
 ---
 
 ## Notes
 
-- 4 FPR issues remain open: #1 (dark palette), #3 (preview zoom), #5 (vendor fields), #7 (settings nav)
-- Codex → Claude handoff communication is #1 process blocker (Mike pastes manually)
-- Screen-sharing product idea noted — solve "agent can't see the screen" problem
+- FPR open issues: #1 (dark palette), #3 (preview zoom), #5 (vendor fields), #7 (settings nav), #20 (tagline), #21 (report architecture)
+- STX Archery open: #13 (edge-to-edge API deprecations for Android 15)
+- PDF generation was the main bug source in FPR — added lesson to NEXT-APP-PLAYBOOK.md
 
 ---
 
@@ -62,12 +62,12 @@ No active build cycle. FPR builds submitted: iOS build 11 (TestFlight, processin
 
 | Project | Status | Next Action |
 |---------|--------|-------------|
-| Field Photo Report | 🟡 Builds submitted, awaiting testing | Device testing → screenshots → submit |
-| STX Archery | 🟡 v1.0.1 in review (both platforms) | Await approval, plan v1.1 |
-| Lean v3 Process | 🟡 Simplified to 4-step core | Stop adding infra, use what works |
+| Field Photo Report | 🟡 iOS submitted, waiting for review | Apple review → Android build + submit |
+| STX Archery | 🟢 Live on both stores | v2 design doc, fix #13 in next build |
+| Lean v3 Process | 🟢 Stable | Use as-is |
 | OneDoc | 🟢 M10.1 live | Install EXE on work laptop |
 | ScatterplotCreator | 🟢 v1.0.10 stable | Await committee v2 approval |
-| NRT | 🟡 local shell iteration | Resolve 15-min team-block display |
+| NRT | 🟡 Local shell iteration | Resolve 15-min team-block display |
 
 ---
 
