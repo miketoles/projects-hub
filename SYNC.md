@@ -1,13 +1,16 @@
 # Spirit Logic — Multi-Agent Sync File
 
-*Last synced: 2026-03-21 12:30 PM by Claude Code (STX build 9 to production)*
+*Last synced: 2026-03-21 3:45 PM by Claude Code (FieldSketch feature sprint planned)*
 
 ---
 
 ## Active Build
 
 <!-- ACTIVE_BUILD_START -->
-No active build cycle.
+**Project:** FieldSketch | **Status:** Plan approved, awaiting build
+**Next agent:** codex (Phase 1 build)
+**Building:** Draw/Select mode split + 5 bug fixes + data model v2 (Phase 1 of 5)
+**Plan:** TASK_CONTRACT.md Rev 4 — 4 rounds of adversarial review, 26 findings resolved
 <!-- ACTIVE_BUILD_END -->
 
 ---
@@ -15,47 +18,43 @@ No active build cycle.
 ## Decision Queue
 
 <!-- DECISION_QUEUE_START -->
-(none)
+(none — plan approved, ready for Phase 1 Codex build on Mike's signal)
 <!-- DECISION_QUEUE_END -->
 
 ---
 
 ## Current Focus
 
-**Project:** Field Photo Report
-**Path:** `~/dev/Field-Photo-Report`
+**Project:** FieldSketch
+**Path:** `~/dev/FieldSketch`
 **Run:** `npx expo start`
 
 ---
 
 ## What We Did This Session (Mar 21)
 
-- STX Archery: Built Android build 9 (v1.0.1, versionCode 9) with RC Android key baked in
-- Verified IAP working on Android device — "already purchased" shows, Restore Purchases works
-- Submitted build 9 to Google Play production track — in review
-- Filed #17: Android displays iOS build number (cosmetic, low priority)
-- Mission Control: Discovery audit complete, Codex adversarial review complete (parked, resuming later)
+- STX Archery: Diagnosed Android IAP failure — RC key missing from eas.json. Fixed, rebuilt (build 9), lesson 10 saved
+- FieldSketch: Logged 16 GitHub issues from John's device testing (Build 7) — 4 bugs, 11 enhancements, 1 closed as dupe
+- FieldSketch: Planned 5-phase feature sprint (Draw/Select mode, shapes, colors, labels, bug fixes)
+- FieldSketch: TASK_CONTRACT.md survived 4 rounds of Codex adversarial review (26 findings, all resolved)
+- Updated CLAUDE.md unit rule: 4 units (ft-in, in, mm, cm) per John's feedback
 
 ---
 
 ## What's Next
 
-- [ ] Take screenshots for both stores (iPhone 6.7", iPad 12.9", Android phone) ← START HERE
-- [ ] Create Play Store feature graphic (1024x500)
-- [ ] Decide: submit fresh iOS build with latest code or use existing TestFlight build 2
-- [ ] Submit to Google Play production track
-- [ ] Submit to App Store for review
-- [x] ~~STX: Re-test IAP on Android~~ DONE — IAP verified working, build 9 submitted to production
+- [ ] FieldSketch: Kick off Phase 1 Codex build (Draw/Select + bugs) <- START HERE
+- [ ] FieldSketch: Build 8 to TestFlight after Phase 1 lands
+- [ ] STX Archery: Monitor Android build 9 production rollout (separate CC session)
+- [ ] FPR: Screenshots + store submission (parked)
 
 ---
 
 ## Notes
 
-- FPR device testing PASSED — keyboard, mark complete, date picker, tab icons, PDF all confirmed working
-- Keyboard fix is "good enough for launch" — #27 tracks future improvement
-- STX Archery build 9 (v1.0.1) submitted to Google Play production — IAP verified working
-- STX #17 filed: version display shows iOS build number on Android (cosmetic)
-- Mission Control v1 spec complete, Codex review done, parked pending build phase
+- FieldSketch Build 7 on TestFlight — John actively testing, great feedback
+- STX Archery lesson 10: EAS secrets alone are not enough — API keys must be in eas.json env block
+- MCP GitHub auth broken this session — used gh CLI as fallback for issue creation
 
 ---
 
@@ -63,9 +62,9 @@ No active build cycle.
 
 | Project | Status | Next Action |
 |---------|--------|-------------|
-| Field Photo Report | 🟡 Testing passed, ready for submission | Screenshots + production submit |
-| STX Archery | 🟢 Build 9 submitted to production | Monitor rollout, #17 version display fix |
-| Lean v3 Process | 🟢 Stable | Use as-is |
+| FieldSketch | 🟡 Feature sprint planned, Phase 1 ready | Codex build Phase 1 |
+| STX Archery | 🟢 Build 9 submitted to Play production | Monitor rollout (separate session) |
+| Field Photo Report | 🟡 Testing passed | Screenshots + submission |
 | ScatterplotCreator | 🟢 v1.0.10 stable | Await committee v2 approval |
 
 ---
