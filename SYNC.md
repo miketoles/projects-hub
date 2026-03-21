@@ -1,15 +1,13 @@
 # Spirit Logic — Multi-Agent Sync File
 
-*Last synced: 2026-03-19 7:30 PM by Claude Code (STX + FPR Android bug fixes)*
+*Last synced: 2026-03-20 2:30 PM by Claude Code (FPR production submission prep)*
 
 ---
 
 ## Active Build
 
 <!-- ACTIVE_BUILD_START -->
-**Project:** STX Archery | **Status:** code complete, build blocked
-**Building:** Android bug fixes #8, #14, #15 (pinch-to-zoom, button text, sight mark auto-save)
-**Blocker:** Local Android build fails with "unknown error" after Gradle completes 407 tasks. Needs investigation next session.
+No active build cycle.
 <!-- ACTIVE_BUILD_END -->
 
 ---
@@ -17,45 +15,46 @@
 ## Decision Queue
 
 <!-- DECISION_QUEUE_START -->
-**Mike:** Investigate STX local Android build failure. FPR local build works (Expo 55/Gradle 9), STX fails (Expo 54/Gradle 8.14). May need cloud build or Gradle config fix.
+(none)
 <!-- DECISION_QUEUE_END -->
 
 ---
 
 ## Current Focus
 
-**Project:** STX Archery + Field Photo Report
-**Path:** `~/dev/3dArchery` + `~/dev/Field-Photo-Report`
-**Run:** `npx expo run:ios`
+**Project:** Field Photo Report
+**Path:** `~/dev/Field-Photo-Report`
+**Run:** `npx expo start`
 
 ---
 
-## What We Did This Session (Mar 19)
+## What We Did This Session (Mar 20)
 
-- Fixed 5 FPR Android bugs (#22-#26): keyboard, date picker, mark complete crash, tab icons, PDF crash
-- Built FPR Android AAB successfully (build 21 on Play internal testing)
-- Fixed 3 STX Android bugs (#8, #14, #15): sight mark auto-save, button font weight, pinch-to-zoom gesture
-- Diagnosed button text issue: Android can't synthesize fontWeight 600 — added SourceSans3-SemiBold.ttf
-- Uploaded RevenueCat service account key for both FPR and STX Play Store apps
+- Reviewed + merged Codex's `useAndroidKeyboardScroll` hook (auto-scroll focused input on Android)
+- Built FPR Android AAB (build 24) via EAS cloud, downloaded to project dir
+- Uploaded to Play Console internal testing, John + Mike confirmed testing passed
+- Filed #27 for remaining keyboard polish (buttons below fields still blocked — low priority)
+- Committed + pushed all code, 35/35 tests pass, tsc clean
 
 ---
 
 ## What's Next
 
-- [ ] Fix STX Android local build failure ← START HERE
-- [ ] Upload STX Android build to Play Console for testing
-- [ ] Device test FPR Android build 21 (John testing 5 bug fixes)
-- [ ] FPR: Google Play screenshots + production submission
-- [ ] STX: Re-test IAP on Android after RC propagation
+- [ ] Take screenshots for both stores (iPhone 6.7", iPad 12.9", Android phone) ← START HERE
+- [ ] Create Play Store feature graphic (1024x500)
+- [ ] Decide: submit fresh iOS build with latest code or use existing TestFlight build 2
+- [ ] Submit to Google Play production track
+- [ ] Submit to App Store for review
+- [ ] STX: Re-test IAP on Android after RC credential propagation (JSON key uploaded Mar 19)
 
 ---
 
 ## Notes
 
-- `ANDROID_HOME=/usr/local/share/android-commandlinetools` required for local builds
-- FPR local builds work, STX fails — likely Expo 54 vs 55 Gradle version difference
-- STX TASK_CONTRACT.md and commit `d8c0640` have all 3 bug fixes ready, just needs successful build
-- Created STX #16 (sight mark v2 UX review for future equipment redesign)
+- FPR device testing PASSED — keyboard, mark complete, date picker, tab icons, PDF all confirmed working
+- Keyboard fix is "good enough for launch" — #27 tracks future improvement
+- STX Archery build 8 uploaded to Play Console, awaiting John's device testing
+- STX IAP: RevenueCat credential propagation may be complete (36hr window from Mar 19)
 
 ---
 
@@ -63,8 +62,8 @@
 
 | Project | Status | Next Action |
 |---------|--------|-------------|
-| Field Photo Report | 🟡 Android build 21 in internal testing | John device testing, then production submit |
-| STX Archery | 🔴 Code done, Android build blocked | Fix local build, upload to Play Console |
+| Field Photo Report | 🟡 Testing passed, ready for submission | Screenshots + production submit |
+| STX Archery | 🟡 Build 8 on Play Console | John device testing + IAP retest |
 | Lean v3 Process | 🟢 Stable | Use as-is |
 | ScatterplotCreator | 🟢 v1.0.10 stable | Await committee v2 approval |
 
