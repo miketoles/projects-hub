@@ -1,6 +1,6 @@
 # Spirit Logic — Multi-Agent Sync File
 
-*Last synced: 2026-03-20 2:30 PM by Claude Code (FPR production submission prep)*
+*Last synced: 2026-03-21 12:30 PM by Claude Code (STX build 9 to production)*
 
 ---
 
@@ -28,13 +28,13 @@ No active build cycle.
 
 ---
 
-## What We Did This Session (Mar 20)
+## What We Did This Session (Mar 21)
 
-- Reviewed + merged Codex's `useAndroidKeyboardScroll` hook (auto-scroll focused input on Android)
-- Built FPR Android AAB (build 24) via EAS cloud, downloaded to project dir
-- Uploaded to Play Console internal testing, John + Mike confirmed testing passed
-- Filed #27 for remaining keyboard polish (buttons below fields still blocked — low priority)
-- Committed + pushed all code, 35/35 tests pass, tsc clean
+- STX Archery: Built Android build 9 (v1.0.1, versionCode 9) with RC Android key baked in
+- Verified IAP working on Android device — "already purchased" shows, Restore Purchases works
+- Submitted build 9 to Google Play production track — in review
+- Filed #17: Android displays iOS build number (cosmetic, low priority)
+- Mission Control: Discovery audit complete, Codex adversarial review complete (parked, resuming later)
 
 ---
 
@@ -45,7 +45,7 @@ No active build cycle.
 - [ ] Decide: submit fresh iOS build with latest code or use existing TestFlight build 2
 - [ ] Submit to Google Play production track
 - [ ] Submit to App Store for review
-- [ ] STX: Re-test IAP on Android after RC credential propagation (JSON key uploaded Mar 19)
+- [x] ~~STX: Re-test IAP on Android~~ DONE — IAP verified working, build 9 submitted to production
 
 ---
 
@@ -53,8 +53,9 @@ No active build cycle.
 
 - FPR device testing PASSED — keyboard, mark complete, date picker, tab icons, PDF all confirmed working
 - Keyboard fix is "good enough for launch" — #27 tracks future improvement
-- STX Archery build 8 uploaded to Play Console, awaiting John's device testing
-- STX IAP: RevenueCat credential propagation may be complete (36hr window from Mar 19)
+- STX Archery build 9 (v1.0.1) submitted to Google Play production — IAP verified working
+- STX #17 filed: version display shows iOS build number on Android (cosmetic)
+- Mission Control v1 spec complete, Codex review done, parked pending build phase
 
 ---
 
@@ -63,7 +64,7 @@ No active build cycle.
 | Project | Status | Next Action |
 |---------|--------|-------------|
 | Field Photo Report | 🟡 Testing passed, ready for submission | Screenshots + production submit |
-| STX Archery | 🟡 Build 8 on Play Console | John device testing + IAP retest |
+| STX Archery | 🟢 Build 9 submitted to production | Monitor rollout, #17 version display fix |
 | Lean v3 Process | 🟢 Stable | Use as-is |
 | ScatterplotCreator | 🟢 v1.0.10 stable | Await committee v2 approval |
 
