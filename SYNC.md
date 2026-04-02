@@ -1,6 +1,6 @@
 # Spirit Logic — Multi-Agent Sync File
 
-*Last synced: 2026-03-30 by Claude Code (NRTTBI design phase complete, committed + pushed)*
+*Last synced: 2026-04-02 by Claude Code (NRTTBI implementation plan ready, build begins)*
 
 ---
 
@@ -24,37 +24,36 @@ No active build cycle.
 
 **Project:** NRTTBI (NRT for TBI)
 **Path:** `~/dev/nrttbi`
-**Run:** No code yet — design phase. `git push origin main` to publish docs.
+**Run:** No code yet — Phase 0 (doc freeze) is next, then Phase 1 scaffold.
 
 ---
 
-## What We Did This Session (Mar 26–30)
+## What We Did This Session (Apr 1–2)
 
-- NRTTBI: Complete design phase — 54 tables, 24 screens, 23 open BCBA questions
-- NRTTBI: Escalated events (incident reports, BERT, holds, vital signs, medication stubs)
-- NRTTBI: CHSA promoted from stub to full spec — ported severity constraints from legacy
-- NRTTBI: Retrospective session entry, schedule entry notes, Quick ABC zero-config workflow
-- NRTTBI: Committed + pushed to GitHub, SYNC.md + .gitignore created
-- Mission Control: Phase 3 — redb database + Rust scraper + all 5 bugs fixed
+- NRTTBI: Created AGENTS.md (Codex instruction set for this repo)
+- NRTTBI: Full adversarial review — role model cleanup (RBT+BCBA only, admin=flag), MSSQL language consistency
+- NRTTBI: Defined ~45 new commands in command contract (full data-layer-first coverage)
+- NRTTBI: Added sync protocol, clinical-day normalization, audit log commands, source enum fix
+- NRTTBI: Created IMPLEMENTATION-PLAN.md — 13 phases, ~85 tasks, WAL sync engine task added
+- NRTTBI: Reclassified IT green light as deployment gate only — build proceeds on local MacBook now
 
 ---
 
 ## What's Next
 
-- [ ] Run 23 BCBA questions through clinical team ← START HERE
-- [ ] Wait for Craig IT green light to begin build
-- [ ] On green light: scaffold Rust/Tauri, write migration 0001 + 0002
-- [ ] FieldSketch: Fix #18-#21, then Phase 2 build
-- [ ] STX Archery: Monitor Android rollout
+- [ ] Phase 0: Final Codex adversarial review (doc freeze gate) ← START HERE
+- [ ] Phase 1: Cargo workspace + Tauri v2 + SvelteKit scaffold + migrations
+- [ ] Phase 2: Repository trait pattern + all sqlx queries
+- [ ] Run 15 BCBA questions through clinical team (parallel to build)
 
 ---
 
 ## Notes
 
 - NRTTBI repo: https://github.com/miketoles/nrttbi.git
+- Craig IT green light = deployment gate only, not build gate
 - BCBA answers coming in informally — update bcba-questions.md as received
-- High priority Qs: Q14 (Pre-BIP), Q21 (Escalated events/BERT)
-- Craig may use MSSQL instead of PostgreSQL — confirm with IT before build
+- High priority Qs: Q21 (Escalated events/BERT), Q17 (Preference assessments)
 
 ---
 
@@ -62,9 +61,9 @@ No active build cycle.
 
 | Project | Status | Next Action |
 |---------|--------|-------------|
-| NRTTBI | 🟢 Design complete | Run BCBA questions, await IT green light |
+| NRTTBI | 🟢 Build begins | Phase 0 doc freeze, then Phase 1 scaffold |
 | Mission Control | 🟢 Phase 3 shipped | Radar Board shows updated status |
-| FieldSketch | 🟡 Phase 1 built, testing | Fix bugs #18-#21, then Phase 2 |
+| FieldSketch | 🟡 Phase 1 built | Fix bugs #18-#21, then Phase 2 |
 | STX Archery | 🟢 Build 9 in production | Monitor rollout |
 | Field Photo Report | 🟡 Testing passed | Screenshots + submission |
 | ScatterplotCreator | 🟢 v1.0.10 stable | Await committee v2 approval |
