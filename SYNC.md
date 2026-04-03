@@ -1,6 +1,6 @@
 # Spirit Logic — Multi-Agent Sync File
 
-*Last synced: 2026-04-02 by Claude Code (NRTTBI implementation plan ready, build begins)*
+*Last synced: 2026-04-03 by Claude Code (NRTTBI design review — BCBA answers, role permissions, deferred questions)*
 
 ---
 
@@ -28,14 +28,14 @@ No active build cycle.
 
 ---
 
-## What We Did This Session (Apr 1–2)
+## What We Did This Session (Apr 3)
 
-- NRTTBI: Created AGENTS.md (Codex instruction set for this repo)
-- NRTTBI: Full adversarial review — role model cleanup (RBT+BCBA only, admin=flag), MSSQL language consistency
-- NRTTBI: Defined ~45 new commands in command contract (full data-layer-first coverage)
-- NRTTBI: Added sync protocol, clinical-day normalization, audit log commands, source enum fix
-- NRTTBI: Created IMPLEMENTATION-PLAN.md — 13 phases, ~85 tasks, WAL sync engine task added
-- NRTTBI: Reclassified IT green light as deployment gate only — build proceeds on local MacBook now
+- Answered Q7 seed data (7/8 — session_type +4, clinical_event_category +4, only pref_assessment_type remains)
+- Answered Q19 partially (Quick ABC unrestricted, demo mode desired, thresholds TBD)
+- Closed Q20 (RBT + BCBA only, no nursing/CNA access)
+- Updated screen permissions: Schedule, Session Live View, Reports, IOA, Check-In, Audit Log
+- Added Q26 (standard protocol templates, v2) and Q27 (Learning Trees / RBT education, v2)
+- Updated project-knowledge layer to reflect all changes
 
 ---
 
@@ -43,17 +43,17 @@ No active build cycle.
 
 - [ ] Phase 0: Final Codex adversarial review (doc freeze gate) ← START HERE
 - [ ] Phase 1: Cargo workspace + Tauri v2 + SvelteKit scaffold + migrations
-- [ ] Phase 2: Repository trait pattern + all sqlx queries
-- [ ] Run 15 BCBA questions through clinical team (parallel to build)
+- [ ] Run remaining BCBA questions: Q17 (pref assessments), Q21 (BERT/incidents — HIGH)
+- [ ] IT questions (IT-1 through IT-6) — deployment gates, not build-blocking
 
 ---
 
 ## Notes
 
 - NRTTBI repo: https://github.com/miketoles/nrttbi.git
-- Craig IT green light = deployment gate only, not build gate
-- BCBA answers coming in informally — update bcba-questions.md as received
-- High priority Qs: Q21 (Escalated events/BERT), Q17 (Preference assessments)
+- Open questions reduced from 11 to 9 (3 clinical + 6 IT)
+- High priority: Q21 (Escalated events/BERT), Q17 (Preference assessments)
+- Q7 closes fully when Q17 is answered (pref_assessment_type seed data)
 
 ---
 
